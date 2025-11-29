@@ -1,8 +1,7 @@
-// app/page.tsx
-// app/page.tsx
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-white text-black">
+
       {/* ヒーローエリア */}
       <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-center">
         Hello, Happy Forever420! 🌸
@@ -12,11 +11,11 @@ export default function Home() {
       </p>
 
       {/* 動画セクション */}
-            {/* 動画セクション */}
       <section className="w-full max-w-3xl px-4 mt-10 space-y-4">
-        <h2 className="text-2xl font-semibold">
+        <h2 className="text-2xl font-semibold mb-2">
           最新のパンダラップ動画
         </h2>
+
         <p className="text-sm text-zinc-600">
           YouTube に上げたショートの中から、いま一番見てほしいやつを置いてます。
         </p>
@@ -25,11 +24,11 @@ export default function Home() {
         <div className="aspect-video w-full rounded-xl overflow-hidden shadow-lg">
           <iframe
             className="w-full h-full rounded-xl"
-            src="https://youtube.com/shorts/PoXM1Kqcjnc?feature=share"
+            src="https://www.youtube.com/embed/PoXM1Kgqcjnc?feature=share"
             title="Panda Rap - Happy Forever"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-          />
+          ></iframe>
         </div>
 
         {/* YouTube チャンネルへ */}
@@ -45,22 +44,19 @@ export default function Home() {
 
       {/* SNS / Link セクション */}
       <section className="w-full max-w-3xl px-4 mt-12">
-        <h2 className="text-xl font-semibold mb-4">
-          SNS & Link
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">SNS & Link</h2>
 
         <div className="grid gap-4 sm:grid-cols-2">
+
           {/* X */}
           <a
-            href="https://x.com/happyforevr420"
+            href="https://x.com/happyforever420"
             target="_blank"
             rel="noreferrer"
             className="rounded-xl border border-zinc-200 px-4 py-3 hover:bg-zinc-50 transition"
           >
             <p className="text-sm font-semibold">X（旧Twitter）</p>
-            <p className="text-xs text-zinc-600">
-              。
-            </p>
+            <p className="text-xs text-zinc-600">日常と思想のログ。</p>
           </a>
 
           {/* note */}
@@ -71,9 +67,7 @@ export default function Home() {
             className="rounded-xl border border-zinc-200 px-4 py-3 hover:bg-zinc-50 transition"
           >
             <p className="text-sm font-semibold">note</p>
-            <p className="text-xs text-zinc-600">
-              ロング文章・地獄ダイブ・考察系はこちら。
-            </p>
+            <p className="text-xs text-zinc-600">ロング文章・地獄ダイブ・考察系はこちら。</p>
           </a>
 
           {/* Instagram */}
@@ -84,22 +78,23 @@ export default function Home() {
             className="rounded-xl border border-zinc-200 px-4 py-3 hover:bg-zinc-50 transition"
           >
             <p className="text-sm font-semibold">Instagram</p>
-            <p className="text-xs text-zinc-600">
-              画像・ビジュアル系のログ
-            </p>
+            <p className="text-xs text-zinc-600">画像・ビジュアル系のログ。</p>
           </a>
 
-          {/* ティックトック*/}
+          {/* TikTok */}
           <a
-            href="https://www.tiktok.com/@happyforever.420?is_from_webapp=1&sender_device=pc"
+            href="https://www.tiktok.com/@happyforever.420?is_from_webapp=1"
             target="_blank"
             rel="noreferrer"
             className="rounded-xl border border-dashed border-zinc-200 px-4 py-3 hover:bg-zinc-50 transition"
           >
-            <p className="text-sm font-semibold">その他のリンク</p>
-            <p className="text-xs text-zinc-600">
-              新しいサービスを始めたらここに足していくイメージ。
-            </p>
+            <p className="text-sm font-semibold">TikTok</p>
+            <p className="text-xs text-zinc-600">ショート動画の別バージョンなど。</p>
           </a>
+
         </div>
       </section>
+
+    </main>
+  );
+}
