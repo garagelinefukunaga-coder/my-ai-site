@@ -25,7 +25,7 @@ export default function Home() {
         <div className="aspect-video w-full rounded-xl overflow-hidden shadow-lg">
           <iframe
             className="w-full h-full rounded-xl"
-            src="https://youtube.com/shorts/PoXM1Kqcjnc?si=AQGi1ZZBiyQaD999"
+            src="https://youtube.com/shorts/PoXM1Kqcjnc?feature=share"
             title="Panda Rap - Happy Forever"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
@@ -52,7 +52,7 @@ export default function Home() {
         <div className="grid gap-4 sm:grid-cols-2">
           {/* X */}
           <a
-            href="https://x.com/happyforevr420/ここを自分のIDに変える"
+            href="https://x.com/happyforevr420"
             target="_blank"
             rel="noreferrer"
             className="rounded-xl border border-zinc-200 px-4 py-3 hover:bg-zinc-50 transition"
@@ -78,14 +78,14 @@ export default function Home() {
 
           {/* Instagram */}
           <a
-            href="https://www.instagram.com/ここもID"
+            href="https://www.instagram.com/"
             target="_blank"
             rel="noreferrer"
             className="rounded-xl border border-zinc-200 px-4 py-3 hover:bg-zinc-50 transition"
           >
             <p className="text-sm font-semibold">Instagram</p>
             <p className="text-xs text-zinc-600">
-              画像・ビジュアル系のログ。
+              画像・ビジュアル系のログ
             </p>
           </a>
 
