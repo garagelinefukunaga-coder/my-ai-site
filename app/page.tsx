@@ -24,8 +24,8 @@ export default function Home() {
         {/* YouTube 埋め込み */}
         <div className="aspect-video w-full rounded-xl overflow-hidden shadow-lg">
           <iframe
-            className="w-full h-full"
-            src="https://youtube.com/shorts/PoXM1Kqcjnc?si=wZXLY5kJJ4oAhn8H/embed/Hs6FU0g6nps?si=qHLM1g25lNDv"
+            className="w-full h-full rounded-xl"
+            src="https://youtube.com/shorts/PoXM1Kqcjnc?si=AQGi1ZZBiyQaD999"
             title="Panda Rap - Happy Forever"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
