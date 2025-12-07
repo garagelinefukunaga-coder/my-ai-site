@@ -24,7 +24,7 @@ export default function Home() {
         <div className="aspect-video w-full rounded-xl overflow-hidden shadow-lg">
           <iframe
             className="w-full h-full rounded-xl"
-            src="https://www.youtube.com/embed/PoXM1Kgqcjnc?feature=share"
+            src="https://youtube.com/shorts/PoXM1Kqcjnc?si=Uvzp6ttmnsEj2xKX"
             title="Panda Rap - Happy Forever"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
@@ -79,17 +79,6 @@ export default function Home() {
           >
             <p className="text-sm font-semibold">Instagram</p>
             <p className="text-xs text-zinc-600">画像・ビジュアル系のログ。</p>
-          </a>
-
-          {/* TikTok */}
-          <a
-            href="https://www.tiktok.com/@happyforever.420?is_from_webapp=1"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-xl border border-dashed border-zinc-200 px-4 py-3 hover:bg-zinc-50 transition"
-          >
-            <p className="text-sm font-semibold">TikTok</p>
-            <p className="text-xs text-zinc-600">ショート動画の別バージョンなど。</p>
           </a>
 
         </div>
