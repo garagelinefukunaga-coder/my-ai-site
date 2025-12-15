@@ -1,7 +1,8 @@
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-white text-black">
-      {/* ヒーローエリア */}
+
+      {/* ヒーロー */}
       <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-center">
         Hello, Happy Forever420! 🌸
       </h1>
@@ -11,24 +12,25 @@ export default function Home() {
 
       {/* 動画セクション */}
       <section className="w-full max-w-3xl px-4 mt-10 space-y-4">
-        <h2 className="text-2xl font-semibold mb-2">最新のパンダラップ動画</h2>
+        <h2 className="text-2xl font-semibold">
+          最新のパンダラップ動画
+        </h2>
 
         <p className="text-sm text-zinc-600">
-          YouTube に上げたショートの中から、いま一番見てほしいやつを置いてます。
+          YouTubeに上げたショートの中から、いま一番見てほしいやつ。
         </p>
 
-        {/* YouTube 埋め込み */}
+        {/* YouTube embed（正解形） */}
         <div className="aspect-video w-full rounded-xl overflow-hidden shadow-lg">
           <iframe
-            className="w-full h-full rounded-xl"
+            className="w-full h-full"
             src="https://www.youtube.com/embed/P0XM1Kqcjnc"
             title="Panda Rap - Happy Forever"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-          ></iframe>
+          />
         </div>
 
-        {/* YouTube チャンネルへ */}
         <a
           href="https://www.youtube.com/@happyforever420"
           target="_blank"
@@ -39,56 +41,37 @@ export default function Home() {
         </a>
       </section>
 
-      {/* SNS / Link セクション */}
+      {/* SNS & Links */}
       <section className="w-full max-w-3xl px-4 mt-12">
         <h2 className="text-xl font-semibold mb-4">SNS & Link</h2>
 
         <div className="grid gap-4 sm:grid-cols-2">
-          {/* X */}
-          <a
-            href="https://x.com/happyforever420"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-xl border border-zinc-200 px-4 py-3 hover:bg-zinc-50 transition"
-          >
+          <a href="https://x.com/happyforever420" target="_blank" rel="noreferrer"
+            className="rounded-xl border px-4 py-3 hover:bg-zinc-50 transition">
             <p className="text-sm font-semibold">X（旧Twitter）</p>
             <p className="text-xs text-zinc-600">日常と思想のログ。</p>
           </a>
 
-          {/* note */}
-          <a
-            href="https://note.com/clear_acacia1018"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-xl border border-zinc-200 px-4 py-3 hover:bg-zinc-50 transition"
-          >
+          <a href="https://note.com/clear_acacia1018" target="_blank" rel="noreferrer"
+            className="rounded-xl border px-4 py-3 hover:bg-zinc-50 transition">
             <p className="text-sm font-semibold">note</p>
-            <p className="text-xs text-zinc-600">ロング文章・地獄ダイブ・考察系はこちら。</p>
+            <p className="text-xs text-zinc-600">ロング文章・考察。</p>
           </a>
 
-          {/* Instagram */}
-          <a
-            href="https://www.instagram.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-xl border border-zinc-200 px-4 py-3 hover:bg-zinc-50 transition"
-          >
+          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer"
+            className="rounded-xl border px-4 py-3 hover:bg-zinc-50 transition">
             <p className="text-sm font-semibold">Instagram</p>
-            <p className="text-xs text-zinc-600">画像・ビジュアル系のログ。</p>
+            <p className="text-xs text-zinc-600">ビジュアルログ。</p>
           </a>
 
-          {/* Sora */}
-          <a
-            href="https://sora.chatgpt.com/profile/happyforever420"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-xl border border-zinc-200 px-4 py-3 hover:bg-zinc-50 transition"
-          >
-            <p className="text-sm font-semibold">Sora（ChatGPT Video）</p>
-            <p className="text-xs text-zinc-600">AI映像・実験・ビジュアルログの保管庫。</p>
+          <a href="https://sora.chatgpt.com/profile/happyforever420" target="_blank" rel="noreferrer"
+            className="rounded-xl border px-4 py-3 hover:bg-zinc-50 transition">
+            <p className="text-sm font-semibold">Sora (ChatGPT Video)</p>
+            <p className="text-xs text-zinc-600">AI映像・実験ログ。</p>
           </a>
         </div>
       </section>
+
     </main>
   );
 }
