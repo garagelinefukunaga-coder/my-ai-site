@@ -1,3 +1,4 @@
+<p className="text-xs text-zinc-400 mt-2">DEPLOY TEST: 2025-12-16 01</p>
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-white text-black">
