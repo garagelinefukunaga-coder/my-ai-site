@@ -18,14 +18,14 @@ export default function Home() {
         </h2>
 
         <p className="text-sm text-zinc-600">
-          YouTubeに上げたショートの中から、いま一番見てほしいやつ。
+          YouTubeに上げた短いの中から、今一番見てほしいやつ。
         </p>
 
         {/* YouTube embed（正解形） */}
         <div className="aspect-video w-full rounded-xl overflow-hidden shadow-lg">
           <iframe
             className="w-full h-full"
-            src="https://www.youtube.com/embed/P0XM1Kqcjnc"
+            src="https://www.youtube.com/embed/7inkSMB9s3A"
             title="Panda Rap - Happy Forever"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
@@ -33,7 +33,7 @@ export default function Home() {
         </div>
 
         <a
-          href="https://www.youtube.com/@happyforever420"
+          href="https://youtube.com/shorts/7inkSMB9s3A?si=6Jw4csycLxA7eDB8"
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center text-sm font-medium text-red-600 hover:text-red-700 underline underline-offset-4"
