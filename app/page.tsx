@@ -14,7 +14,7 @@ export default function Home() {
       {/* 動画セクション */}
       <section className="w-full max-w-3xl px-4 mt-10 space-y-4">
         <h2 className="text-2xl font-semibold">
-          最新のパンダラップ動画
+          最新のラップ動画
         </h2>
 
         <p className="text-sm text-zinc-600">
