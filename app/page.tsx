@@ -65,10 +65,10 @@ export default function Home() {
             <p className="text-xs text-zinc-600">ビジュアルログ。</p>
           </a>
 
-          <a href="https://sora.chatgpt.com/profile/happyforever420" target="_blank" rel="noreferrer"
+          <a href="https://suno.com/@happyforever42019" target="_blank" rel="noreferrer"
             className="rounded-xl border px-4 py-3 hover:bg-zinc-50 transition">
-            <p className="text-sm font-semibold">Sora (ChatGPT Video)</p>
-            <p className="text-xs text-zinc-600">AI映像・実験ログ。</p>
+            <p className="text-sm font-semibold">SUNO</p>
+            <p className="text-xs text-zinc-600">AI音楽・パンダラップ。</p>
           </a>
         </div>
       </section>
