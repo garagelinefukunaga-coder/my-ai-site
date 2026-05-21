@@ -71,26 +71,22 @@ export default function Home() {
             <p className="text-xs text-zinc-600">AI音楽・パンダラップ。</p>
           </a>
 
-          <a href="https://www.tiktok.com/@happyforever42019" target="_blank" rel="noreferrer"
+          <a href="https://www.tiktok.com/@happy.farever.420?is_from_webapp=1&sender_device=pc" target="_blank" rel="noreferrer"
             className="rounded-xl border px-4 py-3 hover:bg-zinc-50 transition">
             <p className="text-sm font-semibold">TikTok</p>
             <p className="text-xs text-zinc-600">ショート動画・パンダラップ。</p>
           </a>
-        </div>
-      </section>
 
-      {/* お問い合わせ */}
-      <section className="w-full max-w-3xl px-4 mt-12 mb-12">
-        <h2 className="text-xl font-semibold mb-4">お問い合わせ</h2>
-        <div className="rounded-xl border px-4 py-5">
-          <p className="text-sm text-zinc-600 mb-4">
-            お気軽にお問い合わせ
-          </p>
-          <img
-            src="https://qr-official.line.me/gs/M_494whwcg_GW.png?oat_content=qr"
-            alt="LINEお問い合わせQRコード"
-            className="w-40 h-40 object-contain"
-          />
+          <a href="https://lin.ee/494whwcg" target="_blank" rel="noreferrer"
+            className="rounded-xl border px-4 py-3 hover:bg-zinc-50 transition">
+            <p className="text-sm font-semibold">LINE</p>
+            <p className="text-xs text-zinc-600 mb-3">お気軽にお問い合わせ</p>
+            <img
+              src="https://qr-official.line.me/gs/M_494whwcg_GW.png?oat_content=qr"
+              alt="LINEお問い合わせQRコード"
+              className="w-24 h-24 object-contain"
+            />
+          </a>
         </div>
       </section>
 
