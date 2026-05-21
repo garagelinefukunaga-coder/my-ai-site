@@ -77,8 +77,8 @@ export default function Home() {
             <p className="text-xs text-zinc-600">ショート動画・パンダラップ。</p>
           </a>
 
-          <a href="https://lin.ee/494whwcg" target="_blank" rel="noreferrer"
-            className="rounded-xl border px-4 py-3 hover:bg-zinc-50 transition">
+          <a href="https://lin.ee/UBj1RIG" target="_blank" rel="noreferrer"
+            className="rounded-xl border px-4 py-3 hover:bg-zinc-50 transition sm:col-start-1">
             <p className="text-sm font-semibold">LINE</p>
             <p className="text-xs text-zinc-600 mb-3">お気軽にお問い合わせ</p>
             <img
