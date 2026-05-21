@@ -70,6 +70,12 @@ export default function Home() {
             <p className="text-sm font-semibold">SUNO</p>
             <p className="text-xs text-zinc-600">AI音楽・パンダラップ。</p>
           </a>
+
+          <a href="https://www.tiktok.com/@happyforever42019" target="_blank" rel="noreferrer"
+            className="rounded-xl border px-4 py-3 hover:bg-zinc-50 transition">
+            <p className="text-sm font-semibold">TikTok</p>
+            <p className="text-xs text-zinc-600">ショート動画・パンダラップ。</p>
+          </a>
         </div>
       </section>
 
@@ -78,7 +84,7 @@ export default function Home() {
         <h2 className="text-xl font-semibold mb-4">お問い合わせ</h2>
         <div className="rounded-xl border px-4 py-5">
           <p className="text-sm text-zinc-600 mb-4">
-            LINEからお気軽にご連絡ください。
+            お気軽にお問い合わせ
           </p>
           <img
             src="https://qr-official.line.me/gs/M_494whwcg_GW.png?oat_content=qr"
