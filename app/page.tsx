@@ -73,6 +73,21 @@ export default function Home() {
         </div>
       </section>
 
+      {/* お問い合わせ */}
+      <section className="w-full max-w-3xl px-4 mt-12 mb-12">
+        <h2 className="text-xl font-semibold mb-4">お問い合わせ</h2>
+        <div className="rounded-xl border px-4 py-5">
+          <p className="text-sm text-zinc-600 mb-4">
+            LINEからお気軽にご連絡ください。
+          </p>
+          <img
+            src="https://qr-official.line.me/gs/M_494whwcg_GW.png?oat_content=qr"
+            alt="LINEお問い合わせQRコード"
+            className="w-40 h-40 object-contain"
+          />
+        </div>
+      </section>
+
     </main>
   );
 }
