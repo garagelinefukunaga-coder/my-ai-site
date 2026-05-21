@@ -72,13 +72,13 @@ export default function Home() {
           </a>
 
           <a href="https://www.tiktok.com/@happy.farever.420?is_from_webapp=1&sender_device=pc" target="_blank" rel="noreferrer"
-            className="rounded-xl border px-4 py-3 hover:bg-zinc-50 transition">
+            className="rounded-xl border px-4 py-3 hover:bg-zinc-50 transition sm:col-span-2">
             <p className="text-sm font-semibold">TikTok</p>
             <p className="text-xs text-zinc-600">ショート動画・パンダラップ。</p>
           </a>
 
           <a href="https://lin.ee/UBj1RIG" target="_blank" rel="noreferrer"
-            className="rounded-xl border px-4 py-3 hover:bg-zinc-50 transition sm:col-start-1">
+            className="rounded-xl border px-4 py-3 hover:bg-zinc-50 transition sm:col-span-2">
             <p className="text-sm font-semibold">LINE</p>
             <p className="text-xs text-zinc-600 mb-3">お気軽にお問い合わせ</p>
             <img
