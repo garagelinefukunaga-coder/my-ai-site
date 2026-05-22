@@ -101,14 +101,14 @@ export default function Home() {
             <p className="text-xs text-zinc-600">ショート動画・パンダラップ。</p>
           </a>
 
-          <a href="https://lin.ee/ZEBr1Ab" target="_blank" rel="noreferrer"
+          <a href="https://lin.ee/xXxs87l" target="_blank" rel="noreferrer"
             className="rounded-xl border px-4 py-3 hover:bg-zinc-50 transition sm:col-span-2">
             <p className="text-sm font-semibold">LINE</p>
             <p className="text-xs text-zinc-600 mb-3">お気軽にお問い合わせ</p>
             <img
-              src="https://qr-official.line.me/gs/M_494whwcg_GW.png?oat_content=qr"
-              alt="LINEお問い合わせQRコード"
-              className="w-24 h-24 object-contain"
+              src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png"
+              alt="友だち追加"
+              className="h-9 w-auto object-contain"
             />
           </a>
         </div>
