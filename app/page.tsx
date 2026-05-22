@@ -1,21 +1,21 @@
 import Link from "next/link";
 
 const linkCardClass =
-  "group block rounded-lg border border-emerald-300/35 bg-black/55 px-4 py-3 text-white shadow-[0_0_24px_rgba(16,185,129,0.16)] transition hover:-translate-y-0.5 hover:border-red-300/70 hover:bg-emerald-950/55";
+  "glass-link group block rounded-lg border border-white/25 px-4 py-3 text-white shadow-[0_0_28px_rgba(16,185,129,0.16)] transition hover:-translate-y-0.5 hover:border-red-200/80 hover:bg-white/15";
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#07100c] text-white">
-      <div className="min-h-screen bg-[linear-gradient(135deg,rgba(5,46,22,0.95),rgba(6,9,18,0.98)_38%,rgba(71,13,21,0.9)_72%,rgba(13,55,46,0.95))]">
+    <main className="forest-rainbow min-h-screen overflow-hidden text-white">
+      <div className="min-h-screen bg-black/10">
         <div className="mx-auto flex w-full max-w-4xl flex-col px-4 py-10 sm:py-14">
-          <section className="mb-10 border-b border-emerald-200/20 pb-8">
-            <p className="mb-3 text-xs font-bold uppercase text-emerald-200">
+          <section className="mb-10 rounded-lg border border-white/15 bg-black/20 px-4 py-6 shadow-[0_18px_70px_rgba(0,0,0,0.28)] backdrop-blur-md sm:px-6">
+            <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] text-emerald-100">
               Panda Rap / AI Music / Green Dragon
             </p>
-            <h1 className="text-4xl font-black leading-tight text-white sm:text-6xl">
+            <h1 className="hero-title text-4xl font-black leading-tight tracking-wide text-white sm:text-6xl">
               Happy Forever420
             </h1>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-emerald-50/80 sm:text-base">
+            <p className="mt-4 max-w-2xl text-sm font-medium leading-7 text-white/86 sm:text-base">
               赤い目の緑の龍、カラフルな花の木、パンダラップ。
               音と映像と言葉をここから育てていきます。
             </p>
@@ -23,18 +23,18 @@ export default function Home() {
 
           <section className="space-y-4">
             <div>
-              <p className="text-xs font-bold uppercase text-red-200">
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-red-100">
                 Featured Short
               </p>
-              <h2 className="mt-1 text-2xl font-black text-white">
+              <h2 className="hero-title mt-1 text-2xl font-black text-white">
                 最新のパンダラップ動画
               </h2>
-              <p className="mt-2 text-sm text-emerald-50/75">
+              <p className="mt-2 text-sm font-medium text-white/80">
                 YouTubeに上げた短いの中から、今一番見てほしいやつ。
               </p>
             </div>
 
-            <div className="aspect-video w-full overflow-hidden rounded-lg border border-amber-200/30 bg-black shadow-[0_18px_60px_rgba(0,0,0,0.45)]">
+            <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
               <iframe
                 className="h-full w-full"
                 src="https://www.youtube.com/embed/6fPCNFhm5cQ"
@@ -48,7 +48,7 @@ export default function Home() {
               href="https://www.youtube.com/shorts/6fPCNFhm5cQ?feature=share"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex rounded-lg border border-red-300/60 bg-red-600 px-4 py-2 text-sm font-bold text-white shadow-[0_0_18px_rgba(239,68,68,0.35)] transition hover:bg-red-500"
+              className="inline-flex rounded-lg border border-white/25 bg-red-500/45 px-4 py-2 text-sm font-black text-white shadow-[0_0_28px_rgba(239,68,68,0.35)] backdrop-blur-md transition hover:bg-red-400/55"
             >
               YouTube チャンネルで他の動画も見る →
             </a>
@@ -76,10 +76,10 @@ export default function Home() {
           </section>
 
           <section className="mt-12">
-            <p className="text-xs font-bold uppercase text-amber-200">
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-100">
               Portal Links
             </p>
-            <h2 className="mt-1 text-2xl font-black text-white">
+            <h2 className="hero-title mt-1 text-2xl font-black text-white">
               SNS & Link
             </h2>
 
