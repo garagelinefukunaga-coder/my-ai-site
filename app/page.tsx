@@ -40,6 +40,20 @@ export default function Home() {
         >
           YouTube チャンネルで他の動画も見る →
         </a>
+
+        <a
+          href="https://note.com/clear_acacia1018/n/n88a6067162c0"
+          target="_blank"
+          rel="noreferrer"
+          className="block rounded-xl border px-4 py-3 hover:bg-zinc-50 transition"
+        >
+          <p className="text-sm font-semibold">
+            綺麗に咲く花、赤い目の緑の龍シェンロン 解説
+          </p>
+          <p className="text-xs text-zinc-600 mt-1">
+            曲解説をnoteで読む →
+          </p>
+        </a>
       </section>
 
       {/* SNS & Links */}
