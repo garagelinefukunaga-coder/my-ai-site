@@ -41,6 +41,20 @@ export default function AlbumPage() {
               allowFullScreen
             />
           </div>
+
+          <a
+            href="https://note.com/clear_acacia1018/n/n88a6067162c0"
+            target="_blank"
+            rel="noreferrer"
+            className="glass-link block rounded-lg border border-white/25 px-4 py-4 text-white shadow-[0_0_28px_rgba(16,185,129,0.16)] transition hover:-translate-y-0.5 hover:border-red-200/80 hover:bg-white/15"
+          >
+            <p className="text-sm font-black">
+              綺麗に咲く花、赤い目の緑の龍シェンロン 解説
+            </p>
+            <p className="mt-1 text-xs text-emerald-50/70">
+              曲解説をnoteで読む →
+            </p>
+          </a>
         </section>
       </div>
     </main>
