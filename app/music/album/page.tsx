@@ -60,6 +60,14 @@ export default function AlbumPage() {
                 allowFullScreen
               />
             </div>
+            <a
+              href="https://www.youtube.com/shorts/6fPCNFhm5cQ?feature=share"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-flex rounded-lg border border-white/25 bg-red-500/45 px-4 py-2 text-sm font-black text-white shadow-[0_0_28px_rgba(239,68,68,0.35)] backdrop-blur-md transition hover:bg-red-400/55"
+            >
+              この動画をYouTubeで見る →
+            </a>
           </div>
 
           <a
