@@ -28,18 +28,38 @@ export default function AlbumPage() {
               HAPPY SET ALBUM
             </h1>
             <p className="mt-4 text-sm font-medium leading-7 text-white/82">
-              新しい曲の動画をまとめて見るページ。
+              新しい曲と、動画＋曲解説のセットをまとめて見るページ。
             </p>
           </div>
 
-          <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
-            <iframe
-              className="h-full w-full"
-              src="https://www.youtube.com/embed/gNcLSvSIJLc"
-              title="Panda Rap - Happy Forever"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
+          <div>
+            <p className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-red-100">
+              New Cover Song
+            </p>
+            <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
+              <iframe
+                className="h-full w-full"
+                src="https://www.youtube.com/embed/gNcLSvSIJLc"
+                title="Panda Rap - New Cover Song"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          </div>
+
+          <div>
+            <p className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-emerald-100">
+              Song & Note Set
+            </p>
+            <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
+              <iframe
+                className="h-full w-full"
+                src="https://www.youtube.com/embed/6fPCNFhm5cQ"
+                title="Panda Rap - Happy Forever"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
           </div>
 
           <a
