@@ -16,8 +16,7 @@ export default function Home() {
               Happy Forever420
             </h1>
             <p className="mt-4 max-w-2xl text-sm font-medium leading-7 text-white/86 sm:text-base">
-              赤い目の緑の龍、カラフルな花の木、パンダラップ。
-              音と映像と言葉をここから育てていきます。
+              AI、パンダのラップ、音の映像、文章、自分のスキルをここで育てていきます。
             </p>
           </section>
 
@@ -37,7 +36,7 @@ export default function Home() {
             <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
               <iframe
                 className="h-full w-full"
-                src="https://www.youtube.com/embed/6fPCNFhm5cQ"
+                src="https://www.youtube.com/embed/gNcLSvSIJLc"
                 title="Panda Rap - Happy Forever"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
@@ -45,26 +44,12 @@ export default function Home() {
             </div>
 
             <a
-              href="https://www.youtube.com/shorts/6fPCNFhm5cQ?feature=share"
+              href="https://www.youtube.com/shorts/gNcLSvSIJLc?feature=share"
               target="_blank"
               rel="noreferrer"
               className="inline-flex rounded-lg border border-white/25 bg-red-500/45 px-4 py-2 text-sm font-black text-white shadow-[0_0_28px_rgba(239,68,68,0.35)] backdrop-blur-md transition hover:bg-red-400/55"
             >
               YouTube チャンネルで他の動画も見る →
-            </a>
-
-            <a
-              href="https://note.com/clear_acacia1018/n/n88a6067162c0"
-              target="_blank"
-              rel="noreferrer"
-              className={linkCardClass}
-            >
-              <p className="text-sm font-black">
-                綺麗に咲く花、赤い目の緑の龍シェンロン 解説
-              </p>
-              <p className="mt-1 text-xs text-emerald-50/70">
-                曲解説をnoteで読む →
-              </p>
             </a>
 
             <Link href="/music" className={linkCardClass}>

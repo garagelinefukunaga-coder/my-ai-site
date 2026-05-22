@@ -22,39 +22,25 @@ export default function AlbumPage() {
 
           <div className="rounded-lg border border-white/15 bg-black/20 px-4 py-6 shadow-[0_18px_70px_rgba(0,0,0,0.28)] backdrop-blur-md sm:px-6">
             <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] text-amber-100">
-              Album Set
+              Happy Set Album
             </p>
             <h1 className="hero-title text-4xl font-black leading-tight tracking-wide sm:text-6xl">
-              ハッピーセット
+              HAPPY SET ALBUM
             </h1>
             <p className="mt-4 text-sm font-medium leading-7 text-white/82">
-              動画と曲解説をセットで見るページ。
+              新しい曲の動画をまとめて見るページ。
             </p>
           </div>
 
           <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
             <iframe
               className="h-full w-full"
-              src="https://www.youtube.com/embed/6fPCNFhm5cQ"
+              src="https://www.youtube.com/embed/gNcLSvSIJLc"
               title="Panda Rap - Happy Forever"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             />
           </div>
-
-          <a
-            href="https://note.com/clear_acacia1018/n/n88a6067162c0"
-            target="_blank"
-            rel="noreferrer"
-            className="glass-link block rounded-lg border border-white/25 px-4 py-4 text-white shadow-[0_0_28px_rgba(16,185,129,0.16)] transition hover:-translate-y-0.5 hover:border-red-200/80 hover:bg-white/15"
-          >
-            <p className="text-sm font-black">
-              綺麗に咲く花、赤い目の緑の龍シェンロン 解説
-            </p>
-            <p className="mt-1 text-xs text-emerald-50/70">
-              曲解説をnoteで読む →
-            </p>
-          </a>
         </section>
       </div>
     </main>

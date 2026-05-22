@@ -29,7 +29,7 @@ export default function MusicPage() {
             href="/music/album"
             className="glass-link block rounded-lg border border-white/25 px-4 py-4 text-white shadow-[0_0_28px_rgba(245,158,11,0.16)] transition hover:-translate-y-0.5 hover:border-red-200/80 hover:bg-white/15"
           >
-            <p className="text-sm font-black">ハッピーセット（アルバム）</p>
+            <p className="text-sm font-black">HAPPY SET ALBUM</p>
             <p className="mt-1 text-xs text-emerald-50/70">
               次のページへ →
             </p>
