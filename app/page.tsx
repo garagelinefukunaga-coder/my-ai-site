@@ -54,6 +54,16 @@ export default function Home() {
             曲解説をnoteで読む →
           </p>
         </a>
+
+        <a
+          href="/music"
+          className="block rounded-xl border px-4 py-3 hover:bg-zinc-50 transition"
+        >
+          <p className="text-sm font-semibold">HAPPY FOREVER MUSIC</p>
+          <p className="text-xs text-zinc-600 mt-1">
+            音楽ページへ →
+          </p>
+        </a>
       </section>
 
       {/* SNS & Links */}
