@@ -38,13 +38,13 @@ const fortunes: Fortune[] = [
 ];
 
 export default function BlenderFortunePage() {
-  const [worry, setWorry] = useState("");
+  const [birthDate, setBirthDate] = useState("");
+  const [bloodType, setBloodType] = useState("");
   const [mood, setMood] = useState("");
-  const [future, setFuture] = useState("");
   const [result, setResult] = useState<Fortune | null>(null);
 
   const tellFortune = () => {
-    const seed = `${worry}${mood}${future}${Date.now()}`;
+    const seed = `${birthDate}${bloodType}${mood}${Date.now()}`;
     const total = Array.from(seed).reduce((sum, char) => sum + char.charCodeAt(0), 0);
     setResult(fortunes[total % fortunes.length]);
   };
@@ -81,13 +81,38 @@ export default function BlenderFortunePage() {
 
           <div className="grid gap-4">
             <label className="block">
-              <span className="mb-2 block text-sm font-black text-white">今の悩み</span>
-              <textarea
-                value={worry}
-                onChange={(event) => setWorry(event.target.value)}
-                className="min-h-24 w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm text-white outline-none backdrop-blur-md placeholder:text-white/40 focus:border-cyan-200/70"
-                placeholder="例：進む方向が分からない"
+              <span className="mb-2 block text-sm font-black text-white">生年月日</span>
+              <input
+                type="date"
+                value={birthDate}
+                onChange={(event) => setBirthDate(event.target.value)}
+                className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm text-white outline-none backdrop-blur-md placeholder:text-white/40 focus:border-cyan-200/70"
               />
+            </label>
+
+            <label className="block">
+              <span className="mb-2 block text-sm font-black text-white">血液型</span>
+              <select
+                value={bloodType}
+                onChange={(event) => setBloodType(event.target.value)}
+                className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm text-white outline-none backdrop-blur-md placeholder:text-white/40 focus:border-cyan-200/70"
+              >
+                <option className="bg-black" value="">
+                  選んでください
+                </option>
+                <option className="bg-black" value="A">
+                  A型
+                </option>
+                <option className="bg-black" value="B">
+                  B型
+                </option>
+                <option className="bg-black" value="O">
+                  O型
+                </option>
+                <option className="bg-black" value="AB">
+                  AB型
+                </option>
+              </select>
             </label>
 
             <label className="block">
@@ -97,16 +122,6 @@ export default function BlenderFortunePage() {
                 onChange={(event) => setMood(event.target.value)}
                 className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm text-white outline-none backdrop-blur-md placeholder:text-white/40 focus:border-cyan-200/70"
                 placeholder="例：少し不安、でも進みたい"
-              />
-            </label>
-
-            <label className="block">
-              <span className="mb-2 block text-sm font-black text-white">選びたい未来</span>
-              <input
-                value={future}
-                onChange={(event) => setFuture(event.target.value)}
-                className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm text-white outline-none backdrop-blur-md placeholder:text-white/40 focus:border-cyan-200/70"
-                placeholder="例：自分の作品で人に届く未来"
               />
             </label>
 
@@ -142,6 +157,14 @@ export default function BlenderFortunePage() {
                 <p className="text-lg font-black">BLENDER占い</p>
                 <p className="mt-1 text-sm font-bold text-cyan-50">LINE公式にて受付中</p>
                 <p className="mt-3 text-xs text-white/72">より深い診断・相談はこちら</p>
+                <a
+                  href="https://lin.ee/xXxs87l"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-4 inline-flex rounded-lg border border-cyan-100/40 bg-cyan-300/20 px-5 py-3 text-sm font-black text-white shadow-[0_0_30px_rgba(0,255,200,0.3)] transition hover:bg-cyan-200/30"
+                >
+                  LINEで友だち追加
+                </a>
               </div>
             </section>
           )}
