@@ -58,6 +58,13 @@ export default function Home() {
                 音楽ページへ →
               </p>
             </Link>
+
+            <Link href="/blender" className={linkCardClass}>
+              <p className="text-sm font-black">BLENDER占い｜AI未来診断</p>
+              <p className="mt-1 text-xs text-emerald-50/70">
+                量子と感情のミニ診断へ →
+              </p>
+            </Link>
           </section>
 
           <section className="mt-12">
