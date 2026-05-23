@@ -28,7 +28,7 @@ export default function AlbumPage() {
               HAPPY SET ALBUM
             </h1>
             <p className="mt-4 text-sm font-medium leading-7 text-white/82">
-              新しい曲と、動画＋曲解説のセットをまとめて見るページ。
+              老子力学の動画、綺麗に咲く花の動画、note解説をセットで見るページ。
             </p>
           </div>
 
@@ -49,7 +49,7 @@ export default function AlbumPage() {
 
           <div>
             <p className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-emerald-100">
-              Song & Note Set
+              綺麗に咲く花、赤い目の緑の龍シェンロン
             </p>
             <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
               <iframe
