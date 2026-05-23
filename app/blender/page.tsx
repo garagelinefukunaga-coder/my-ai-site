@@ -72,7 +72,7 @@ export default function BlenderFortunePage() {
             </p>
             <div className="mt-5 overflow-hidden rounded-lg border border-cyan-200/20 bg-black/35 shadow-[0_0_34px_rgba(0,255,200,0.14)]">
               <img
-                src="/broon.jpg"
+                src="/blender-fortune.png"
                 alt="ブルーン"
                 className="mx-auto max-h-[420px] w-full object-contain"
               />
