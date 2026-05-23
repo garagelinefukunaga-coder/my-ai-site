@@ -8,14 +8,17 @@ export default function Home() {
     <main className="forest-rainbow min-h-screen overflow-hidden text-white">
       <div className="min-h-screen bg-black/10">
         <div className="mx-auto flex w-full max-w-4xl flex-col px-4 py-10 sm:py-14">
-          <section className="mb-10 rounded-lg border border-white/15 bg-black/20 px-4 py-6 shadow-[0_18px_70px_rgba(0,0,0,0.28)] backdrop-blur-md sm:px-6">
+          <section className="mb-5 rounded-lg border border-white/15 bg-black/20 px-4 py-6 shadow-[0_18px_70px_rgba(0,0,0,0.28)] backdrop-blur-md sm:px-6">
             <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] text-emerald-100">
               Panda Rap / AI Music / Green Dragon
             </p>
             <h1 className="hero-title text-4xl font-black leading-tight tracking-wide text-white sm:text-6xl">
               Happy Forever420
             </h1>
-            <div className="mt-4 max-w-2xl space-y-3 text-sm font-medium leading-7 text-white/86 sm:text-base">
+          </section>
+
+          <section className="mb-10 rounded-lg border border-white/15 bg-black/20 px-4 py-6 shadow-[0_18px_70px_rgba(0,0,0,0.24)] backdrop-blur-md sm:px-6">
+            <div className="max-w-2xl space-y-3 text-sm font-medium leading-7 text-white/86 sm:text-base">
               <p>My name is HAPPY FOREVER.</p>
               <p>日本語の漢字で、Happy は「福」、Forever は「永」。</p>
               <p>

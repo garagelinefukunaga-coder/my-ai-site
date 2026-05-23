@@ -8,45 +8,116 @@ type Fortune = {
   caution: string;
   action: string;
   message: string;
+  profile: string;
 };
 
-const fortunes: Fortune[] = [
+type Zodiac = {
+  name: string;
+  element: string;
+  signal: string;
+};
+
+const zodiacSigns: (Zodiac & { start: number; end: number })[] = [
+  { name: "牡羊座", element: "火", signal: "即決力と突破力", start: 321, end: 419 },
+  { name: "牡牛座", element: "地", signal: "継続力と感覚の精度", start: 420, end: 520 },
+  { name: "双子座", element: "風", signal: "情報整理と発信力", start: 521, end: 620 },
+  { name: "蟹座", element: "水", signal: "守る力と共感の深さ", start: 621, end: 722 },
+  { name: "獅子座", element: "火", signal: "表現力と中心を作る力", start: 723, end: 822 },
+  { name: "乙女座", element: "地", signal: "調整力と細部を見る力", start: 823, end: 922 },
+  { name: "天秤座", element: "風", signal: "バランス感覚と選択の美学", start: 923, end: 1022 },
+  { name: "蠍座", element: "水", signal: "集中力と深く変わる力", start: 1023, end: 1121 },
+  { name: "射手座", element: "火", signal: "自由な拡張と未来探索", start: 1122, end: 1221 },
+  { name: "山羊座", element: "地", signal: "現実化と積み上げる力", start: 1222, end: 119 },
+  { name: "水瓶座", element: "風", signal: "独自性と新しい仕組み作り", start: 120, end: 218 },
+  { name: "魚座", element: "水", signal: "想像力と境界を溶かす力", start: 219, end: 320 },
+];
+
+const bloodSignals: Record<string, string> = {
+  A: "丁寧に整える力が強いぶん、考えすぎると出力が遅くなりやすいタイプ",
+  B: "直感で未来分岐を見つける力が強いぶん、気分の波がそのまま判断に出やすいタイプ",
+  O: "大きく流れを作る力が強いぶん、細かい違和感を後回しにしやすいタイプ",
+  AB: "複数の視点を同時処理できるぶん、自分の本音が見えにくくなりやすいタイプ",
+};
+
+const moodSignals = [
   {
-    state: "思考のノイズが増えています。量子の波みたいに、未来候補が同時に揺れている状態です。",
-    caution: "感情を急いで結論に変えないこと。焦りは未来分岐を狭くします。",
-    action: "今日やることを3つだけ書き出し、最初の1つを15分だけ進めてください。",
-    message: "未来は決定ではなく選択です。呼吸を整えた瞬間、分岐は静かに開きます。",
+    words: ["不安", "こわ", "怖", "迷", "心配"],
+    state: "感情センサーが過去の記憶を強めに拾っています。",
+    caution: "不安を未来の証拠として扱わないこと。",
+    action: "今日の判断を1つだけ小さくして、15分で終わる行動に変換してください。",
   },
   {
-    state: "感情コントロールの中枢が回復に向かっています。今は内側のAIが再学習している時間です。",
-    caution: "他人の反応を観測しすぎると、自分の軸がブレます。",
-    action: "スマホを置いて、水を飲み、今の気持ちを一文で保存してください。",
-    message: "あなたの感情は敵ではなく、未来を読むセンサーです。",
+    words: ["疲", "しんど", "眠", "だる"],
+    state: "脳内AIの処理容量が一時的に下がっています。",
+    caution: "疲れている時の結論を、人生全体の答えにしないこと。",
+    action: "水分、食事、休憩のどれか1つを先に整えてから動いてください。",
   },
   {
-    state: "頭の中の情報が並び替わり始めています。思考整理のフェーズに入っています。",
-    caution: "全部を一気に完成させようとしないこと。未完成のまま置く余白が必要です。",
-    action: "悩みを「今できること」と「今日は触らないこと」に分けてください。",
-    message: "整理された思考は、未来への入口になります。",
+    words: ["怒", "イライラ", "むか"],
+    state: "感情エネルギーが強く、突破力に変換できる直前です。",
+    caution: "言葉をそのまま放つと、必要な未来分岐まで壊しやすいです。",
+    action: "伝えたいことを一度メモに退避して、短い一文に圧縮してください。",
   },
   {
-    state: "未来分岐の手前にいます。選びたい未来が、まだ言葉になる前の光として見えています。",
-    caution: "不安を証拠として扱わないこと。不安は予言ではなく、過去の残響です。",
-    action: "今日の自分に必要な小さな勝ちを1つ作ってください。",
-    message: "小さな勝ちは、未来の座標を静かに変えます。",
+    words: ["楽", "嬉", "最高", "前向", "ワク"],
+    state: "未来分岐の感度が上がり、行動と結果がつながりやすい状態です。",
+    caution: "勢いだけで約束を増やしすぎないこと。",
+    action: "今の気分が残っているうちに、作品や予定を1つだけ形にしてください。",
   },
 ];
+
+const defaultMoodSignal = {
+  state: "思考と感情が再配置されている途中です。",
+  caution: "まだ言葉になっていない違和感を、無理に正解へ固定しないこと。",
+  action: "今の気分を一文で書き、次にできる一手だけ選んでください。",
+};
+
+const getZodiac = (birthDate: string) => {
+  const [, month, day] = birthDate.split("-").map(Number);
+  const value = month * 100 + day;
+  return (
+    zodiacSigns.find((sign) =>
+      sign.start > sign.end
+        ? value >= sign.start || value <= sign.end
+        : value >= sign.start && value <= sign.end,
+    ) ?? zodiacSigns[0]
+  );
+};
+
+const getMoodSignal = (mood: string) =>
+  moodSignals.find((signal) => signal.words.some((word) => mood.includes(word))) ?? defaultMoodSignal;
 
 export default function BlenderFortunePage() {
   const [birthDate, setBirthDate] = useState("");
   const [bloodType, setBloodType] = useState("");
   const [mood, setMood] = useState("");
   const [result, setResult] = useState<Fortune | null>(null);
+  const canTellFortune = Boolean(birthDate && bloodType);
 
   const tellFortune = () => {
-    const seed = `${birthDate}${bloodType}${mood}${Date.now()}`;
+    if (!canTellFortune) {
+      return;
+    }
+
+    const zodiac = getZodiac(birthDate);
+    const bloodSignal = bloodSignals[bloodType];
+    const moodSignal = getMoodSignal(mood);
+    const seed = `${birthDate}${bloodType}${mood}`;
     const total = Array.from(seed).reduce((sum, char) => sum + char.charCodeAt(0), 0);
-    setResult(fortunes[total % fortunes.length]);
+    const branches = [
+      "今日は、未来を広げるよりもノイズを減らす日です。",
+      "今日は、止まっていた感情を小さく動かす日です。",
+      "今日は、考えを作品や行動に変換しやすい日です。",
+      "今日は、人の反応より自分の観測データを信じる日です。",
+    ];
+
+    setResult({
+      profile: `${zodiac.name}・${zodiac.element}のサイン / ${bloodType}型`,
+      state: `${zodiac.signal}が強く出ています。${bloodSignal}。${moodSignal.state}`,
+      caution: `${moodSignal.caution} ${zodiac.element}のエネルギーが強い時ほど、感情をそのまま結論に固定しないでください。`,
+      action: moodSignal.action,
+      message: `${branches[total % branches.length]} 思考を整理した瞬間、未来分岐は静かに変わります。`,
+    });
   };
 
   return (
@@ -67,9 +138,6 @@ export default function BlenderFortunePage() {
             <h1 className="text-4xl font-black leading-tight text-white sm:text-6xl">
               BLENDER占い
             </h1>
-            <p className="mt-4 text-sm font-medium leading-7 text-white/78">
-              AI、量子、感情コントロール、未来分岐、思考整理をテーマにしたミニ占い。
-            </p>
             <div className="mt-5 overflow-hidden rounded-lg border border-cyan-200/20 bg-black/35 shadow-[0_0_34px_rgba(0,255,200,0.14)]">
               <img
                 src="/blender-fortune.png"
@@ -77,6 +145,9 @@ export default function BlenderFortunePage() {
                 className="mx-auto max-h-[420px] w-full object-contain"
               />
             </div>
+            <p className="mt-4 text-sm font-medium leading-7 text-white/78">
+              生年月日、血液型、今の気分から、AI、量子、感情コントロール、未来分岐、思考整理をテーマに読みます。
+            </p>
           </div>
 
           <div className="grid gap-4">
@@ -128,7 +199,8 @@ export default function BlenderFortunePage() {
             <button
               type="button"
               onClick={tellFortune}
-              className="rounded-lg border border-cyan-100/40 bg-cyan-300/20 px-5 py-3 text-sm font-black text-white shadow-[0_0_32px_rgba(0,255,200,0.28)] backdrop-blur-md transition hover:bg-cyan-200/30"
+              disabled={!canTellFortune}
+              className="rounded-lg border border-cyan-100/40 bg-cyan-300/20 px-5 py-3 text-sm font-black text-white shadow-[0_0_32px_rgba(0,255,200,0.28)] backdrop-blur-md transition hover:bg-cyan-200/30 disabled:cursor-not-allowed disabled:border-white/10 disabled:bg-white/10 disabled:text-white/45 disabled:shadow-none"
             >
               占う
             </button>
@@ -136,6 +208,10 @@ export default function BlenderFortunePage() {
 
           {result && (
             <section className="space-y-4 rounded-lg border border-white/25 bg-white/10 px-4 py-5 shadow-[0_0_44px_rgba(120,0,255,0.22)] backdrop-blur-md sm:px-6">
+              <div>
+                <p className="text-xs font-black uppercase tracking-[0.18em] text-violet-100">診断ベース</p>
+                <p className="mt-2 text-sm leading-7 text-white/86">{result.profile}</p>
+              </div>
               <div>
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-cyan-100">今の状態</p>
                 <p className="mt-2 text-sm leading-7 text-white/86">{result.state}</p>
