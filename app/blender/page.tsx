@@ -60,22 +60,6 @@ export default function BlenderFortunePage() {
             ← ホームに戻る
           </Link>
 
-          <div className="overflow-hidden rounded-lg border border-cyan-200/25 bg-black/45 shadow-[0_0_52px_rgba(0,255,200,0.18)] backdrop-blur-md">
-            <img
-              src="/broon.jpg"
-              alt="ブルーン"
-              className="max-h-[520px] w-full object-cover object-top"
-            />
-            <div className="border-t border-white/15 px-4 py-4 sm:px-6">
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-100">
-                Fortune Navigator
-              </p>
-              <h2 className="mt-1 text-3xl font-black text-white sm:text-4xl">
-                ブルーン
-              </h2>
-            </div>
-          </div>
-
           <div className="rounded-lg border border-cyan-200/25 bg-black/45 px-4 py-6 shadow-[0_0_52px_rgba(0,255,200,0.18)] backdrop-blur-md sm:px-6">
             <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] text-cyan-100">
               AI Future Reading
@@ -86,6 +70,13 @@ export default function BlenderFortunePage() {
             <p className="mt-4 text-sm font-medium leading-7 text-white/78">
               AI、量子、感情コントロール、未来分岐、思考整理をテーマにしたミニ占い。
             </p>
+            <div className="mt-5 overflow-hidden rounded-lg border border-cyan-200/20 bg-black/35 shadow-[0_0_34px_rgba(0,255,200,0.14)]">
+              <img
+                src="/broon.jpg"
+                alt="ブルーン"
+                className="mx-auto max-h-[420px] w-full object-contain"
+              />
+            </div>
           </div>
 
           <div className="grid gap-4">
