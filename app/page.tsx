@@ -70,9 +70,9 @@ export default function Home() {
             </Link>
 
             <Link href="/blender" className={linkCardClass}>
-              <p className="text-sm font-black">BLENDER占い｜AI未来診断</p>
+              <p className="text-sm font-black">ブレンダの見極め占い</p>
               <p className="mt-1 text-xs text-emerald-50/70">
-                量子と感情のミニ診断へ →
+                今週の流れをそっと見極める →
               </p>
             </Link>
           </section>

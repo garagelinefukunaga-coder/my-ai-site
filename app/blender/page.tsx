@@ -3,73 +3,77 @@
 import { useState } from "react";
 import Link from "next/link";
 
-type Fortune = {
-  state: string;
-  caution: string;
-  action: string;
-  message: string;
+const lineUrl = "https://lin.ee/xXxs87l";
+
+type FortuneResult = {
   profile: string;
+  overall: string;
+  love: string;
+  work: string;
+  message: string;
 };
 
 type Zodiac = {
   name: string;
   element: string;
-  signal: string;
+  look: string;
 };
 
 const zodiacSigns: (Zodiac & { start: number; end: number })[] = [
-  { name: "牡羊座", element: "火", signal: "即決力と突破力", start: 321, end: 419 },
-  { name: "牡牛座", element: "地", signal: "継続力と感覚の精度", start: 420, end: 520 },
-  { name: "双子座", element: "風", signal: "情報整理と発信力", start: 521, end: 620 },
-  { name: "蟹座", element: "水", signal: "守る力と共感の深さ", start: 621, end: 722 },
-  { name: "獅子座", element: "火", signal: "表現力と中心を作る力", start: 723, end: 822 },
-  { name: "乙女座", element: "地", signal: "調整力と細部を見る力", start: 823, end: 922 },
-  { name: "天秤座", element: "風", signal: "バランス感覚と選択の美学", start: 923, end: 1022 },
-  { name: "蠍座", element: "水", signal: "集中力と深く変わる力", start: 1023, end: 1121 },
-  { name: "射手座", element: "火", signal: "自由な拡張と未来探索", start: 1122, end: 1221 },
-  { name: "山羊座", element: "地", signal: "現実化と積み上げる力", start: 1222, end: 119 },
-  { name: "水瓶座", element: "風", signal: "独自性と新しい仕組み作り", start: 120, end: 218 },
-  { name: "魚座", element: "水", signal: "想像力と境界を溶かす力", start: 219, end: 320 },
+  { name: "牡羊座", element: "火", look: "勢いで道を開く力", start: 321, end: 419 },
+  { name: "牡牛座", element: "地", look: "ゆっくり確かめて本物を残す力", start: 420, end: 520 },
+  { name: "双子座", element: "風", look: "情報を拾って流れを変える力", start: 521, end: 620 },
+  { name: "蟹座", element: "水", look: "大切なものを守りながら育てる力", start: 621, end: 722 },
+  { name: "獅子座", element: "火", look: "表現で場の空気を動かす力", start: 723, end: 822 },
+  { name: "乙女座", element: "地", look: "細部を整えて信頼に変える力", start: 823, end: 922 },
+  { name: "天秤座", element: "風", look: "距離感と美意識で選び直す力", start: 923, end: 1022 },
+  { name: "蠍座", element: "水", look: "本音の奥まで見にいく力", start: 1023, end: 1121 },
+  { name: "射手座", element: "火", look: "遠くの可能性へ踏み出す力", start: 1122, end: 1221 },
+  { name: "山羊座", element: "地", look: "現実を積み上げて形にする力", start: 1222, end: 119 },
+  { name: "水瓶座", element: "風", look: "人と違う視点で仕組みを作る力", start: 120, end: 218 },
+  { name: "魚座", element: "水", look: "感じたものをやわらかく受け取る力", start: 219, end: 320 },
 ];
 
-const bloodSignals: Record<string, string> = {
-  A: "丁寧に整える力が強いぶん、考えすぎると出力が遅くなりやすいタイプ",
-  B: "直感で未来分岐を見つける力が強いぶん、気分の波がそのまま判断に出やすいタイプ",
-  O: "大きく流れを作る力が強いぶん、細かい違和感を後回しにしやすいタイプ",
-  AB: "複数の視点を同時処理できるぶん、自分の本音が見えにくくなりやすいタイプ",
+const bloodReadings: Record<string, string> = {
+  A: "丁寧に見ようとするぶん、気を遣いすぎるところがあります",
+  B: "直感が速いぶん、気分が先に走ってしまう時があります",
+  O: "大きく受け止められるぶん、小さい違和感を後回しにしがちです",
+  AB: "頭では分かっているのに、心だけ別の場所に残りやすいところがあります",
 };
 
-const moodSignals = [
-  {
-    words: ["不安", "こわ", "怖", "迷", "心配"],
-    state: "感情センサーが過去の記憶を強めに拾っています。",
-    caution: "不安を未来の証拠として扱わないこと。",
-    action: "今日の判断を1つだけ小さくして、15分で終わる行動に変換してください。",
-  },
-  {
-    words: ["疲", "しんど", "眠", "だる"],
-    state: "脳内AIの処理容量が一時的に下がっています。",
-    caution: "疲れている時の結論を、人生全体の答えにしないこと。",
-    action: "水分、食事、休憩のどれか1つを先に整えてから動いてください。",
-  },
-  {
-    words: ["怒", "イライラ", "むか"],
-    state: "感情エネルギーが強く、突破力に変換できる直前です。",
-    caution: "言葉をそのまま放つと、必要な未来分岐まで壊しやすいです。",
-    action: "伝えたいことを一度メモに退避して、短い一文に圧縮してください。",
-  },
-  {
-    words: ["楽", "嬉", "最高", "前向", "ワク"],
-    state: "未来分岐の感度が上がり、行動と結果がつながりやすい状態です。",
-    caution: "勢いだけで約束を増やしすぎないこと。",
-    action: "今の気分が残っているうちに、作品や予定を1つだけ形にしてください。",
-  },
+const overallOpenings = [
+  "今週は、無理に愛想よくせんでもええ流れです。",
+  "今週は、少し立ち止まって見極めるほうが強いです。",
+  "今週は、頑張り方を少し変えるだけで空気が軽くなります。",
+  "今週は、自分を雑に扱う人や場所から、半歩だけ距離を取るのがよさそうです。",
 ];
 
-const defaultMoodSignal = {
-  state: "思考と感情が再配置されている途中です。",
-  caution: "まだ言葉になっていない違和感を、無理に正解へ固定しないこと。",
-  action: "今の気分を一文で書き、次にできる一手だけ選んでください。",
+const loveOpenings = [
+  "恋愛は、相手を読む前に自分が削られてへんか見たほうがええ週です。",
+  "恋愛は、優しさの出しすぎに少し注意です。",
+  "恋愛は、追いかけるより観察するほうが流れをつかめます。",
+  "恋愛は、言葉の量より温度を見る週です。",
+];
+
+const workOpenings = [
+  "仕事や作業は、全部を背負うほど評価される週ではありません。",
+  "仕事運は、整える力が効いてきます。",
+  "仕事では、勢いより段取りが味方になります。",
+  "仕事面は、少し言いにくい確認ほど先に済ませたほうがよさそうです。",
+];
+
+const brendaClosings = [
+  "ちゃんと見えている人ほど、今週は急がなくて大丈夫です。",
+  "ええ人でいる前に、自分の扱われ方を見てくださいね。",
+  "心がざわつく時ほど、答えは大きな声では来ません。小さい違和感のほうを見てください。",
+  "無理に明るくせんでも大丈夫です。整えるだけで、ちゃんと次の流れは来ます。",
+];
+
+const getWeekKey = () => {
+  const now = new Date();
+  const firstDay = new Date(now.getFullYear(), 0, 1);
+  const pastDays = Math.floor((now.getTime() - firstDay.getTime()) / 86400000);
+  return `${now.getFullYear()}-${Math.ceil((pastDays + firstDay.getDay() + 1) / 7)}`;
 };
 
 const getZodiac = (birthDate: string) => {
@@ -84,14 +88,12 @@ const getZodiac = (birthDate: string) => {
   );
 };
 
-const getMoodSignal = (mood: string) =>
-  moodSignals.find((signal) => signal.words.some((word) => mood.includes(word))) ?? defaultMoodSignal;
+const pick = <T,>(items: T[], seed: number, offset: number) => items[(seed + offset) % items.length];
 
 export default function BlenderFortunePage() {
   const [birthDate, setBirthDate] = useState("");
   const [bloodType, setBloodType] = useState("");
-  const [mood, setMood] = useState("");
-  const [result, setResult] = useState<Fortune | null>(null);
+  const [result, setResult] = useState<FortuneResult | null>(null);
   const canTellFortune = Boolean(birthDate && bloodType);
 
   const tellFortune = () => {
@@ -100,146 +102,136 @@ export default function BlenderFortunePage() {
     }
 
     const zodiac = getZodiac(birthDate);
-    const bloodSignal = bloodSignals[bloodType];
-    const moodSignal = getMoodSignal(mood);
-    const seed = `${birthDate}${bloodType}${mood}`;
-    const total = Array.from(seed).reduce((sum, char) => sum + char.charCodeAt(0), 0);
-    const branches = [
-      "今日は、未来を広げるよりもノイズを減らす日です。",
-      "今日は、止まっていた感情を小さく動かす日です。",
-      "今日は、考えを作品や行動に変換しやすい日です。",
-      "今日は、人の反応より自分の観測データを信じる日です。",
-    ];
+    const seedText = `${birthDate}-${bloodType}-${getWeekKey()}`;
+    const seed = Array.from(seedText).reduce((sum, char) => sum + char.charCodeAt(0), 0);
+    const bloodReading = bloodReadings[bloodType];
 
     setResult({
-      profile: `${zodiac.name}・${zodiac.element}のサイン / ${bloodType}型`,
-      state: `${zodiac.signal}が強く出ています。${bloodSignal}。${moodSignal.state}`,
-      caution: `${moodSignal.caution} ${zodiac.element}のエネルギーが強い時ほど、感情をそのまま結論に固定しないでください。`,
-      action: moodSignal.action,
-      message: `${branches[total % branches.length]} 思考を整理した瞬間、未来分岐は静かに変わります。`,
+      profile: `${zodiac.name} / ${bloodType}型 / ${zodiac.element}の流れ`,
+      overall: `${pick(overallOpenings, seed, 0)} ${zodiac.look}が出ていますが、今は押し切るより、何を残して何を置くかを見たほうがええです。 ${bloodReading}ので、頑張りすぎると雑に扱われやすい流れもあります。 ただ、気づいた時点で流れは変えられますから、今週は自分の境界線を少し丁寧に引いてください。`,
+      love: `${pick(loveOpenings, seed, 1)} 好きな人や大切な人に合わせるのは悪くありませんが、合わせたあとに自分だけ疲れているなら、そこは見直しどころです。 言い方を強くする必要はありません。 ただ、何でも笑って流す癖だけは、そろそろ減らしてええと思います。`,
+      work: `${pick(workOpenings, seed, 2)} 今週は、目立つ成果よりも、曖昧な部分をきちんと分けることが運を上げます。 頼まれたことを全部抱えると、親切ではなく便利な人になってしまいます。 できること、今日は無理なこと、その線引きを静かに出せたら十分です。`,
+      message: `${pick(brendaClosings, seed, 3)} ブレンダから見ると、あなたはもう少し自分の感覚を信じてよさそうです。 きつい答えを急いで出さなくても構いません。 でも、違和感をなかったことにするのだけは、今週はやめときましょうね。`,
     });
   };
 
   return (
-    <main className="min-h-screen bg-black text-white">
-      <div className="min-h-screen bg-[linear-gradient(135deg,rgba(0,255,180,0.18),rgba(0,0,0,0.96)_38%,rgba(120,0,255,0.18)_70%,rgba(255,0,90,0.14))] px-4 py-10">
-        <section className="mx-auto w-full max-w-3xl space-y-6">
+    <main className="min-h-screen bg-[#100c12] text-white">
+      <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(236,72,153,0.2),transparent_34%),radial-gradient(circle_at_top_right,rgba(34,211,238,0.16),transparent_30%),linear-gradient(145deg,rgba(16,12,18,0.98),rgba(44,24,41,0.96)_52%,rgba(10,18,18,0.98))] px-4 py-8 sm:py-10">
+        <section className="mx-auto w-full max-w-2xl space-y-5">
           <Link
             href="/"
-            className="inline-flex rounded-lg border border-white/25 bg-white/10 px-4 py-2 text-sm font-black text-white shadow-[0_0_24px_rgba(0,255,200,0.2)] backdrop-blur-md transition hover:bg-white/15"
+            className="inline-flex rounded-lg border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold text-white shadow-[0_0_24px_rgba(236,72,153,0.14)] backdrop-blur-md transition hover:bg-white/15"
           >
             ← ホームに戻る
           </Link>
 
-          <div className="rounded-lg border border-cyan-200/25 bg-black/45 px-4 py-6 shadow-[0_0_52px_rgba(0,255,200,0.18)] backdrop-blur-md sm:px-6">
-            <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] text-cyan-100">
-              AI Future Reading
-            </p>
-            <h1 className="text-4xl font-black leading-tight text-white sm:text-6xl">
-              BLENDER占い
-            </h1>
-            <div className="mt-5 overflow-hidden rounded-lg border border-cyan-200/20 bg-black/35 shadow-[0_0_34px_rgba(0,255,200,0.14)]">
+          <div className="overflow-hidden rounded-lg border border-white/15 bg-white/[0.07] shadow-[0_20px_70px_rgba(0,0,0,0.38)] backdrop-blur-md">
+            <div className="px-4 pt-5 sm:px-6">
+              <p className="mb-2 text-xs font-black uppercase tracking-[0.22em] text-rose-100">
+                Brenda Reading
+              </p>
+              <h1 className="text-3xl font-black leading-tight text-white sm:text-5xl">
+                ブレンダの見極め占い
+              </h1>
+            </div>
+            <div className="mt-5 bg-black/20">
               <img
                 src="/blender-fortune.png"
-                alt="ブルーン"
+                alt="ブレンダ"
                 className="mx-auto max-h-[420px] w-full object-contain"
               />
             </div>
-            <p className="mt-4 text-sm font-medium leading-7 text-white/78">
-              生年月日、血液型、今の気分から、AI、量子、感情コントロール、未来分岐、思考整理をテーマに読みます。
+            <p className="px-4 py-5 text-sm font-medium leading-7 text-white/82 sm:px-6">
+              生年月日と血液型から、今のあなたの流れをブレンダがそっと見極めます。
             </p>
           </div>
 
-          <div className="grid gap-4">
-            <label className="block">
-              <span className="mb-2 block text-sm font-black text-white">生年月日</span>
-              <input
-                type="date"
-                value={birthDate}
-                onChange={(event) => setBirthDate(event.target.value)}
-                className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm text-white outline-none backdrop-blur-md placeholder:text-white/40 focus:border-cyan-200/70"
-              />
-            </label>
+          <div className="rounded-lg border border-white/15 bg-black/30 px-4 py-5 shadow-[0_18px_50px_rgba(0,0,0,0.3)] backdrop-blur-md sm:px-6">
+            <div className="grid gap-4">
+              <label className="block">
+                <span className="mb-2 block text-sm font-black text-white">生年月日</span>
+                <input
+                  type="date"
+                  value={birthDate}
+                  onChange={(event) => setBirthDate(event.target.value)}
+                  className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm text-white outline-none backdrop-blur-md focus:border-rose-200/70"
+                />
+              </label>
 
-            <label className="block">
-              <span className="mb-2 block text-sm font-black text-white">血液型</span>
-              <select
-                value={bloodType}
-                onChange={(event) => setBloodType(event.target.value)}
-                className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm text-white outline-none backdrop-blur-md placeholder:text-white/40 focus:border-cyan-200/70"
+              <label className="block">
+                <span className="mb-2 block text-sm font-black text-white">血液型</span>
+                <select
+                  value={bloodType}
+                  onChange={(event) => setBloodType(event.target.value)}
+                  className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm text-white outline-none backdrop-blur-md focus:border-rose-200/70"
+                >
+                  <option className="bg-[#100c12]" value="">
+                    選んでください
+                  </option>
+                  <option className="bg-[#100c12]" value="A">
+                    A型
+                  </option>
+                  <option className="bg-[#100c12]" value="B">
+                    B型
+                  </option>
+                  <option className="bg-[#100c12]" value="O">
+                    O型
+                  </option>
+                  <option className="bg-[#100c12]" value="AB">
+                    AB型
+                  </option>
+                </select>
+              </label>
+
+              <button
+                type="button"
+                onClick={tellFortune}
+                disabled={!canTellFortune}
+                className="rounded-lg border border-rose-100/40 bg-rose-300/20 px-5 py-3 text-sm font-black text-white shadow-[0_0_32px_rgba(244,114,182,0.28)] backdrop-blur-md transition hover:bg-rose-200/30 disabled:cursor-not-allowed disabled:border-white/10 disabled:bg-white/10 disabled:text-white/45 disabled:shadow-none"
               >
-                <option className="bg-black" value="">
-                  選んでください
-                </option>
-                <option className="bg-black" value="A">
-                  A型
-                </option>
-                <option className="bg-black" value="B">
-                  B型
-                </option>
-                <option className="bg-black" value="O">
-                  O型
-                </option>
-                <option className="bg-black" value="AB">
-                  AB型
-                </option>
-              </select>
-            </label>
-
-            <label className="block">
-              <span className="mb-2 block text-sm font-black text-white">今の気分</span>
-              <input
-                value={mood}
-                onChange={(event) => setMood(event.target.value)}
-                className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm text-white outline-none backdrop-blur-md placeholder:text-white/40 focus:border-cyan-200/70"
-                placeholder="例：少し不安、でも進みたい"
-              />
-            </label>
-
-            <button
-              type="button"
-              onClick={tellFortune}
-              disabled={!canTellFortune}
-              className="rounded-lg border border-cyan-100/40 bg-cyan-300/20 px-5 py-3 text-sm font-black text-white shadow-[0_0_32px_rgba(0,255,200,0.28)] backdrop-blur-md transition hover:bg-cyan-200/30 disabled:cursor-not-allowed disabled:border-white/10 disabled:bg-white/10 disabled:text-white/45 disabled:shadow-none"
-            >
-              占う
-            </button>
+                占う
+              </button>
+            </div>
           </div>
 
           {result && (
-            <section className="space-y-4 rounded-lg border border-white/25 bg-white/10 px-4 py-5 shadow-[0_0_44px_rgba(120,0,255,0.22)] backdrop-blur-md sm:px-6">
-              <div>
-                <p className="text-xs font-black uppercase tracking-[0.18em] text-violet-100">診断ベース</p>
-                <p className="mt-2 text-sm leading-7 text-white/86">{result.profile}</p>
-              </div>
-              <div>
-                <p className="text-xs font-black uppercase tracking-[0.18em] text-cyan-100">今の状態</p>
-                <p className="mt-2 text-sm leading-7 text-white/86">{result.state}</p>
-              </div>
-              <div>
-                <p className="text-xs font-black uppercase tracking-[0.18em] text-rose-100">注意点</p>
-                <p className="mt-2 text-sm leading-7 text-white/86">{result.caution}</p>
-              </div>
-              <div>
-                <p className="text-xs font-black uppercase tracking-[0.18em] text-emerald-100">今日の行動</p>
-                <p className="mt-2 text-sm leading-7 text-white/86">{result.action}</p>
-              </div>
-              <div>
-                <p className="text-xs font-black uppercase tracking-[0.18em] text-amber-100">一言メッセージ</p>
-                <p className="mt-2 text-sm leading-7 text-white/86">{result.message}</p>
+            <section className="space-y-4">
+              <div className="rounded-lg border border-white/15 bg-white/[0.08] px-4 py-5 shadow-[0_18px_55px_rgba(0,0,0,0.32)] backdrop-blur-md sm:px-6">
+                <p className="text-xs font-black uppercase tracking-[0.2em] text-rose-100">今週の見立て</p>
+                <p className="mt-2 text-sm leading-7 text-white/80">{result.profile}</p>
               </div>
 
-              <div className="rounded-lg border border-cyan-100/30 bg-black/35 px-4 py-4 text-center shadow-[0_0_36px_rgba(0,255,200,0.22)]">
-                <p className="text-lg font-black">BLENDER占い</p>
-                <p className="mt-1 text-sm font-bold text-cyan-50">LINE公式にて受付中</p>
-                <p className="mt-3 text-xs text-white/72">より深い診断・相談はこちら</p>
+              {[
+                ["今週の全体運", result.overall],
+                ["恋愛運", result.love],
+                ["仕事運", result.work],
+                ["ブレンダからのひとこと", result.message],
+              ].map(([title, text]) => (
+                <div
+                  key={title}
+                  className="rounded-lg border border-white/15 bg-black/28 px-4 py-5 shadow-[0_18px_50px_rgba(0,0,0,0.28)] backdrop-blur-md sm:px-6"
+                >
+                  <p className="text-sm font-black text-rose-50">{title}</p>
+                  <p className="mt-3 text-sm leading-7 text-white/84">{text}</p>
+                </div>
+              ))}
+
+              <div className="rounded-lg border border-rose-100/25 bg-white/[0.08] px-4 py-5 shadow-[0_0_42px_rgba(244,114,182,0.18)] backdrop-blur-md sm:px-6">
+                <p className="text-lg font-black text-white">公式LINE募集中</p>
+                <div className="mt-3 space-y-3 text-sm leading-7 text-white/82">
+                  <p>ただいま、AI占いを練習中のため、公式LINEで無料案内しています。</p>
+                  <p>まだ育てている途中やけれど、やさしく見てもらいたい方には、今ちょうど入りやすい時期です。</p>
+                  <p>少し付き合ってもええよ、という方がおられましたら、ぜひご協力ください。</p>
+                  <p>気負わんでも大丈夫です。ええ感じに受け取れるように、ちゃんと見ます。</p>
+                </div>
                 <a
-                  href="https://lin.ee/xXxs87l"
+                  href={lineUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-4 inline-flex rounded-lg border border-cyan-100/40 bg-cyan-300/20 px-5 py-3 text-sm font-black text-white shadow-[0_0_30px_rgba(0,255,200,0.3)] transition hover:bg-cyan-200/30"
+                  className="mt-5 inline-flex w-full justify-center rounded-lg border border-rose-100/40 bg-rose-300/20 px-5 py-3 text-sm font-black text-white shadow-[0_0_30px_rgba(244,114,182,0.26)] transition hover:bg-rose-200/30 sm:w-auto"
                 >
-                  LINEで友だち追加
+                  公式LINEはこちら
                 </a>
               </div>
             </section>
