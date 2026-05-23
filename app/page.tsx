@@ -15,9 +15,16 @@ export default function Home() {
             <h1 className="hero-title text-4xl font-black leading-tight tracking-wide text-white sm:text-6xl">
               Happy Forever420
             </h1>
-            <p className="mt-4 max-w-2xl text-sm font-medium leading-7 text-white/86 sm:text-base">
-              AI、パンダのラップ、音の映像、文章、自分のスキルをここで育てていきます。
-            </p>
+            <div className="mt-4 max-w-2xl space-y-3 text-sm font-medium leading-7 text-white/86 sm:text-base">
+              <p>My name is HAPPY FOREVER.</p>
+              <p>日本語の漢字で、Happy は「福」、Forever は「永」。</p>
+              <p>
+                まだ何かが定まっているわけではありませんが、AIを使いながら、音楽・映像・言葉を少しずつ形にしています。
+              </p>
+              <p>試行錯誤しながら、自分にしかできない表現を作っていきます。</p>
+              <p>皆様、よろしくお願いいたします。</p>
+              <p>HAPPY FOREVER</p>
+            </div>
           </section>
 
           <section className="space-y-4">
