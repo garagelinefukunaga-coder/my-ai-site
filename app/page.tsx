@@ -75,6 +75,18 @@ export default function Home() {
                 今週の流れをそっと見極める →
               </p>
             </Link>
+
+            <a
+              href="https://suno.com/playlist/f80cbfe2-59e7-4583-b693-bb75ddb2a48f"
+              target="_blank"
+              rel="noreferrer"
+              className={linkCardClass}
+            >
+              <p className="text-sm font-black">J-POP Mixアルバム（SUNO）</p>
+              <p className="mt-1 text-xs text-emerald-50/70">
+                SUNOのJ-POPアルバムへ →
+              </p>
+            </a>
           </section>
 
           <section className="mt-12">
