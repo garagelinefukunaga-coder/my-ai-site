@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Happy Forever420",
-  description: "Panda rap, AI music, and Happy Forever links.",
+  title: "HAPPY FOREVER",
+  description: "HAPPY FOREVER official site.",
 };
 
 export default function RootLayout({

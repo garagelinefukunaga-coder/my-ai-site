@@ -13,7 +13,7 @@ export default function Home() {
               Panda Rap / AI Music / Green Dragon
             </p>
             <h1 className="hero-title text-4xl font-black leading-tight tracking-wide text-white sm:text-6xl">
-              Happy Forever420
+              HAPPY FOREVER
             </h1>
           </section>
 
