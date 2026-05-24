@@ -41,18 +41,40 @@ const bloodReadings: Record<string, string> = {
   AB: "頭では分かっているのに、心だけ別の場所に残りやすいところがあります",
 };
 
+const moodReadings = [
+  {
+    words: ["不安", "心配", "怖", "こわ", "迷"],
+    text: "気持ちが少し先回りしています。悪い予感に見えるものの中に、ただの疲れも混ざっています",
+  },
+  {
+    words: ["疲", "しんど", "眠", "だる"],
+    text: "今日は判断力より回復力を優先したほうがよさそうです。無理に元気なふりをすると、あとで響きます",
+  },
+  {
+    words: ["怒", "イライラ", "むか"],
+    text: "腹が立つのは、ほんまは大事にしたかった部分を雑に触られたからかもしれません",
+  },
+  {
+    words: ["嬉", "楽", "最高", "前向", "ワク"],
+    text: "気持ちの明るさがちゃんと追い風になっています。ただ、勢いで引き受けすぎるのは少し注意です",
+  },
+];
+
+const defaultMoodReading =
+  "今の気分は、まだ言葉になりきっていないようです。無理にきれいな答えにせず、少しだけ眺めるくらいで大丈夫です";
+
 const overallOpenings = [
-  "今週は、無理に愛想よくせんでもええ流れです。",
-  "今週は、少し立ち止まって見極めるほうが強いです。",
-  "今週は、頑張り方を少し変えるだけで空気が軽くなります。",
-  "今週は、自分を雑に扱う人や場所から、半歩だけ距離を取るのがよさそうです。",
+  "今日は、無理に愛想よくせんでもええ流れです。",
+  "今日は、少し立ち止まって見極めるほうが強いです。",
+  "今日は、頑張り方を少し変えるだけで空気が軽くなります。",
+  "今日は、自分を雑に扱う人や場所から、半歩だけ距離を取るのがよさそうです。",
 ];
 
 const loveOpenings = [
-  "恋愛は、相手を読む前に自分が削られてへんか見たほうがええ週です。",
+  "恋愛は、相手を読む前に自分が削られてへんか見たほうがええ日です。",
   "恋愛は、優しさの出しすぎに少し注意です。",
   "恋愛は、追いかけるより観察するほうが流れをつかめます。",
-  "恋愛は、言葉の量より温度を見る週です。",
+  "恋愛は、言葉の量より温度を見る日です。",
 ];
 
 const workOpenings = [
@@ -63,17 +85,15 @@ const workOpenings = [
 ];
 
 const brendaClosings = [
-  "ちゃんと見えている人ほど、今週は急がなくて大丈夫です。",
+  "ちゃんと見えている人ほど、今日は急がなくて大丈夫です。",
   "ええ人でいる前に、自分の扱われ方を見てくださいね。",
   "心がざわつく時ほど、答えは大きな声では来ません。小さい違和感のほうを見てください。",
   "無理に明るくせんでも大丈夫です。整えるだけで、ちゃんと次の流れは来ます。",
 ];
 
-const getWeekKey = () => {
+const getTodayKey = () => {
   const now = new Date();
-  const firstDay = new Date(now.getFullYear(), 0, 1);
-  const pastDays = Math.floor((now.getTime() - firstDay.getTime()) / 86400000);
-  return `${now.getFullYear()}-${Math.ceil((pastDays + firstDay.getDay() + 1) / 7)}`;
+  return `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
 };
 
 const getZodiac = (birthDate: string) => {
@@ -90,11 +110,15 @@ const getZodiac = (birthDate: string) => {
 
 const pick = <T,>(items: T[], seed: number, offset: number) => items[(seed + offset) % items.length];
 
+const getMoodReading = (mood: string) =>
+  moodReadings.find((reading) => reading.words.some((word) => mood.includes(word)))?.text ?? defaultMoodReading;
+
 export default function BlenderFortunePage() {
   const [birthDate, setBirthDate] = useState("");
   const [bloodType, setBloodType] = useState("");
+  const [mood, setMood] = useState("");
   const [result, setResult] = useState<FortuneResult | null>(null);
-  const canTellFortune = Boolean(birthDate && bloodType);
+  const canTellFortune = Boolean(birthDate && bloodType && mood.trim());
 
   const tellFortune = () => {
     if (!canTellFortune) {
@@ -102,16 +126,17 @@ export default function BlenderFortunePage() {
     }
 
     const zodiac = getZodiac(birthDate);
-    const seedText = `${birthDate}-${bloodType}-${getWeekKey()}`;
+    const seedText = `${birthDate}-${bloodType}-${mood}-${getTodayKey()}`;
     const seed = Array.from(seedText).reduce((sum, char) => sum + char.charCodeAt(0), 0);
     const bloodReading = bloodReadings[bloodType];
+    const moodReading = getMoodReading(mood);
 
     setResult({
       profile: `${zodiac.name} / ${bloodType}型 / ${zodiac.element}の流れ`,
-      overall: `${pick(overallOpenings, seed, 0)} ${zodiac.look}が出ていますが、今は押し切るより、何を残して何を置くかを見たほうがええです。 ${bloodReading}ので、頑張りすぎると雑に扱われやすい流れもあります。 ただ、気づいた時点で流れは変えられますから、今週は自分の境界線を少し丁寧に引いてください。`,
-      love: `${pick(loveOpenings, seed, 1)} 好きな人や大切な人に合わせるのは悪くありませんが、合わせたあとに自分だけ疲れているなら、そこは見直しどころです。 言い方を強くする必要はありません。 ただ、何でも笑って流す癖だけは、そろそろ減らしてええと思います。`,
-      work: `${pick(workOpenings, seed, 2)} 今週は、目立つ成果よりも、曖昧な部分をきちんと分けることが運を上げます。 頼まれたことを全部抱えると、親切ではなく便利な人になってしまいます。 できること、今日は無理なこと、その線引きを静かに出せたら十分です。`,
-      message: `${pick(brendaClosings, seed, 3)} ブレンダから見ると、あなたはもう少し自分の感覚を信じてよさそうです。 きつい答えを急いで出さなくても構いません。 でも、違和感をなかったことにするのだけは、今週はやめときましょうね。`,
+      overall: `${pick(overallOpenings, seed, 0)} ${zodiac.look}が出ていますが、今は押し切るより、何を残して何を置くかを見たほうがええです。 ${moodReading}。 ${bloodReading}ので、頑張りすぎると雑に扱われやすい流れもあります。 ただ、気づいた時点で流れは変えられますから、今日は自分の境界線を少し丁寧に引いてください。`,
+      love: `${pick(loveOpenings, seed, 1)} 好きな人や大切な人に合わせるのは悪くありませんが、合わせたあとに自分だけ疲れているなら、そこは見直しどころです。 今日の気分を無視してまで、ええ顔をせんでも大丈夫です。 ただ、何でも笑って流す癖だけは、そろそろ減らしてええと思います。`,
+      work: `${pick(workOpenings, seed, 2)} 今日は、目立つ成果よりも、曖昧な部分をきちんと分けることが運を上げます。 頼まれたことを全部抱えると、親切ではなく便利な人になってしまいます。 できること、今日は無理なこと、その線引きを静かに出せたら十分です。`,
+      message: `${pick(brendaClosings, seed, 3)} ブレンダから見ると、あなたはもう少し自分の感覚を信じてよさそうです。 きつい答えを急いで出さなくても構いません。 でも、違和感をなかったことにするのだけは、今日はやめときましょうね。`,
     });
   };
 
@@ -143,7 +168,7 @@ export default function BlenderFortunePage() {
               />
             </div>
             <p className="px-4 py-5 text-sm font-medium leading-7 text-white/82 sm:px-6">
-              生年月日と血液型から、今のあなたの流れをブレンダがそっと見極めます。
+              生年月日と血液型、気分から今日のあなたの流れをブレンダがそっと見極めます。
             </p>
           </div>
 
@@ -184,6 +209,16 @@ export default function BlenderFortunePage() {
                 </select>
               </label>
 
+              <label className="block">
+                <span className="mb-2 block text-sm font-black text-white">今の気分</span>
+                <input
+                  value={mood}
+                  onChange={(event) => setMood(event.target.value)}
+                  className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm text-white outline-none backdrop-blur-md placeholder:text-white/45 focus:border-rose-200/70"
+                  placeholder="例：少し不安、でも進みたい"
+                />
+              </label>
+
               <button
                 type="button"
                 onClick={tellFortune}
@@ -198,12 +233,12 @@ export default function BlenderFortunePage() {
           {result && (
             <section className="space-y-4">
               <div className="rounded-lg border border-white/15 bg-white/[0.08] px-4 py-5 shadow-[0_18px_55px_rgba(0,0,0,0.32)] backdrop-blur-md sm:px-6">
-                <p className="text-xs font-black uppercase tracking-[0.2em] text-rose-100">今週の見立て</p>
+                <p className="text-xs font-black uppercase tracking-[0.2em] text-rose-100">今日の見立て</p>
                 <p className="mt-2 text-sm leading-7 text-white/80">{result.profile}</p>
               </div>
 
               {[
-                ["今週の全体運", result.overall],
+                ["今日の全体運", result.overall],
                 ["恋愛運", result.love],
                 ["仕事運", result.work],
                 ["ブレンダからのひとこと", result.message],
