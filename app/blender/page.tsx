@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 
-const lineUrl = "https://lin.ee/xXxs87l";
+const lineUrl =
+  "https://line.me/R/oaMessage/%40494whwcg/?%E3%83%96%E3%83%AC%E3%83%B3%E3%83%80%E3%81%AE%E8%A6%8B%E6%A5%B5%E3%82%81%E5%8D%A0%E3%81%84";
 
 type FortuneResult = {
   profile: string;

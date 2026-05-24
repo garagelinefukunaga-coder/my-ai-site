@@ -129,7 +129,7 @@ export default function Home() {
               </a>
 
               <a
-                href="https://lin.ee/xXxs87l"
+                href="https://line.me/R/oaMessage/%40494whwcg/?%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B"
                 target="_blank"
                 rel="noreferrer"
                 className={`${linkCardClass} sm:col-span-2`}
