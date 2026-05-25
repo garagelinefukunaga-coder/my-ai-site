@@ -12,9 +12,29 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const googleSiteVerification = "";
+
 export const metadata: Metadata = {
-  title: "HAPPY FOREVER",
-  description: "HAPPY FOREVER official site.",
+  metadataBase: new URL("https://happy-forever.vercel.app"),
+  title: "HAPPY FOREVER｜AI Music・映像・ブレンダの見極め占い",
+  description:
+    "HAPPY FOREVERは、AIを使いながら音楽・映像・言葉・ブレンダの見極め占いを少しずつ形にしているホームページです。Happyは幸、Foreverは永。少しずつ進んでいます。",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  verification: googleSiteVerification
+    ? {
+        google: googleSiteVerification,
+      }
+    : undefined,
 };
 
 export default function RootLayout({
