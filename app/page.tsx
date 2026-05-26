@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ShareButtons from "./ShareButtons";
 
 const linkCardClass =
   "glass-link group block rounded-lg border border-white/25 px-4 py-3 text-white shadow-[0_0_28px_rgba(16,185,129,0.16)] transition hover:-translate-y-0.5 hover:border-red-200/80 hover:bg-white/15";
@@ -67,6 +68,8 @@ export default function Home() {
           </section>
 
           <section className="space-y-4">
+            <ShareButtons />
+
             <div>
               <p className="text-xs font-black uppercase tracking-[0.2em] text-red-100">
                 Featured Short
