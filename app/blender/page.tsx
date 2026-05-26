@@ -152,8 +152,8 @@ export default function BlenderFortunePage() {
             ← ホームに戻る
           </Link>
 
-          <div className="overflow-hidden rounded-lg border border-white/15 bg-white/[0.07] shadow-[0_20px_70px_rgba(0,0,0,0.38)] backdrop-blur-md">
-            <div className="px-4 pt-5 sm:px-6">
+          <div className="rounded-lg border border-white/15 bg-white/[0.07] px-4 py-5 shadow-[0_20px_70px_rgba(0,0,0,0.38)] backdrop-blur-md sm:px-6">
+            <div>
               <p className="mb-2 text-xs font-black uppercase tracking-[0.22em] text-rose-100">
                 Brenda Reading
               </p>
@@ -161,19 +161,38 @@ export default function BlenderFortunePage() {
                 ブレンダの見極め占い
               </h1>
             </div>
-            <div className="mt-5 bg-black/20">
+          </div>
+
+          <div className="overflow-hidden rounded-lg border border-rose-100/20 bg-black/25 shadow-[0_20px_70px_rgba(0,0,0,0.38)] backdrop-blur-md">
+            <div className="bg-black/20">
               <img
                 src="/blender-fortune.png"
                 alt="ブレンダ"
                 className="mx-auto max-h-[420px] w-full object-contain"
               />
             </div>
-            <p className="px-4 py-5 text-sm font-medium leading-7 text-white/82 sm:px-6">
-              生年月日と血液型、気分から今日のあなたの流れをブレンダがそっと見極めます。
-            </p>
+          </div>
+
+          <div className="rounded-lg border border-rose-100/20 bg-white/[0.07] px-4 py-5 shadow-[0_18px_55px_rgba(0,0,0,0.3)] backdrop-blur-md sm:px-6">
+            <div className="space-y-3 text-sm font-medium leading-7 text-white/84">
+              <p className="text-base font-black text-rose-50">ブレンダです。</p>
+              <p>やさしいだけの占いでは、たぶん終わりません。</p>
+              <p>
+                ちょっと厳しいことも言うかもしれへんけど、ほんまのところを見ずに、きれいごとだけ並べるんは好きやないんです。
+              </p>
+              <p>
+                濃い線と薄い線を見ながら、いくつかの可能性に幅を持たせて、今のあなたがどう動くのがいちばん自然かを見ていきます。
+              </p>
+              <p>
+                目先の安心より、大事な時にちゃんと自分で選べるように整える占いです。
+              </p>
+            </div>
           </div>
 
           <div className="rounded-lg border border-white/15 bg-black/30 px-4 py-5 shadow-[0_18px_50px_rgba(0,0,0,0.3)] backdrop-blur-md sm:px-6">
+            <p className="mb-4 text-sm font-medium leading-7 text-white/82">
+              生年月日と血液型、気分から今日のあなたの流れをブレンダがそっと見極めます。
+            </p>
             <div className="grid gap-4">
               <label className="block">
                 <span className="mb-2 block text-sm font-black text-white">生年月日</span>
