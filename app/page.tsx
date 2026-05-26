@@ -12,6 +12,7 @@ const structuredData = {
       url: "https://happy-forever.vercel.app/",
       name: "HAPPY FOREVER",
       alternateName: ["Happy Forever420", "HAPPY FOREVER MUSIC"],
+      image: "https://happy-forever.vercel.app/happy-forever-logo.png",
       inLanguage: "ja",
       description:
         "HAPPY FOREVERは、AIを使いながら音楽・映像・言葉・ブレンダの見極め占いを少しずつ形にしているホームページです。",
@@ -21,6 +22,7 @@ const structuredData = {
       "@id": "https://happy-forever.vercel.app/#happy-forever",
       name: "HAPPY FOREVER",
       url: "https://happy-forever.vercel.app/",
+      image: "https://happy-forever.vercel.app/happy-forever-logo.png",
       sameAs: [
         "https://x.com/happyforever420",
         "https://note.com/clear_acacia1018",
@@ -52,6 +54,13 @@ export default function Home() {
             <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] text-emerald-100">
               Panda Rap / AI Music / Green Dragon
             </p>
+            <div className="mb-5 overflow-hidden rounded-lg border border-white/20 bg-black/30 shadow-[0_18px_70px_rgba(0,0,0,0.32)]">
+              <img
+                src="/happy-forever-logo.png"
+                alt="HAPPY FOREVER logo"
+                className="block w-full object-cover"
+              />
+            </div>
             <h1 className="hero-title text-4xl font-black leading-tight tracking-wide text-white sm:text-6xl">
               HAPPY FOREVER
             </h1>

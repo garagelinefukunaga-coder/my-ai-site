@@ -45,10 +45,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/blender-fortune.png",
+        url: "/happy-forever-logo.png",
         width: 1240,
         height: 1240,
-        alt: "HAPPY FOREVER ブレンダの見極め占い",
+        alt: "HAPPY FOREVER logo",
       },
     ],
   },
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: "HAPPY FOREVER｜AI Music・映像・ブレンダの見極め占い",
     description:
       "AI音楽、映像、言葉、ブレンダの見極め占いを少しずつ形にしているホームページです。",
-    images: ["/blender-fortune.png"],
+    images: ["/happy-forever-logo.png"],
   },
   robots: {
     index: true,
