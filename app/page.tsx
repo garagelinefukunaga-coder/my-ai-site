@@ -3,9 +3,49 @@ import Link from "next/link";
 const linkCardClass =
   "glass-link group block rounded-lg border border-white/25 px-4 py-3 text-white shadow-[0_0_28px_rgba(16,185,129,0.16)] transition hover:-translate-y-0.5 hover:border-red-200/80 hover:bg-white/15";
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://happy-forever.vercel.app/#website",
+      url: "https://happy-forever.vercel.app/",
+      name: "HAPPY FOREVER",
+      alternateName: ["Happy Forever420", "HAPPY FOREVER MUSIC"],
+      inLanguage: "ja",
+      description:
+        "HAPPY FOREVERは、AIを使いながら音楽・映像・言葉・ブレンダの見極め占いを少しずつ形にしているホームページです。",
+    },
+    {
+      "@type": "Person",
+      "@id": "https://happy-forever.vercel.app/#happy-forever",
+      name: "HAPPY FOREVER",
+      url: "https://happy-forever.vercel.app/",
+      sameAs: [
+        "https://x.com/happyforever420",
+        "https://note.com/clear_acacia1018",
+        "https://suno.com/@happyforever42019",
+        "https://www.tiktok.com/@happy.farever.420",
+      ],
+      knowsAbout: [
+        "AI音楽",
+        "パンダラップ",
+        "映像",
+        "ブレンダの見極め占い",
+        "量子力学",
+        "感情コントロール",
+      ],
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <main className="forest-rainbow min-h-screen overflow-hidden text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <div className="min-h-screen bg-black/10">
         <div className="mx-auto flex w-full max-w-4xl flex-col px-4 py-10 sm:py-14">
           <section className="mb-5 rounded-lg border border-white/15 bg-black/20 px-4 py-6 shadow-[0_18px_70px_rgba(0,0,0,0.28)] backdrop-blur-md sm:px-6">
