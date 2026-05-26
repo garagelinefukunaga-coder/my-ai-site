@@ -17,19 +17,6 @@ export default function Home() {
             </h1>
           </section>
 
-          <section className="mb-10 rounded-lg border border-white/15 bg-black/20 px-4 py-6 shadow-[0_18px_70px_rgba(0,0,0,0.24)] backdrop-blur-md sm:px-6">
-            <div className="max-w-2xl space-y-3 text-sm font-medium leading-7 text-white/86 sm:text-base">
-              <p>My name is HAPPY FOREVER.</p>
-              <p>日本語の漢字で、Happy は「福」、Forever は「永」。</p>
-              <p>
-                まだ何かが定まっているわけではありませんが、AIを使いながら、音楽・映像・言葉を少しずつ形にしています。
-              </p>
-              <p>試行錯誤しながら、自分にしかできない表現を作っていきます。</p>
-              <p>皆様、よろしくお願いいたします。</p>
-              <p>HAPPY FOREVER</p>
-            </div>
-          </section>
-
           <section className="space-y-4">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.2em] text-red-100">
@@ -76,6 +63,19 @@ export default function Home() {
               </p>
             </a>
 
+            <div className="rounded-lg border border-white/15 bg-black/20 px-4 py-6 shadow-[0_18px_70px_rgba(0,0,0,0.24)] backdrop-blur-md sm:px-6">
+              <div className="max-w-2xl space-y-3 text-sm font-medium leading-7 text-white/86 sm:text-base">
+                <p>My name is HAPPY FOREVER.</p>
+                <p>日本語の漢字で、Happy は「福」、Forever は「永」。</p>
+                <p>
+                  まだ何かが定まっているわけではありませんが、AIを使いながら、音楽・映像・言葉を少しずつ形にしています。
+                </p>
+                <p>試行錯誤しながら、自分にしかできない表現を作っていきます。</p>
+                <p>皆様、よろしくお願いいたします。</p>
+                <p>HAPPY FOREVER</p>
+              </div>
+            </div>
+
             <Link href="/music" className={linkCardClass}>
               <p className="text-sm font-black">HAPPY FOREVER MUSIC</p>
               <p className="mt-1 text-xs text-emerald-50/70">
@@ -89,18 +89,6 @@ export default function Home() {
                 今週の流れをそっと見極める →
               </p>
             </Link>
-
-            <a
-              href="https://suno.com/playlist/f80cbfe2-59e7-4583-b693-bb75ddb2a48f"
-              target="_blank"
-              rel="noreferrer"
-              className={linkCardClass}
-            >
-              <p className="text-sm font-black">J-POP Mixアルバム（SUNO）</p>
-              <p className="mt-1 text-xs text-emerald-50/70">
-                SUNOのJ-POPアルバムへ →
-              </p>
-            </a>
           </section>
 
           <section className="mt-12">

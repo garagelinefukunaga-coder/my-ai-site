@@ -34,6 +34,18 @@ export default function MusicPage() {
               次のページへ →
             </p>
           </Link>
+
+          <a
+            href="https://suno.com/playlist/f80cbfe2-59e7-4583-b693-bb75ddb2a48f"
+            target="_blank"
+            rel="noreferrer"
+            className="glass-link block rounded-lg border border-white/25 px-4 py-4 text-white shadow-[0_0_28px_rgba(245,158,11,0.16)] transition hover:-translate-y-0.5 hover:border-red-200/80 hover:bg-white/15"
+          >
+            <p className="text-sm font-black">J-POP Mixアルバム（SUNO）</p>
+            <p className="mt-1 text-xs text-emerald-50/70">
+              SUNOのJ-POPアルバムへ →
+            </p>
+          </a>
         </section>
       </div>
     </main>
