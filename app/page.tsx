@@ -68,7 +68,7 @@ export default function Home() {
               </p>
               <iframe
                 className="block w-full rounded-lg bg-white"
-                src="https://note.com/embed/notes/n4380f9114c0f"
+                src="https://note.com/clear_acacia1018/n/n4380f9114c0f?sub_rt=share_pw"
                 title="量子力学、感情コントロール、観測するまでは決まらない note解説"
                 height="400"
               />
