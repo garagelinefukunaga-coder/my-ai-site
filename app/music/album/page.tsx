@@ -45,6 +45,17 @@ export default function AlbumPage() {
                 allowFullScreen
               />
             </div>
+            <div className="mt-4 overflow-hidden rounded-lg border border-white/20 bg-black/35 px-3 py-3 shadow-[0_18px_70px_rgba(0,0,0,0.32)] backdrop-blur-sm">
+              <p className="mb-3 text-sm font-black text-white">
+                量子力学、感情コントロール、観測するまでは決まらない 解説
+              </p>
+              <iframe
+                className="block w-full rounded-lg bg-white"
+                src="https://note.com/embed/notes/n4380f9114c0f"
+                title="量子力学、感情コントロール、観測するまでは決まらない note解説"
+                height="400"
+              />
+            </div>
           </div>
 
           <div>
