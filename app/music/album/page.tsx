@@ -45,17 +45,19 @@ export default function AlbumPage() {
                 allowFullScreen
               />
             </div>
-            <div className="mt-4 overflow-hidden rounded-lg border border-white/20 bg-black/35 px-3 py-3 shadow-[0_18px_70px_rgba(0,0,0,0.32)] backdrop-blur-sm">
-              <p className="mb-3 text-sm font-black text-white">
+            <a
+              href="https://note.com/clear_acacia1018/n/n4380f9114c0f?sub_rt=share_pw"
+              target="_blank"
+              rel="noreferrer"
+              className="glass-link mt-4 block rounded-lg border border-white/25 px-4 py-4 text-white shadow-[0_0_28px_rgba(16,185,129,0.16)] transition hover:-translate-y-0.5 hover:border-red-200/80 hover:bg-white/15"
+            >
+              <p className="text-sm font-black">
                 量子力学、感情コントロール、観測するまでは決まらない 解説
               </p>
-              <iframe
-                className="block w-full rounded-lg bg-white"
-                src="https://note.com/clear_acacia1018/n/n4380f9114c0f?sub_rt=share_pw"
-                title="量子力学、感情コントロール、観測するまでは決まらない note解説"
-                height="400"
-              />
-            </div>
+              <p className="mt-1 text-xs text-emerald-50/70">
+                曲解説をnoteで読む →
+              </p>
+            </a>
           </div>
 
           <div>
