@@ -46,8 +46,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/happy-forever-logo.png",
-        width: 1240,
-        height: 1240,
+        width: 1254,
+        height: 1254,
         alt: "HAPPY FOREVER logo",
       },
     ],
