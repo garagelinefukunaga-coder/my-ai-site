@@ -128,6 +128,10 @@ export default function Home() {
               </p>
             </a>
 
+            <p className="pt-2 text-xs font-black uppercase tracking-[0.2em] text-amber-100">
+              メインページ
+            </p>
+
             <Link href="/music" className={linkCardClass}>
               <p className="text-sm font-black">HAPPY FOREVER MUSIC</p>
               <p className="mt-1 text-xs text-emerald-50/70">
