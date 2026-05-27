@@ -55,6 +55,9 @@ export default function Home() {
             <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] text-emerald-100">
               Panda Rap / AI Music / Green Dragon
             </p>
+            <h1 className="hero-title mb-5 text-4xl font-black leading-tight tracking-wide text-white sm:text-6xl">
+              HAPPY FOREVER
+            </h1>
             <div className="mb-5 overflow-hidden rounded-lg border border-white/20 bg-black/30 shadow-[0_18px_70px_rgba(0,0,0,0.32)]">
               <img
                 src="/happy-forever-logo.png"
@@ -62,9 +65,6 @@ export default function Home() {
                 className="block w-full object-cover"
               />
             </div>
-            <h1 className="hero-title text-4xl font-black leading-tight tracking-wide text-white sm:text-6xl">
-              HAPPY FOREVER
-            </h1>
           </section>
 
           <section className="space-y-4">
