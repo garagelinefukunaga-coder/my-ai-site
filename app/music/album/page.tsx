@@ -1,5 +1,37 @@
 import Link from "next/link";
 
+const playlistLinks = [
+  {
+    href: "https://youtube.com/playlist?list=PL988GhbTQQYUN5MafhRWiK1C9d_BdQ05y&si=ybYiTkznVSi2KP3Y",
+    label: "YouTube Playlist",
+  },
+  {
+    href: "https://suno.com/playlist/193f1a75-1fb0-4d43-a7b2-5bb20601e861",
+    label: "SUNO Playlist",
+  },
+];
+
+function PlaylistLinkBar() {
+  return (
+    <div className="glass-link flex items-center gap-1.5 overflow-x-auto rounded-full border border-white/25 px-2 py-1.5 shadow-[0_0_22px_rgba(245,158,11,0.18)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <span className="shrink-0 px-2 text-[10px] font-black uppercase tracking-[0.16em] text-amber-100/85">
+        Playlist
+      </span>
+      {playlistLinks.map((link) => (
+        <a
+          key={link.href}
+          href={link.href}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex h-8 shrink-0 items-center rounded-full border border-white/20 bg-white/10 px-3 text-xs font-black leading-none text-white transition hover:border-red-200/80 hover:bg-white/18"
+        >
+          {link.label} →
+        </a>
+      ))}
+    </div>
+  );
+}
+
 export default function AlbumPage() {
   return (
     <main className="forest-rainbow min-h-screen text-white">
@@ -28,9 +60,11 @@ export default function AlbumPage() {
               HAPPY SET ALBUM
             </h1>
             <p className="mt-4 text-sm font-medium leading-7 text-white/82">
-              老子力学の動画、綺麗に咲く花の動画、note解説をセットで見るページ。
+              老子力学 → 綺麗に咲く花 → note解説の順番で見るページ。
             </p>
           </div>
+
+          <PlaylistLinkBar />
 
           <div>
             <p className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-red-100">
@@ -96,6 +130,8 @@ export default function AlbumPage() {
               曲解説をnoteで読む →
             </p>
           </a>
+
+          <PlaylistLinkBar />
         </section>
       </div>
     </main>
