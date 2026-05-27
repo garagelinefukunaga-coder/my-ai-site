@@ -70,6 +70,19 @@ export default function Home() {
           <section className="space-y-4">
             <ShareButtons />
 
+            <div className="rounded-lg border border-white/15 bg-black/20 px-4 py-6 shadow-[0_18px_70px_rgba(0,0,0,0.24)] backdrop-blur-md sm:px-6">
+              <div className="max-w-2xl space-y-3 text-sm font-medium leading-7 text-white/86 sm:text-base">
+                <p>My name is HAPPY FOREVER.</p>
+                <p>日本語の漢字で、Happy は「福」、Forever は「永」。</p>
+                <p>
+                  まだ何かが定まっているわけではありませんが、AIを使いながら、音楽・映像・言葉を少しずつ形にしています。
+                </p>
+                <p>試行錯誤しながら、自分にしかできない表現を作っていきます。</p>
+                <p>皆様、よろしくお願いいたします。</p>
+                <p>HAPPY FOREVER</p>
+              </div>
+            </div>
+
             <div>
               <p className="text-xs font-black uppercase tracking-[0.2em] text-red-100">
                 Featured Short
@@ -114,19 +127,6 @@ export default function Home() {
                 曲解説をnoteで読む →
               </p>
             </a>
-
-            <div className="rounded-lg border border-white/15 bg-black/20 px-4 py-6 shadow-[0_18px_70px_rgba(0,0,0,0.24)] backdrop-blur-md sm:px-6">
-              <div className="max-w-2xl space-y-3 text-sm font-medium leading-7 text-white/86 sm:text-base">
-                <p>My name is HAPPY FOREVER.</p>
-                <p>日本語の漢字で、Happy は「福」、Forever は「永」。</p>
-                <p>
-                  まだ何かが定まっているわけではありませんが、AIを使いながら、音楽・映像・言葉を少しずつ形にしています。
-                </p>
-                <p>試行錯誤しながら、自分にしかできない表現を作っていきます。</p>
-                <p>皆様、よろしくお願いいたします。</p>
-                <p>HAPPY FOREVER</p>
-              </div>
-            </div>
 
             <Link href="/music" className={linkCardClass}>
               <p className="text-sm font-black">HAPPY FOREVER MUSIC</p>
