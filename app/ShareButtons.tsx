@@ -3,7 +3,8 @@
 import { useState } from "react";
 
 const siteUrl = "https://happy-forever.vercel.app/";
-const shareText = "HAPPY FOREVER｜AI Music・映像・ブレンダの見極め占い";
+const shareText =
+  "HAPPY FOREVERのホームページ、チェックしてみよう。\n\nHAPPY FOREVER";
 const encodedSiteUrl = encodeURIComponent(siteUrl);
 const encodedShareText = encodeURIComponent(shareText);
 const lineShareUrl = `https://line.me/R/msg/text/?${encodeURIComponent(
@@ -33,17 +34,17 @@ export default function ShareButtons() {
   };
 
   const chipClass =
-    "inline-flex h-9 items-center justify-center rounded-full border border-white/20 bg-white/10 px-3 text-xs font-black text-white transition hover:border-white/40 hover:bg-white/18";
+    "inline-flex h-7 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/10 px-2.5 text-[11px] font-black leading-none text-white transition hover:border-white/40 hover:bg-white/18";
 
   return (
-    <div className="glass-link flex flex-wrap items-center gap-2 rounded-lg border border-white/25 px-3 py-2 shadow-[0_0_28px_rgba(244,114,182,0.2)]">
+    <div className="glass-link flex items-center gap-1.5 overflow-x-auto rounded-full border border-white/25 px-2 py-1.5 shadow-[0_0_22px_rgba(244,114,182,0.18)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
       <button
         type="button"
         onClick={shareSite}
-        className="inline-flex h-10 flex-1 items-center justify-between rounded-full border border-white/30 bg-[linear-gradient(110deg,rgba(236,72,153,0.42),rgba(34,211,238,0.3),rgba(250,204,21,0.22))] px-4 text-left text-sm font-black text-white shadow-[0_0_26px_rgba(34,211,238,0.2)] transition hover:border-white/60 hover:shadow-[0_0_34px_rgba(244,114,182,0.3)] sm:flex-none sm:min-w-64"
+        className="inline-flex h-8 shrink-0 items-center gap-2 rounded-full border border-white/30 bg-[linear-gradient(110deg,rgba(236,72,153,0.42),rgba(34,211,238,0.3),rgba(250,204,21,0.22))] px-3 text-xs font-black leading-none text-white shadow-[0_0_22px_rgba(34,211,238,0.18)] transition hover:border-white/60 hover:shadow-[0_0_28px_rgba(244,114,182,0.28)]"
       >
-        <span>このサイトを共有</span>
-        <span className="text-xs text-white/75">Share</span>
+        <span>共有する</span>
+        <span className="text-[10px] text-white/75">Share</span>
       </button>
       <a
         href={`https://twitter.com/intent/tweet?text=${encodedShareText}&url=${encodedSiteUrl}`}
