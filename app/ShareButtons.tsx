@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const siteUrl = "https://happy-forever.vercel.app/";
 const shareText =
-  "HAPPY FOREVERのホームページ、チェックしてみよう。\n\nHAPPY FOREVER";
+  "HAPPY FOREVERのホームページ、チェックしてみよう。\n\n🌈✨ HAPPY FOREVER ✨🌈";
 const encodedSiteUrl = encodeURIComponent(siteUrl);
 const encodedShareText = encodeURIComponent(shareText);
 const lineShareUrl = `https://line.me/R/msg/text/?${encodeURIComponent(
