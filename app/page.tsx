@@ -198,6 +198,10 @@ export default function Home() {
               </a>
             </div>
           </section>
+
+          <div className="mt-8">
+            <ShareButtons />
+          </div>
         </div>
       </div>
     </main>
