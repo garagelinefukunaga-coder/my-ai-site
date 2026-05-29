@@ -100,34 +100,20 @@ export default function Home() {
             <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
               <iframe
                 className="h-full w-full"
-                src="https://www.youtube.com/embed/gNcLSvSIJLc"
-                title="Panda Rap - Happy Forever"
+                src="https://www.youtube.com/embed/SKl2MPvezDM"
+                title="Panda Rap - 自分を変える努力"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
             </div>
 
             <a
-              href="https://www.youtube.com/shorts/gNcLSvSIJLc?feature=share"
+              href="https://youtube.com/shorts/SKl2MPvezDM?si=VkXY6cOOxO_uQ2c_"
               target="_blank"
               rel="noreferrer"
               className="inline-flex rounded-lg border border-white/25 bg-red-500/45 px-4 py-2 text-sm font-black text-white shadow-[0_0_28px_rgba(239,68,68,0.35)] backdrop-blur-md transition hover:bg-red-400/55"
             >
               YouTube チャンネルで他の動画も見る →
-            </a>
-
-            <a
-              href="https://note.com/clear_acacia1018/n/n4380f9114c0f?sub_rt=share_pw"
-              target="_blank"
-              rel="noreferrer"
-              className="glass-link block rounded-lg border border-white/25 px-4 py-4 text-white shadow-[0_0_28px_rgba(16,185,129,0.16)] transition hover:-translate-y-0.5 hover:border-red-200/80 hover:bg-white/15"
-            >
-              <p className="text-sm font-black">
-                量子力学、感情コントロール、観測するまでは決まらない 解説
-              </p>
-              <p className="mt-1 text-xs text-emerald-50/70">
-                曲解説をnoteで読む →
-              </p>
             </a>
 
             <p className="pt-2 text-xs font-black uppercase tracking-[0.2em] text-amber-100">

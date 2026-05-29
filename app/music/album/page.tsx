@@ -67,14 +67,37 @@ export default function AlbumPage() {
           <PlaylistLinkBar />
 
           <div>
+            <p className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-rose-100">
+              自分を変える努力
+            </p>
+            <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
+              <iframe
+                className="h-full w-full"
+                src="https://www.youtube.com/embed/SKl2MPvezDM"
+                title="Panda Rap - 自分を変える努力"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+            <a
+              href="https://youtube.com/shorts/SKl2MPvezDM?si=VkXY6cOOxO_uQ2c_"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-flex rounded-lg border border-white/25 bg-red-500/45 px-4 py-2 text-sm font-black text-white shadow-[0_0_28px_rgba(239,68,68,0.35)] backdrop-blur-md transition hover:bg-red-400/55"
+            >
+              この動画をYouTubeで見る →
+            </a>
+          </div>
+
+          <div>
             <p className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-red-100">
-              New Cover Song
+              量子力学、感情コントロール、観測するまでは決まらない
             </p>
             <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
               <iframe
                 className="h-full w-full"
                 src="https://www.youtube.com/embed/gNcLSvSIJLc"
-                title="Panda Rap - New Cover Song"
+                title="Panda Rap - 量子力学、感情コントロール"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
