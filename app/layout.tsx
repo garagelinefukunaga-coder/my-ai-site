@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 const googleSiteVerification = "";
-const bingSiteVerification = "";
+const bingSiteVerification = "2B0C15F9AF1FE9A8047AF079F08404A5";
 const yahooSiteVerification = "";
 
 const siteVerification = {
