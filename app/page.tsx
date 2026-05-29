@@ -11,17 +11,18 @@ const structuredData = {
       "@type": "WebSite",
       "@id": "https://happy-forever.vercel.app/#website",
       url: "https://happy-forever.vercel.app/",
-      name: "HAPPY FOREVER",
-      alternateName: ["Happy Forever420", "HAPPY FOREVER MUSIC"],
+      name: "HAPPY FOREVER 420",
+      alternateName: ["Happyforever 420 / 福永", "HAPPY FOREVER MUSIC"],
       image: "https://happy-forever.vercel.app/happy-forever-logo.png",
       inLanguage: "ja",
       description:
-        "HAPPY FOREVERは、AIを使いながら音楽・映像・言葉・ブレンダの見極め占いを少しずつ形にしているホームページです。",
+        "HAPPY FOREVER 420は、AIを使いながら音楽・映像・言葉・ブレンダの見極め占いを少しずつ形にしているホームページです。Happyは福、Foreverは永。",
     },
     {
       "@type": "Person",
       "@id": "https://happy-forever.vercel.app/#happy-forever",
-      name: "HAPPY FOREVER",
+      name: "HAPPY FOREVER 420",
+      alternateName: "Happyforever 420 / 福永",
       url: "https://happy-forever.vercel.app/",
       image: "https://happy-forever.vercel.app/happy-forever-logo.png",
       sameAs: [
@@ -56,12 +57,12 @@ export default function Home() {
               Panda Rap / AI Music / Green Dragon
             </p>
             <h1 className="hero-title mb-5 text-4xl font-black leading-tight tracking-wide text-white sm:text-6xl">
-              HAPPY FOREVER
+              HAPPY FOREVER 420
             </h1>
             <div className="mb-5 overflow-hidden rounded-lg border border-white/20 bg-black/30 shadow-[0_18px_70px_rgba(0,0,0,0.32)]">
               <img
                 src="/happy-forever-logo.png"
-                alt="HAPPY FOREVER logo"
+                alt="HAPPY FOREVER 420 logo"
                 className="block w-full object-cover"
               />
             </div>
@@ -72,14 +73,15 @@ export default function Home() {
 
             <div className="rounded-lg border border-white/15 bg-black/20 px-4 py-6 shadow-[0_18px_70px_rgba(0,0,0,0.24)] backdrop-blur-md sm:px-6">
               <div className="max-w-2xl space-y-3 text-sm font-medium leading-7 text-white/86 sm:text-base">
-                <p>My name is HAPPY FOREVER.</p>
+                <p>My name is HAPPY FOREVER 420.</p>
+                <p>補助表記は、Happyforever 420 / 福永。</p>
                 <p>日本語の漢字で、Happy は「福」、Forever は「永」。</p>
                 <p>
                   まだ何かが定まっているわけではありませんが、AIを使いながら、音楽・映像・言葉を少しずつ形にしています。
                 </p>
                 <p>試行錯誤しながら、自分にしかできない表現を作っていきます。</p>
                 <p>皆様、よろしくお願いいたします。</p>
-                <p>HAPPY FOREVER</p>
+                <p>HAPPY FOREVER 420</p>
               </div>
             </div>
 

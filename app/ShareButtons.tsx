@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const siteUrl = "https://happy-forever.vercel.app/";
 const shareText =
-  "HAPPY FOREVERのホームページ、チェックしてみよう。\n\n🌈✨ HAPPY FOREVER ✨🌈";
+  "HAPPY FOREVER 420のホームページ、チェックしてみよう。\n\n🌈✨ HAPPY FOREVER 420 ✨🌈";
 const encodedSiteUrl = encodeURIComponent(siteUrl);
 const encodedShareText = encodeURIComponent(shareText);
 const lineShareUrl = `https://line.me/R/msg/text/?${encodeURIComponent(
@@ -23,7 +23,7 @@ export default function ShareButtons() {
   const shareSite = async () => {
     if (navigator.share) {
       await navigator.share({
-        title: "HAPPY FOREVER",
+        title: "HAPPY FOREVER 420",
         text: shareText,
         url: siteUrl,
       });

@@ -13,15 +13,26 @@ const geistMono = Geist_Mono({
 });
 
 const googleSiteVerification = "";
+const bingSiteVerification = "";
+const yahooSiteVerification = "";
+
+const siteVerification = {
+  ...(googleSiteVerification ? { google: googleSiteVerification } : {}),
+  ...(yahooSiteVerification ? { yahoo: yahooSiteVerification } : {}),
+  ...(bingSiteVerification
+    ? { other: { "msvalidate.01": bingSiteVerification } }
+    : {}),
+} satisfies Metadata["verification"];
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://happy-forever.vercel.app"),
-  title: "HAPPY FOREVER｜AI Music・映像・ブレンダの見極め占い",
+  title: "HAPPY FOREVER 420｜AI Music・映像・ブレンダの見極め占い",
   description:
-    "HAPPY FOREVERは、AIを使いながら音楽・映像・言葉・ブレンダの見極め占いを少しずつ形にしているホームページです。Happyは幸、Foreverは永。少しずつ進んでいます。",
+    "HAPPY FOREVER 420は、AIを使いながら音楽・映像・言葉・ブレンダの見極め占いを少しずつ形にしているホームページです。Happyは福、Foreverは永。少しずつ進んでいます。",
   keywords: [
-    "HAPPY FOREVER",
-    "Happy Forever420",
+    "HAPPY FOREVER 420",
+    "Happyforever 420",
+    "福永",
     "AI Music",
     "AI音楽",
     "パンダラップ",
@@ -29,18 +40,18 @@ export const metadata: Metadata = {
     "量子力学",
     "感情コントロール",
   ],
-  authors: [{ name: "HAPPY FOREVER" }],
-  creator: "HAPPY FOREVER",
-  publisher: "HAPPY FOREVER",
+  authors: [{ name: "HAPPY FOREVER 420" }],
+  creator: "HAPPY FOREVER 420",
+  publisher: "HAPPY FOREVER 420",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "HAPPY FOREVER｜AI Music・映像・ブレンダの見極め占い",
+    title: "HAPPY FOREVER 420｜AI Music・映像・ブレンダの見極め占い",
     description:
-      "HAPPY FOREVERは、AIを使いながら音楽・映像・言葉・ブレンダの見極め占いを少しずつ形にしているホームページです。",
+      "HAPPY FOREVER 420は、AIを使いながら音楽・映像・言葉・ブレンダの見極め占いを少しずつ形にしているホームページです。Happyは福、Foreverは永。",
     url: "/",
-    siteName: "HAPPY FOREVER",
+    siteName: "HAPPY FOREVER 420",
     locale: "ja_JP",
     type: "website",
     images: [
@@ -48,15 +59,15 @@ export const metadata: Metadata = {
         url: "/happy-forever-logo.png",
         width: 1254,
         height: 1254,
-        alt: "HAPPY FOREVER logo",
+        alt: "HAPPY FOREVER 420 logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "HAPPY FOREVER｜AI Music・映像・ブレンダの見極め占い",
+    title: "HAPPY FOREVER 420｜AI Music・映像・ブレンダの見極め占い",
     description:
-      "AI音楽、映像、言葉、ブレンダの見極め占いを少しずつ形にしているホームページです。",
+      "HAPPY FOREVER 420は、AI音楽、映像、言葉、ブレンダの見極め占いを少しずつ形にしているホームページです。",
     images: ["/happy-forever-logo.png"],
   },
   robots: {
@@ -67,11 +78,10 @@ export const metadata: Metadata = {
       follow: true,
     },
   },
-  verification: googleSiteVerification
-    ? {
-        google: googleSiteVerification,
-      }
-    : undefined,
+  verification:
+    siteVerification && Object.keys(siteVerification).length > 0
+      ? siteVerification
+      : undefined,
 };
 
 export default function RootLayout({
