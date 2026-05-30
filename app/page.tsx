@@ -4,41 +4,78 @@ import ShareButtons from "./ShareButtons";
 const linkCardClass =
   "glass-link group block rounded-lg border border-white/25 px-4 py-3 text-white shadow-[0_0_28px_rgba(16,185,129,0.16)] transition hover:-translate-y-0.5 hover:border-red-200/80 hover:bg-white/15";
 
+const siteUrl = "https://happy-forever.vercel.app/";
+const socialLinks = [
+  "https://www.youtube.com/shorts/SKl2MPvezDM?si=VkXY6cOOxO_uQ2c_",
+  "https://x.com/happyforever420",
+  "https://note.com/clear_acacia1018",
+  "https://suno.com/@happyforever42019",
+  "https://www.tiktok.com/@happy.farever.420",
+];
+
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "WebSite",
       "@id": "https://happy-forever.vercel.app/#website",
-      url: "https://happy-forever.vercel.app/",
+      url: siteUrl,
       name: "HAPPY FOREVER 420",
       alternateName: ["Happyforever 420 / 福永", "HAPPY FOREVER MUSIC"],
       image: "https://happy-forever.vercel.app/happy-forever-logo.png",
       inLanguage: "ja",
       description:
-        "HAPPY FOREVER 420は、AIを使いながら音楽・映像・言葉・ブレンダの見極め占いを少しずつ形にしているホームページです。Happyは福、Foreverは永。",
+        "HAPPY FOREVER 420は、Japanese Drill、AI Music、パンダラッパー、映像作品、note制作ログ、ブレンダの見極め占いを公開している個人プロジェクトです。Happyは福、Foreverは永。",
     },
     {
       "@type": "Person",
       "@id": "https://happy-forever.vercel.app/#happy-forever",
       name: "HAPPY FOREVER 420",
       alternateName: "Happyforever 420 / 福永",
-      url: "https://happy-forever.vercel.app/",
+      url: siteUrl,
       image: "https://happy-forever.vercel.app/happy-forever-logo.png",
-      sameAs: [
-        "https://x.com/happyforever420",
-        "https://note.com/clear_acacia1018",
-        "https://suno.com/@happyforever42019",
-        "https://www.tiktok.com/@happy.farever.420",
-      ],
+      sameAs: socialLinks,
       knowsAbout: [
+        "Japanese Drill",
         "AI音楽",
         "パンダラップ",
+        "パンダラッパー",
         "映像",
+        "note制作ログ",
         "ブレンダの見極め占い",
         "量子力学",
         "感情コントロール",
       ],
+    },
+    {
+      "@type": "MusicGroup",
+      "@id": "https://happy-forever.vercel.app/#music-group",
+      name: "HAPPY FOREVER 420",
+      alternateName: "Happyforever 420 / 福永",
+      url: siteUrl,
+      image: "https://happy-forever.vercel.app/happy-forever-logo.png",
+      genre: ["Japanese Drill", "AI Music", "Panda Rap"],
+      sameAs: socialLinks,
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://happy-forever.vercel.app/#creative-work",
+      name: "HAPPY FOREVER 420 Japanese Drill AI Music",
+      creator: {
+        "@id": "https://happy-forever.vercel.app/#happy-forever",
+      },
+      url: siteUrl,
+      image: "https://happy-forever.vercel.app/happy-forever-logo.png",
+      inLanguage: "ja",
+      about: [
+        "Japanese Drill",
+        "AI Music",
+        "パンダラッパー",
+        "映像作品",
+        "note制作ログ",
+        "ブレンダの見極め占い",
+      ],
+      sameAs: socialLinks,
     },
   ],
 };
@@ -76,6 +113,9 @@ export default function Home() {
                 <p>My name is HAPPY FOREVER 420.</p>
                 <p>補助表記は、Happyforever 420 / 福永。</p>
                 <p>日本語の漢字で、Happy は「福」、Forever は「永」。</p>
+                <p>
+                  HAPPY FOREVER 420は、Japanese Drill、AI Music、パンダラッパー、映像作品、note制作ログを公開している個人プロジェクトです。
+                </p>
                 <p>
                   まだ何かが定まっているわけではありませんが、AIを使いながら、音楽・映像・言葉を少しずつ形にしています。
                 </p>
@@ -133,6 +173,28 @@ export default function Home() {
                 今週の流れをそっと見極める →
               </p>
             </Link>
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              <a
+                href="https://www.youtube.com/shorts/SKl2MPvezDM?si=VkXY6cOOxO_uQ2c_"
+                target="_blank"
+                rel="noreferrer"
+                className={linkCardClass}
+              >
+                <p className="text-sm font-black">YouTube</p>
+                <p className="text-xs text-emerald-50/70">最新のパンダラップ動画。</p>
+              </a>
+
+              <a
+                href="https://note.com/clear_acacia1018"
+                target="_blank"
+                rel="noreferrer"
+                className={linkCardClass}
+              >
+                <p className="text-sm font-black">note制作ログ</p>
+                <p className="text-xs text-emerald-50/70">制作記録・曲解説・考察。</p>
+              </a>
+            </div>
           </section>
 
           <section className="mt-12">

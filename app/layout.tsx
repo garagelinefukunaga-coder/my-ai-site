@@ -26,16 +26,20 @@ const siteVerification = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://happy-forever.vercel.app"),
-  title: "HAPPY FOREVER 420｜AI Music・映像・ブレンダの見極め占い",
+  title: "HAPPY FOREVER 420 | Japanese Drill AI Music",
   description:
-    "HAPPY FOREVER 420は、AIを使いながら音楽・映像・言葉・ブレンダの見極め占いを少しずつ形にしているホームページです。Happyは福、Foreverは永。少しずつ進んでいます。",
+    "HAPPY FOREVER 420は、Japanese Drill、AI Music、パンダラッパー、映像作品、note制作ログ、ブレンダの見極め占いを公開している個人プロジェクトです。Happyは福、Foreverは永。",
   keywords: [
     "HAPPY FOREVER 420",
     "Happyforever 420",
     "福永",
+    "Japanese Drill",
     "AI Music",
     "AI音楽",
+    "パンダラッパー",
     "パンダラップ",
+    "映像作品",
+    "note制作ログ",
     "ブレンダの見極め占い",
     "量子力学",
     "感情コントロール",
@@ -47,9 +51,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "HAPPY FOREVER 420｜AI Music・映像・ブレンダの見極め占い",
+    title: "HAPPY FOREVER 420 | Japanese Drill AI Music",
     description:
-      "HAPPY FOREVER 420は、AIを使いながら音楽・映像・言葉・ブレンダの見極め占いを少しずつ形にしているホームページです。Happyは福、Foreverは永。",
+      "HAPPY FOREVER 420は、Japanese Drill、AI Music、パンダラッパー、映像作品、note制作ログを公開している個人プロジェクトです。Happyは福、Foreverは永。",
     url: "/",
     siteName: "HAPPY FOREVER 420",
     locale: "ja_JP",
@@ -65,9 +69,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "HAPPY FOREVER 420｜AI Music・映像・ブレンダの見極め占い",
+    title: "HAPPY FOREVER 420 | Japanese Drill AI Music",
     description:
-      "HAPPY FOREVER 420は、AI音楽、映像、言葉、ブレンダの見極め占いを少しずつ形にしているホームページです。",
+      "HAPPY FOREVER 420は、Japanese Drill、AI Music、パンダラッパー、映像作品、note制作ログを公開している個人プロジェクトです。",
     images: ["/happy-forever-logo.png"],
   },
   robots: {
