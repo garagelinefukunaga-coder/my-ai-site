@@ -229,9 +229,14 @@ export default function Home() {
               YouTube チャンネルで他の動画も見る →
             </a>
 
-            <p className="pt-2 text-xs font-black uppercase tracking-[0.2em] text-amber-100">
-              メインページ
-            </p>
+            <div className="pt-2">
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-100">
+                Main Pages
+              </p>
+              <h2 className="hero-title mt-1 text-2xl font-black text-white">
+                メインページ
+              </h2>
+            </div>
 
             <Link href="/music" className={linkCardClass}>
               <p className="text-sm font-black">HAPPY FOREVER MUSIC</p>
@@ -247,7 +252,17 @@ export default function Home() {
               </p>
             </Link>
 
-            <div className="grid gap-3 sm:grid-cols-2">
+          </section>
+
+          <section className="mt-12">
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-100">
+              Portal Links
+            </p>
+            <h2 className="hero-title mt-1 text-2xl font-black text-white">
+              SNS & Link
+            </h2>
+
+            <div className="mt-5 grid gap-4 sm:grid-cols-2">
               <a
                 href="https://www.youtube.com/shorts/SKl2MPvezDM?si=VkXY6cOOxO_uQ2c_"
                 target="_blank"
@@ -267,18 +282,7 @@ export default function Home() {
                 <p className="text-sm font-black">note制作ログ</p>
                 <p className="text-xs text-emerald-50/70">制作記録・曲解説・考察。</p>
               </a>
-            </div>
-          </section>
 
-          <section className="mt-12">
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-100">
-              Portal Links
-            </p>
-            <h2 className="hero-title mt-1 text-2xl font-black text-white">
-              SNS & Link
-            </h2>
-
-            <div className="mt-5 grid gap-4 sm:grid-cols-2">
               <a href="https://x.com/happyforever420" target="_blank" rel="noreferrer" className={linkCardClass}>
                 <p className="text-sm font-black">X（旧Twitter）</p>
                 <p className="text-xs text-emerald-50/70">日常と思想のログ。</p>
