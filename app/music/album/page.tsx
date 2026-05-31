@@ -69,22 +69,19 @@ export default function AlbumPage() {
             <h1 className="hero-title text-4xl font-black leading-tight tracking-wide sm:text-6xl">
               HAPPY SET ALBUM
             </h1>
-            <p className="mt-4 text-sm font-medium leading-7 text-white/82">
-              老子力学 → 綺麗に咲く花 → note解説の順番で見るページ。
-            </p>
           </div>
 
           <PlaylistLinkBar />
 
           <div>
-            <p className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-rose-100">
-              自分を変える努力
-            </p>
+            <h2 className="hero-title mb-3 text-2xl font-black leading-tight text-white sm:text-3xl">
+              過去の意味が変わる瞬間
+            </h2>
             <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
               <iframe
                 className="h-full w-full"
                 src="https://www.youtube.com/embed/SKl2MPvezDM"
-                title="Panda Rap - 自分を変える努力"
+                title="Panda Rap - 過去の意味が変わる瞬間"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
@@ -100,9 +97,9 @@ export default function AlbumPage() {
           </div>
 
           <div>
-            <p className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-red-100">
-              量子力学、感情コントロール、観測するまでは決まらない
-            </p>
+            <h2 className="hero-title mb-3 text-2xl font-black leading-tight text-white sm:text-3xl">
+              量子力学、感情コントロール、観測するまで未来はわからない
+            </h2>
             <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
               <iframe
                 className="h-full w-full"
@@ -128,9 +125,9 @@ export default function AlbumPage() {
           </div>
 
           <div>
-            <p className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-emerald-100">
-              綺麗に咲く花、赤い目の緑の龍シェンロン
-            </p>
+            <h2 className="hero-title mb-3 text-2xl font-black leading-tight text-white sm:text-3xl">
+              綺麗な花を咲かせて、赤い目の龍シェンロン
+            </h2>
             <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
               <iframe
                 className="h-full w-full"
