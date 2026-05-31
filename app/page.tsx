@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import ShareButtons from "./ShareButtons";
 
@@ -12,6 +13,19 @@ const socialLinks = [
   "https://suno.com/@happyforever42019",
   "https://www.tiktok.com/@happy.farever.420",
 ];
+
+export const metadata: Metadata = {
+  title: "HAPPY FOREVER 420 | Japanese Drill AI Music",
+  description:
+    "HAPPY FOREVER 420は、Japanese Drill、AI Music、パンダラッパー、映像作品、note制作ログ、ブレンダの見極め占いを公開している個人プロジェクトです。Happyは福、Foreverは永。",
+  alternates: {
+    canonical: "/",
+    languages: {
+      ja: "/",
+      en: "/en",
+    },
+  },
+};
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -77,6 +91,58 @@ const structuredData = {
       ],
       sameAs: socialLinks,
     },
+    {
+      "@type": "VideoObject",
+      "@id": "https://happy-forever.vercel.app/#latest-video",
+      name: "自分を変える努力 | HAPPY FOREVER 420",
+      description:
+        "HAPPY FOREVER 420の最新パンダラップ動画。Japanese Drill、AI Music、映像作品として公開しているショート動画です。",
+      thumbnailUrl: [
+        "https://i.ytimg.com/vi/SKl2MPvezDM/maxresdefault.jpg",
+        "https://happy-forever.vercel.app/happy-forever-logo.png",
+      ],
+      embedUrl: "https://www.youtube.com/embed/SKl2MPvezDM",
+      contentUrl: "https://youtube.com/shorts/SKl2MPvezDM",
+      publisher: {
+        "@id": "https://happy-forever.vercel.app/#happy-forever",
+      },
+      inLanguage: "ja",
+      genre: ["Japanese Drill", "AI Music", "Panda Rap"],
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://happy-forever.vercel.app/#main-image",
+      name: "HAPPY FOREVER 420 main visual",
+      contentUrl: "https://happy-forever.vercel.app/happy-forever-logo.png",
+      caption: "HAPPY FOREVER 420 Japanese Drill AI Music main visual",
+      creator: {
+        "@id": "https://happy-forever.vercel.app/#happy-forever",
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://happy-forever.vercel.app/#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: siteUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "HAPPY FOREVER MUSIC",
+          item: "https://happy-forever.vercel.app/music",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "ブレンダの見極め占い",
+          item: "https://happy-forever.vercel.app/blender",
+        },
+      ],
+    },
   ],
 };
 
@@ -107,6 +173,13 @@ export default function Home() {
 
           <section className="space-y-4">
             <ShareButtons />
+
+            <Link href="/en" className={linkCardClass}>
+              <p className="text-sm font-black">English / Global Page</p>
+              <p className="mt-1 text-xs text-emerald-50/70">
+                HAPPY FOREVER 420 in English →
+              </p>
+            </Link>
 
             <div className="rounded-lg border border-white/15 bg-black/20 px-4 py-6 shadow-[0_18px_70px_rgba(0,0,0,0.24)] backdrop-blur-md sm:px-6">
               <div className="max-w-2xl space-y-3 text-sm font-medium leading-7 text-white/86 sm:text-base">

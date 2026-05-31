@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "HAPPY SET ALBUM | HAPPY FOREVER 420",
+  description:
+    "HAPPY FOREVER 420のHAPPY SET ALBUM。自分を変える努力、量子力学と感情コントロール、綺麗に咲く花の動画とnote解説をまとめています。",
+  alternates: {
+    canonical: "/music/album",
+  },
+};
 
 const playlistLinks = [
   {

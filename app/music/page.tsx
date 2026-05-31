@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "HAPPY FOREVER MUSIC | HAPPY FOREVER 420",
+  description:
+    "HAPPY FOREVER 420の音楽ページ。Japanese Drill、AI Music、パンダラップ、SUNOプレイリストをまとめています。",
+  alternates: {
+    canonical: "/music",
+  },
+};
 
 export default function MusicPage() {
   return (

@@ -47,9 +47,6 @@ export const metadata: Metadata = {
   authors: [{ name: "HAPPY FOREVER 420" }],
   creator: "HAPPY FOREVER 420",
   publisher: "HAPPY FOREVER 420",
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: "HAPPY FOREVER 420 | Japanese Drill AI Music",
     description:
