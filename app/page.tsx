@@ -257,14 +257,16 @@ export default function Home() {
             <Link href="/music" className={linkCardClass}>
               <p className="text-sm font-black">HAPPY FOREVER MUSIC</p>
               <p className="mt-1 text-xs text-emerald-50/70">
-                音楽ページへ →
+                HAPPY FOREVER制作音楽ページ →
               </p>
             </Link>
 
             <Link href="/blender" className={linkCardClass}>
               <p className="text-sm font-black">ブレンダの見極め占い</p>
-              <p className="mt-1 text-xs text-emerald-50/70">
-                今週の流れをそっと見極める →
+              <p className="mt-1 text-xs leading-5 text-emerald-50/70">
+                APIなしの簡単版。占いキャラとして作ったブレンダで、まずは勧誘占いから。
+                <br />
+                公式LINEでは、ブレンダを使ってもう少し深く対応します →
               </p>
             </Link>
 
