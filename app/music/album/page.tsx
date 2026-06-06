@@ -75,6 +75,29 @@ export default function AlbumPage() {
 
           <div>
             <h2 className="hero-title mb-3 text-2xl font-black leading-tight text-white sm:text-3xl">
+              努力と成長、能力は未知、1日1日が大事
+            </h2>
+            <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
+              <iframe
+                className="h-full w-full"
+                src="https://www.youtube.com/embed/GvRlRMG7nac"
+                title="Panda Rap - 努力と成長、能力は未知、1日1日が大事"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+            <a
+              href="https://youtube.com/shorts/GvRlRMG7nac?si=fpMF2gddZqE18a5L"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-flex rounded-lg border border-white/25 bg-red-500/45 px-4 py-2 text-sm font-black text-white shadow-[0_0_28px_rgba(239,68,68,0.35)] backdrop-blur-md transition hover:bg-red-400/55"
+            >
+              この動画をYouTubeで見る →
+            </a>
+          </div>
+
+          <div>
+            <h2 className="hero-title mb-3 text-2xl font-black leading-tight text-white sm:text-3xl">
               過去の意味が変わる瞬間
             </h2>
             <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
