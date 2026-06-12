@@ -7,7 +7,7 @@ const linkCardClass =
 
 const siteUrl = "https://happy-forever.vercel.app/";
 const socialLinks = [
-  "https://youtube.com/shorts/GvRlRMG7nac?si=fpMF2gddZqE18a5L",
+  "https://youtube.com/shorts/JC3zIJEdxjM?si=2WFfpVjCnBXngioY",
   "https://x.com/happyforever420",
   "https://note.com/clear_acacia1018",
   "https://suno.com/@happyforever42019",
@@ -94,15 +94,15 @@ const structuredData = {
     {
       "@type": "VideoObject",
       "@id": "https://happy-forever.vercel.app/#latest-video",
-      name: "努力と成長、能力は未知、1日1日が大事 | HAPPY FOREVER 420",
+      name: "ステップバイステップ、自分のペースで | HAPPY FOREVER 420",
       description:
-        "HAPPY FOREVER 420の最新パンダラップ動画。努力と成長、未知の能力、1日1日を大事にする感覚をテーマにしたショート動画です。",
+        "HAPPY FOREVER 420の最新パンダラップ動画。ステップバイステップ、自分のペースで進む感覚をテーマにしたショート動画です。",
       thumbnailUrl: [
-        "https://i.ytimg.com/vi/GvRlRMG7nac/maxresdefault.jpg",
+        "https://i.ytimg.com/vi/JC3zIJEdxjM/maxresdefault.jpg",
         "https://happy-forever.vercel.app/happy-forever-logo.png",
       ],
-      embedUrl: "https://www.youtube.com/embed/GvRlRMG7nac",
-      contentUrl: "https://youtube.com/shorts/GvRlRMG7nac",
+      embedUrl: "https://www.youtube.com/embed/JC3zIJEdxjM",
+      contentUrl: "https://youtube.com/shorts/JC3zIJEdxjM",
       publisher: {
         "@id": "https://happy-forever.vercel.app/#happy-forever",
       },
@@ -213,15 +213,15 @@ export default function Home() {
             <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
               <iframe
                 className="h-full w-full"
-                src="https://www.youtube.com/embed/GvRlRMG7nac"
-                title="Panda Rap - 努力と成長、能力は未知、1日1日が大事"
+                src="https://www.youtube.com/embed/JC3zIJEdxjM"
+                title="Panda Rap - ステップバイステップ、自分のペースで"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
             </div>
 
             <a
-              href="https://youtube.com/shorts/GvRlRMG7nac?si=fpMF2gddZqE18a5L"
+              href="https://youtube.com/shorts/JC3zIJEdxjM?si=2WFfpVjCnBXngioY"
               target="_blank"
               rel="noreferrer"
               className="inline-flex rounded-lg border border-white/25 bg-red-500/45 px-4 py-2 text-sm font-black text-white shadow-[0_0_28px_rgba(239,68,68,0.35)] backdrop-blur-md transition hover:bg-red-400/55"
@@ -266,7 +266,7 @@ export default function Home() {
 
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
               <a
-                href="https://youtube.com/shorts/GvRlRMG7nac?si=fpMF2gddZqE18a5L"
+                href="https://youtube.com/shorts/JC3zIJEdxjM?si=2WFfpVjCnBXngioY"
                 target="_blank"
                 rel="noreferrer"
                 className={linkCardClass}
