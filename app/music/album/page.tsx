@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "HAPPY SET ALBUM | HAPPY FOREVER 420",
@@ -48,7 +47,6 @@ export default function AlbumPage() {
     <main className="forest-rainbow min-h-screen text-white">
       <div className="min-h-screen bg-black/10 px-4 py-12">
         <section className="mx-auto w-full max-w-3xl space-y-6">
-          <Script async src="https://note.com/scripts/embed.js" charSet="utf-8" />
           <div className="flex flex-wrap gap-3">
             <Link
               href="/music"
@@ -98,16 +96,6 @@ export default function AlbumPage() {
             </a>
           </div>
 
-          <div className="overflow-hidden rounded-lg border border-white/20 bg-black/20 px-4 py-4 shadow-[0_14px_48px_rgba(0,0,0,0.24)] backdrop-blur-md">
-            <iframe
-              title="努力と成長、能力は未知、1日1日が大事 note"
-              className="note-embed mx-auto block w-full max-w-[494px]"
-              src="https://note.com/embed/notes/n435facc56999"
-              style={{ border: 0, padding: 0, margin: "10px 0", position: "static", visibility: "visible" }}
-              height="400"
-            />
-          </div>
-
           <div>
             <h2 className="hero-title mb-3 text-2xl font-black leading-tight text-white sm:text-3xl">
               努力と成長、能力は未知、1日1日が大事
@@ -129,14 +117,21 @@ export default function AlbumPage() {
             >
               この動画をYouTubeで見る →
             </a>
-            <a
-              href="https://note.com/clear_acacia1018/n/n435facc56999"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-3 ml-0 inline-flex rounded-lg border border-white/25 bg-white/10 px-4 py-2 text-sm font-black text-white transition hover:border-red-200/80 hover:bg-white/18 sm:ml-3"
-            >
-              この曲の詳しい解説はnoteへ →
-            </a>
+            <div className="mt-4 rounded-lg border border-white/20 bg-black/20 px-4 py-4 shadow-[0_14px_48px_rgba(0,0,0,0.24)] backdrop-blur-md">
+              <p className="text-sm font-medium leading-7 text-white/86">
+                努力と成長、能力は未知、1日1日が大事をテーマにしたパンダラップ。
+                <br />
+                焦らず積み重ねる感覚と、毎日の一歩を大事にする気持ちをnoteにまとめています。
+              </p>
+              <a
+                href="https://note.com/clear_acacia1018/n/n435facc56999"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-3 inline-flex rounded-lg border border-white/25 bg-white/10 px-4 py-2 text-sm font-black text-white transition hover:border-red-200/80 hover:bg-white/18"
+              >
+                この曲の詳しい解説はnoteへ →
+              </a>
+            </div>
           </div>
 
           <div>
