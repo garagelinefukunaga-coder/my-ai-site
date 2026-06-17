@@ -96,7 +96,7 @@ export default function AlbumPage() {
             </a>
             <div className="mt-4 rounded-lg border border-white/20 bg-black/20 px-4 py-4 shadow-[0_14px_48px_rgba(0,0,0,0.24)] backdrop-blur-md">
               <p className="text-sm font-medium leading-7 text-white/86">
-                突破した感覚と、ステップバイステップで進む気持ちをnoteにまとめました。
+                ステップバイステップで自分の位置を確認して、先を見ながらゆっくり登っていく気持ちをnoteにまとめました。
               </p>
               <a
                 href="https://note.com/clear_acacia1018/n/n43558d184a50"
