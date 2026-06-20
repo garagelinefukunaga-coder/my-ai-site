@@ -7,7 +7,7 @@ const linkCardClass =
 
 const siteUrl = "https://happy-forever.vercel.app/";
 const socialLinks = [
-  "https://youtube.com/shorts/JC3zIJEdxjM?si=2WFfpVjCnBXngioY",
+  "https://youtube.com/shorts/ATivnkcRmy8?si=RgnuQo6-eiR1ePOx",
   "https://x.com/happyforever420",
   "https://note.com/clear_acacia1018",
   "https://suno.com/@happyforever42019",
@@ -94,15 +94,15 @@ const structuredData = {
     {
       "@type": "VideoObject",
       "@id": "https://happy-forever.vercel.app/#latest-video",
-      name: "ステップバイステップ、自分のペースで | HAPPY FOREVER 420",
+      name: "理想の自分軸、自分に負けて嫌なやつになるな | HAPPY FOREVER 420",
       description:
-        "HAPPY FOREVER 420の最新パンダラップ動画。ステップバイステップ、自分のペースで進む感覚をテーマにしたショート動画です。",
+        "HAPPY FOREVER 420の最新パンダラップ動画。理想の自分軸を持ち、自分に負けて嫌なやつになるなという思いをテーマにしたショート動画です。",
       thumbnailUrl: [
-        "https://i.ytimg.com/vi/JC3zIJEdxjM/maxresdefault.jpg",
+        "https://i.ytimg.com/vi/ATivnkcRmy8/maxresdefault.jpg",
         "https://happy-forever.vercel.app/happy-forever-logo.png",
       ],
-      embedUrl: "https://www.youtube.com/embed/JC3zIJEdxjM",
-      contentUrl: "https://youtube.com/shorts/JC3zIJEdxjM",
+      embedUrl: "https://www.youtube.com/embed/ATivnkcRmy8",
+      contentUrl: "https://youtube.com/shorts/ATivnkcRmy8",
       publisher: {
         "@id": "https://happy-forever.vercel.app/#happy-forever",
       },
@@ -213,35 +213,21 @@ export default function Home() {
             <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
               <iframe
                 className="h-full w-full"
-                src="https://www.youtube.com/embed/JC3zIJEdxjM"
-                title="Panda Rap - ステップバイステップ、自分のペースで"
+                src="https://www.youtube.com/embed/ATivnkcRmy8"
+                title="Panda Rap - 理想の自分軸、自分に負けて嫌なやつになるな"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
             </div>
 
             <a
-              href="https://youtube.com/shorts/JC3zIJEdxjM?si=2WFfpVjCnBXngioY"
+              href="https://youtube.com/shorts/ATivnkcRmy8?si=RgnuQo6-eiR1ePOx"
               target="_blank"
               rel="noreferrer"
               className="inline-flex rounded-lg border border-white/25 bg-red-500/45 px-4 py-2 text-sm font-black text-white shadow-[0_0_28px_rgba(239,68,68,0.35)] backdrop-blur-md transition hover:bg-red-400/55"
             >
               YouTube チャンネルで他の動画も見る →
             </a>
-
-            <div className="rounded-lg border border-white/20 bg-black/20 px-4 py-4 shadow-[0_14px_48px_rgba(0,0,0,0.24)] backdrop-blur-md">
-              <p className="text-sm font-medium leading-7 text-white/86">
-                ステップバイステップで自分の位置を確認して、先を見ながらゆっくり登っていく気持ちをnoteにまとめました。
-              </p>
-              <a
-                href="https://note.com/clear_acacia1018/n/n43558d184a50"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-3 inline-flex rounded-lg border border-white/25 bg-white/10 px-4 py-2 text-sm font-black text-white transition hover:border-red-200/80 hover:bg-white/18"
-              >
-                最新パンダラップのnoteを読む →
-              </a>
-            </div>
 
             <div className="pt-2">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-100">
@@ -280,7 +266,7 @@ export default function Home() {
 
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
               <a
-                href="https://youtube.com/shorts/JC3zIJEdxjM?si=2WFfpVjCnBXngioY"
+                href="https://youtube.com/shorts/ATivnkcRmy8?si=RgnuQo6-eiR1ePOx"
                 target="_blank"
                 rel="noreferrer"
                 className={linkCardClass}
