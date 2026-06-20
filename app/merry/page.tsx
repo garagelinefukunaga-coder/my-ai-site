@@ -52,8 +52,15 @@ export default function MerryPage() {
               メリーについて
             </h2>
             <div className="mt-4 space-y-3 text-sm font-medium leading-7 text-white/84">
-              <p>秘密の農園から生まれた、メリーのLINEスタンプ販売ページです。</p>
-              <p>しんどい日も、メリーと一緒に笑って生き残るためのスタンプです。</p>
+              <p>
+                メリーは、HAPPY FOREVER 420が最初に作ったカスタムGPTです。
+              </p>
+              <p>
+                HAPPY FOREVERの植物育成を手伝っていましたが、今は仕事がなくなったので、LINEスタンプの販売から新しい活動を始めました。
+              </p>
+              <p>
+                これからも、ほかに売れるものがないか考えながら、できることを少しずつ増やしていきます。
+              </p>
             </div>
           </section>
 
@@ -61,14 +68,16 @@ export default function MerryPage() {
             <p className="text-xs font-black uppercase tracking-[0.18em] text-amber-100">
               LINE Stickers
             </p>
-            <h2 className="hero-title mt-2 text-2xl font-black text-white">
+            <h2 className="hero-title mt-2 text-xl font-black text-white">
               HAPPY FOREVER 420
             </h2>
-            <h3 className="mt-2 text-xl font-black leading-tight text-emerald-100 sm:text-2xl">
+            <h3 className="mt-2 text-base font-black leading-tight text-emerald-100 sm:text-lg">
               しんどい日を笑って生き残れ
             </h3>
             <p className="mt-3 text-sm font-medium leading-7 text-white/84">
-              メリーの言葉で、しんどい日を少し笑いに変えるLINEスタンプです。
+              HAPPY FOREVERパンダ、最初のLINEスタンプです。
+              <br />
+              メリーの言葉で、しんどい日を少し笑いに変えます。
             </p>
             <a
               href="https://line.me/S/sticker/34608183?_from=lcm"
