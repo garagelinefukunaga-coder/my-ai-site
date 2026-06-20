@@ -257,9 +257,9 @@ export default function Home() {
             <Link href="/merry" className={linkCardClass}>
               <p className="text-sm font-black">秘密の農園メリーの販売場</p>
               <p className="mt-1 text-xs leading-5 text-emerald-50/70">
-                秘密の農園から生まれたメリー。
+                HAPPY FOREVER 420「しんどい日を笑って生き残れ」
                 <br />
-                LINEスタンプ販売ページへ →
+                LINEスタンプ販売中 →
               </p>
             </Link>
 

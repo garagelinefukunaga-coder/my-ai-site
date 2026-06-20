@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "秘密の農園メリーの販売場 | HAPPY FOREVER 420",
+  title: "しんどい日を笑って生き残れ | 秘密の農園メリー",
   description:
-    "秘密の農園メリーの紹介とLINEスタンプ販売情報を掲載するHAPPY FOREVER 420の公式ページです。",
+    "HAPPY FOREVER 420のLINEスタンプ「しんどい日を笑って生き残れ」を販売する、秘密の農園メリーの公式ページです。",
   alternates: {
     canonical: "/merry",
   },
@@ -40,7 +40,7 @@ export default function MerryPage() {
             </h2>
             <div className="mt-4 space-y-3 text-sm font-medium leading-7 text-white/84">
               <p>秘密の農園から生まれた、メリーのLINEスタンプ販売ページです。</p>
-              <p>メリーの物語や詳しい紹介を、ここに掲載していきます。</p>
+              <p>しんどい日も、メリーと一緒に笑って生き残るためのスタンプです。</p>
             </div>
           </section>
 
@@ -49,14 +49,22 @@ export default function MerryPage() {
               LINE Stickers
             </p>
             <h2 className="hero-title mt-2 text-2xl font-black text-white">
-              メリーのLINEスタンプ
+              HAPPY FOREVER 420
             </h2>
+            <h3 className="mt-2 text-xl font-black leading-tight text-emerald-100 sm:text-2xl">
+              しんどい日を笑って生き残れ
+            </h3>
             <p className="mt-3 text-sm font-medium leading-7 text-white/84">
-              販売ページへのリンクを準備しています。
+              メリーの言葉で、しんどい日を少し笑いに変えるLINEスタンプです。
             </p>
-            <span className="mt-4 inline-flex cursor-not-allowed rounded-lg border border-white/15 bg-white/5 px-4 py-2 text-sm font-black text-white/55">
-              LINEスタンプ販売ページ 準備中
-            </span>
+            <a
+              href="https://line.me/S/sticker/34608183?_from=lcm"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex rounded-lg border border-white/25 bg-[#06c755]/80 px-4 py-3 text-sm font-black text-white shadow-[0_0_28px_rgba(6,199,85,0.25)] transition hover:bg-[#06c755]"
+            >
+              LINEスタンプ販売ページを見る →
+            </a>
           </section>
         </section>
       </div>
