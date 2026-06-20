@@ -34,6 +34,19 @@ export default function MerryPage() {
             </p>
           </header>
 
+          <a
+            href="https://line.me/S/sticker/34608183?_from=lcm"
+            target="_blank"
+            rel="noreferrer"
+            className="block overflow-hidden rounded-lg border border-white/20 bg-black/25 shadow-[0_20px_70px_rgba(0,0,0,0.38)] transition hover:border-emerald-200/70"
+          >
+            <img
+              src="/merry-sticker-shop.png"
+              alt="秘密の農園メリー しんどい日を笑って生き残れ LINEスタンプ"
+              className="block w-full object-cover"
+            />
+          </a>
+
           <section className="rounded-lg border border-white/20 bg-black/20 px-4 py-5 shadow-[0_18px_55px_rgba(0,0,0,0.3)] backdrop-blur-md sm:px-6">
             <h2 className="hero-title text-2xl font-black text-white">
               メリーについて
