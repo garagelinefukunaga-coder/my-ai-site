@@ -64,20 +64,18 @@ export default function MerryPage() {
             </div>
           </section>
 
-          <section className="rounded-lg border border-white/20 bg-black/20 px-4 py-5 shadow-[0_18px_55px_rgba(0,0,0,0.3)] backdrop-blur-md sm:px-6">
+          <section className="rounded-lg border border-white/20 bg-black/20 px-4 py-4 shadow-[0_18px_55px_rgba(0,0,0,0.3)] backdrop-blur-md sm:px-5">
             <p className="text-xs font-black uppercase tracking-[0.18em] text-amber-100">
               LINE Stickers
             </p>
-            <h2 className="hero-title mt-2 text-xl font-black text-white">
-              HAPPY FOREVER 420
+            <h2 className="mt-2 text-base font-black leading-6 text-white">
+              HAPPY FOREVERパンダ、最初のLINEスタンプ
             </h2>
-            <h3 className="mt-2 text-base font-black leading-tight text-emerald-100 sm:text-lg">
+            <h3 className="mt-1 text-sm font-black leading-6 text-emerald-100 sm:text-base">
               しんどい日を笑って生き残れ
             </h3>
-            <p className="mt-3 text-sm font-medium leading-7 text-white/84">
-              HAPPY FOREVERパンダ、最初のLINEスタンプです。
-              <br />
-              メリーの言葉で、しんどい日を少し笑いに変えます。
+            <p className="mt-2 text-xs font-medium leading-6 text-white/78 sm:text-sm">
+              メリーの言葉で、しんどい日を少し笑いに変えるスタンプです。
             </p>
             <a
               href="https://line.me/S/sticker/34608183?_from=lcm"
