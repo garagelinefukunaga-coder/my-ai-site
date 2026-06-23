@@ -41,6 +41,9 @@ export const metadata: Metadata = {
     "映像作品",
     "note制作ログ",
     "ブレンダの見極め占い",
+    "秘密の農園メリー",
+    "LINEスタンプ",
+    "しんどい日を笑って生き残れ",
     "量子力学",
     "感情コントロール",
   ],
@@ -58,9 +61,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/happy-forever-logo.png",
-        width: 1254,
-        height: 1254,
-        alt: "HAPPY FOREVER 420 logo",
+        width: 1536,
+        height: 1024,
+        alt: "HAPPY FOREVER 420 main visual",
       },
     ],
   },
