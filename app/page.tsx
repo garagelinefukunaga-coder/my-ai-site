@@ -103,6 +103,8 @@ const structuredData = {
       ],
       embedUrl: "https://www.youtube.com/embed/ATivnkcRmy8",
       contentUrl: "https://youtube.com/shorts/ATivnkcRmy8",
+      uploadDate: "2026-06-18T22:59:49-07:00",
+      duration: "PT1M40S",
       publisher: {
         "@id": "https://happy-forever.vercel.app/#happy-forever",
       },
