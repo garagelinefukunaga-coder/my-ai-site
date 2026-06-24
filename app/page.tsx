@@ -261,6 +261,13 @@ export default function Home() {
               </p>
             </Link>
 
+
+            <Link href="/about" className={linkCardClass}>
+              <p className="text-sm font-black">HAPPY FOREVER 420について</p>
+              <p className="mt-1 text-xs leading-5 text-emerald-50/70">
+                パンダラップを始めた理由と、作りながら成長していく自己紹介 →
+              </p>
+            </Link>
             <Link href="/blender" className={linkCardClass}>
               <p className="text-sm font-black">ブレンダの見極め占い</p>
               <p className="mt-1 text-xs leading-5 text-emerald-50/70">
@@ -281,6 +288,29 @@ export default function Home() {
 
           </section>
 
+
+          <section className="mt-12 rounded-lg border border-white/15 bg-black/20 px-4 py-6 shadow-[0_18px_70px_rgba(0,0,0,0.24)] backdrop-blur-md sm:px-6">
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-100">
+              About HAPPY FOREVER 420
+            </p>
+            <h2 className="hero-title mt-1 text-2xl font-black text-white">
+              HAPPY FOREVER 420について
+            </h2>
+            <div className="mt-4 space-y-3 text-sm font-medium leading-7 text-white/86 sm:text-base">
+              <p>
+                最初は、なんとなくラップを歌うパンダがいたら面白そうやと思って作り始めました。
+              </p>
+              <p>
+                遊びながら作り続けているうちに、音楽、映像、言葉、キャラクターが少しずつ形になってきました。
+              </p>
+            </div>
+            <Link
+              href="/about"
+              className="mt-4 inline-flex rounded-lg border border-white/25 bg-white/10 px-4 py-2 text-sm font-black text-white transition hover:border-red-200/80 hover:bg-white/18"
+            >
+              自己紹介を読む →
+            </Link>
+          </section>
           <section className="mt-12">
             <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-100">
               Portal Links
@@ -365,3 +395,4 @@ export default function Home() {
     </main>
   );
 }
+
