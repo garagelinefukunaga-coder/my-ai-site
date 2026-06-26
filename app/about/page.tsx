@@ -14,25 +14,52 @@ export const metadata: Metadata = {
 
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "AboutPage",
-  "@id": `${siteUrl}/about#about`,
-  url: `${siteUrl}/about`,
-  name: "HAPPY FOREVER 420について",
-  description:
-    "HAPPY FOREVER 420がパンダラップを作り始めた理由と、AI音楽、映像、note制作ログを続ける個人プロジェクトの自己紹介。",
-  inLanguage: "ja",
-  isPartOf: {
-    "@id": `${siteUrl}/#website`,
-  },
-  about: {
-    "@type": "Person",
-    "@id": `${siteUrl}/#happy-forever`,
-    name: "HAPPY FOREVER 420",
-    alternateName: "Happyforever 420 / 福永",
-    url: siteUrl,
-    image: `${siteUrl}/happy-forever-logo.png`,
-    knowsAbout: ["Japanese Drill", "AI音楽", "パンダラップ", "映像作品", "note制作ログ"],
-  },
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": `${siteUrl}/about#about`,
+      url: `${siteUrl}/about`,
+      name: "HAPPY FOREVER 420について",
+      description:
+        "HAPPY FOREVER 420がパンダラップを作り始めた理由と、AI音楽、映像、note制作ログを続ける個人プロジェクトの自己紹介。",
+      inLanguage: "ja",
+      isPartOf: {
+        "@id": `${siteUrl}/#website`,
+      },
+      about: {
+        "@type": "Person",
+        "@id": `${siteUrl}/#happy-forever`,
+        name: "HAPPY FOREVER 420",
+        alternateName: "Happyforever 420 / 福永",
+        url: siteUrl,
+        image: `${siteUrl}/happy-forever-logo.png`,
+        knowsAbout: [
+          "Japanese Drill",
+          "AI音楽",
+          "パンダラップ",
+          "映像作品",
+          "note制作ログ",
+        ],
+      },
+      video: {
+        "@id": `${siteUrl}/about#intro-video`,
+      },
+    },
+    {
+      "@type": "VideoObject",
+      "@id": `${siteUrl}/about#intro-video`,
+      name: "HAPPY FOREVER 420 紹介動画",
+      description:
+        "HAPPY FOREVER 420の自己紹介ページに掲載している、パンダラップとAI音楽の紹介動画です。",
+      thumbnailUrl: [`${siteUrl}/happy-forever-logo.png`],
+      contentUrl: `${siteUrl}/happy-forever-introduction.mp4`,
+      uploadDate: "2026-06-26T11:04:57+09:00",
+      publisher: {
+        "@id": `${siteUrl}/#happy-forever`,
+      },
+      inLanguage: "ja",
+    },
+  ],
 };
 
 export default function AboutPage() {
@@ -58,6 +85,18 @@ export default function AboutPage() {
             <h1 className="hero-title text-3xl font-black leading-tight tracking-wide text-white sm:text-5xl">
               HAPPY FOREVER 420について
             </h1>
+          </section>
+
+          <section className="mt-5 overflow-hidden rounded-lg border border-white/20 bg-black/35 shadow-[0_18px_70px_rgba(0,0,0,0.34)] backdrop-blur-sm">
+            <video
+              className="block w-full"
+              controls
+              playsInline
+              preload="metadata"
+              poster="/happy-forever-logo.png"
+            >
+              <source src="/happy-forever-introduction.mp4" type="video/mp4" />
+            </video>
           </section>
 
           <section className="mt-5 rounded-lg border border-white/15 bg-black/20 px-4 py-6 shadow-[0_18px_70px_rgba(0,0,0,0.24)] backdrop-blur-md sm:px-6">
