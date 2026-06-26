@@ -51,7 +51,7 @@ const structuredData = {
       name: "HAPPY FOREVER 420 紹介動画",
       description:
         "HAPPY FOREVER 420の自己紹介ページに掲載している、パンダラップとAI音楽の紹介動画です。",
-      thumbnailUrl: [`${siteUrl}/happy-forever-logo.png`],
+      thumbnailUrl: [`${siteUrl}/happy-forever-introduction-poster.jpg`],
       contentUrl: `${siteUrl}/happy-forever-introduction.mp4`,
       uploadDate: "2026-06-26T11:04:57+09:00",
       publisher: {
@@ -93,7 +93,7 @@ export default function AboutPage() {
               controls
               playsInline
               preload="metadata"
-              poster="/happy-forever-logo.png"
+              poster="/happy-forever-introduction-poster.jpg"
             >
               <source src="/happy-forever-introduction.mp4" type="video/mp4" />
             </video>
