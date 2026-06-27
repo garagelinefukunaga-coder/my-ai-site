@@ -7,7 +7,7 @@ const linkCardClass =
 
 const siteUrl = "https://happy-forever.vercel.app/";
 const socialLinks = [
-  "https://youtube.com/shorts/ZE72hBtFzi8?si=OHUyIJZkiUqFAA83",
+  "https://www.youtube.com/shorts/ZE72hBtFzi8",
   "https://x.com/happyforever420",
   "https://note.com/clear_acacia1018",
   "https://suno.com/@happyforever42019",
@@ -212,29 +212,18 @@ export default function Home() {
               </p>
             </div>
 
-            <a
-              href="https://youtube.com/shorts/ZE72hBtFzi8?si=OHUyIJZkiUqFAA83"
-              target="_blank"
-              rel="noreferrer"
-              className="group relative mx-auto block aspect-[9/16] w-full max-w-sm overflow-hidden rounded-lg border border-white/20 bg-black/60 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm"
-              aria-label="ハッピーじゃないし、未来へ繋ぐ意志をYouTubeで見る"
-            >
-              <img
-                src="/latest-panda-rap-thumbnail.jpg"
-                alt="ハッピーじゃないし、未来へ繋ぐ意志"
-                className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
+            <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
+              <iframe
+                className="h-full w-full"
+                src="https://www.youtube.com/embed/ZE72hBtFzi8?rel=0&playsinline=1"
+                title="Panda Rap - ハッピーじゃないし、未来へ繋ぐ意志"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
               />
-              <span className="absolute inset-0 bg-black/12 transition group-hover:bg-black/4" />
-              <span className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-red-500/90 text-2xl font-black text-white shadow-[0_0_30px_rgba(239,68,68,0.55)] transition group-hover:bg-red-400">
-                ▶
-              </span>
-              <span className="absolute bottom-4 left-4 right-4 rounded-lg border border-white/20 bg-black/55 px-3 py-2 text-sm font-black text-white backdrop-blur-sm">
-                YouTubeで見る
-              </span>
-            </a>
+            </div>
 
             <a
-              href="https://youtube.com/shorts/ZE72hBtFzi8?si=OHUyIJZkiUqFAA83"
+              href="https://www.youtube.com/shorts/ZE72hBtFzi8"
               target="_blank"
               rel="noreferrer"
               className="inline-flex rounded-lg border border-white/25 bg-red-500/45 px-4 py-2 text-sm font-black text-white shadow-[0_0_28px_rgba(239,68,68,0.35)] backdrop-blur-md transition hover:bg-red-400/55"
@@ -318,7 +307,7 @@ export default function Home() {
 
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
               <a
-                href="https://youtube.com/shorts/ZE72hBtFzi8?si=OHUyIJZkiUqFAA83"
+                href="https://www.youtube.com/shorts/ZE72hBtFzi8"
                 target="_blank"
                 rel="noreferrer"
                 className={linkCardClass}
