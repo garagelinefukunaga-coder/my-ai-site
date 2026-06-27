@@ -212,7 +212,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
+            <div className="mx-auto aspect-[9/16] w-full max-w-sm overflow-hidden rounded-lg border border-white/20 bg-black/60 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
               <iframe
                 className="h-full w-full"
                 src="https://www.youtube.com/embed/ZE72hBtFzi8"

@@ -77,7 +77,7 @@ export default function AlbumPage() {
             <h2 className="hero-title mb-3 text-2xl font-black leading-tight text-white sm:text-3xl">
               ハッピーじゃないし、未来へ繋ぐ意志
             </h2>
-            <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
+            <div className="mx-auto aspect-[9/16] w-full max-w-sm overflow-hidden rounded-lg border border-white/20 bg-black/60 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
               <iframe
                 className="h-full w-full"
                 src="https://www.youtube.com/embed/ZE72hBtFzi8"
