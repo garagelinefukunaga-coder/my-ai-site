@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "HAPPY FOREVER MUSIC | HAPPY FOREVER 420",
   description:
-    "HAPPY FOREVER 420の音楽ページ。HAPPY SET ALBUM、J-POP Mix、リリックAI仕様アルバムなど、Japanese Drill、AI Music、パンダラップ、SUNOプレイリストをまとめています。",
+    "HAPPY FOREVER 420の音楽ページ。HAPPY SET ALBUM、狂気のピエロ、J-POP Mix、リリックAI仕様アルバムなど、Japanese Drill、AI Music、パンダラップ、SUNOプレイリストをまとめています。",
   alternates: {
     canonical: "/music",
   },
@@ -47,6 +47,21 @@ export default function MusicPage() {
               次のページへ →
             </p>
           </Link>
+
+          <a
+            href="https://suno.com/playlist/2399334a-c8fc-45bc-8c0f-8eb67a10b937"
+            target="_blank"
+            rel="noreferrer"
+            className="glass-link block rounded-lg border border-white/25 px-4 py-4 text-white shadow-[0_0_28px_rgba(245,158,11,0.16)] transition hover:-translate-y-0.5 hover:border-red-200/80 hover:bg-white/15"
+          >
+            <p className="text-sm font-black">狂気のピエロ（SUNO）</p>
+            <p className="mt-2 text-sm font-medium leading-6 text-white/82">
+              HAPPYパンダとは別ライン。AIを使って、少し毒舌めの機械音声と危ない雰囲気のラップを作ってみました。
+            </p>
+            <p className="mt-2 text-xs text-emerald-50/70">
+              SUNOの狂気のピエロへ →
+            </p>
+          </a>
 
           <a
             href="https://suno.com/playlist/f80cbfe2-59e7-4583-b693-bb75ddb2a48f"
