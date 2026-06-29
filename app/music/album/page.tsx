@@ -94,6 +94,19 @@ export default function AlbumPage() {
             >
               この動画をYouTubeで見る →
             </a>
+            <div className="mt-4 rounded-lg border border-white/20 bg-black/20 px-4 py-4 shadow-[0_14px_48px_rgba(0,0,0,0.24)] backdrop-blur-md">
+              <p className="text-sm font-medium leading-7 text-white/86">
+                ハッピーじゃないし、未来へ繋ぐ意志について、曲の考え方と制作の流れをnoteにまとめました。
+              </p>
+              <a
+                href="https://note.com/clear_acacia1018/n/n925a3afbd85d"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-3 inline-flex rounded-lg border border-white/25 bg-white/10 px-4 py-2 text-sm font-black text-white transition hover:border-red-200/80 hover:bg-white/18"
+              >
+                この曲の詳しい解説はnoteへ →
+              </a>
+            </div>
           </div>
 
           <div>
