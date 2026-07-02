@@ -64,19 +64,22 @@ export default function MerryPage() {
             </div>
           </section>
 
+          <div className="pt-2">
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-100">
+              Sticker Shop
+            </p>
+            <h2 className="hero-title mt-1 text-2xl font-black text-white">
+              HAPPY FOREVERパンダ・ハピパン LINEスタンプ販売まとめ
+            </h2>
+          </div>
+
           <section className="rounded-lg border border-white/20 bg-black/20 px-4 py-4 shadow-[0_18px_55px_rgba(0,0,0,0.3)] backdrop-blur-md sm:px-5">
             <p className="text-xs font-black uppercase tracking-[0.18em] text-amber-100">
               LINE Stickers
             </p>
             <h2 className="mt-2 text-base font-black leading-6 text-white">
-              HAPPY FOREVERパンダ LINEスタンプ販売ページ
-            </h2>
-            <h3 className="mt-1 text-sm font-black leading-6 text-emerald-100 sm:text-base">
               HAPPY FOREVERパンダ「しんどい日を笑って生き残れ」
-            </h3>
-            <p className="mt-2 text-xs font-medium leading-6 text-white/78 sm:text-sm">
-              メリーの言葉で、しんどい日を少し笑いに変えるスタンプです。
-            </p>
+            </h2>
             <a
               href="https://line.me/S/sticker/34608183?_from=lcm"
               target="_blank"
@@ -95,7 +98,7 @@ export default function MerryPage() {
               ハピパンスタンプライト1
             </h2>
             <p className="mt-2 text-xs font-medium leading-6 text-white/78 sm:text-sm">
-              ハピパンスタンプライト1のLINEスタンプ販売ページです。
+              低価格ライト版のLINEスタンプ販売ページです。
             </p>
             <a
               href="https://store.line.me/stickershop/product/34719629/ja?from=sticker"
