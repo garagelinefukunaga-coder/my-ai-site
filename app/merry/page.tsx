@@ -64,51 +64,23 @@ export default function MerryPage() {
             </div>
           </section>
 
-          <div className="pt-2">
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-100">
+          <Link
+            href="/merry/stickers"
+            className="block rounded-lg border border-white/20 bg-black/20 px-4 py-5 shadow-[0_18px_55px_rgba(0,0,0,0.3)] backdrop-blur-md transition hover:-translate-y-0.5 hover:border-emerald-200/70 hover:bg-white/12 sm:px-5"
+          >
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-amber-100">
               Sticker Shop
             </p>
-            <h2 className="hero-title mt-1 text-2xl font-black text-white">
+            <h2 className="hero-title mt-2 text-2xl font-black leading-tight text-white">
               HAPPY FOREVERパンダ・ハピパン LINEスタンプ販売まとめ
             </h2>
-          </div>
-
-          <section className="rounded-lg border border-white/20 bg-black/20 px-4 py-4 shadow-[0_18px_55px_rgba(0,0,0,0.3)] backdrop-blur-md sm:px-5">
-            <p className="text-xs font-black uppercase tracking-[0.18em] text-amber-100">
-              LINE Stickers
+            <p className="mt-2 text-sm font-medium leading-7 text-white/80">
+              ハピパンのLINEスタンプ販売ページをまとめたページへ。
             </p>
-            <h2 className="mt-2 text-base font-black leading-6 text-white">
-              HAPPY FOREVERパンダ「しんどい日を笑って生き残れ」
-            </h2>
-            <a
-              href="https://line.me/S/sticker/34608183?_from=lcm"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-4 inline-flex rounded-lg border border-white/25 bg-[#06c755]/80 px-4 py-3 text-sm font-black text-white shadow-[0_0_28px_rgba(6,199,85,0.25)] transition hover:bg-[#06c755]"
-            >
-              LINEスタンプ販売ページを見る →
-            </a>
-          </section>
-
-          <section className="rounded-lg border border-white/20 bg-black/20 px-4 py-4 shadow-[0_18px_55px_rgba(0,0,0,0.3)] backdrop-blur-md sm:px-5">
-            <p className="text-xs font-black uppercase tracking-[0.18em] text-amber-100">
-              LINE Stickers
+            <p className="mt-3 text-sm font-black text-emerald-100">
+              販売まとめを見る →
             </p>
-            <h2 className="mt-2 text-base font-black leading-6 text-white">
-              ハピパンスタンプライト1
-            </h2>
-            <p className="mt-2 text-xs font-medium leading-6 text-white/78 sm:text-sm">
-              低価格ライト版のLINEスタンプ販売ページです。
-            </p>
-            <a
-              href="https://store.line.me/stickershop/product/34719629/ja?from=sticker"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-4 inline-flex rounded-lg border border-white/25 bg-[#06c755]/80 px-4 py-3 text-sm font-black text-white shadow-[0_0_28px_rgba(6,199,85,0.25)] transition hover:bg-[#06c755]"
-            >
-              ハピパンスタンプライト1を販売ページで見る →
-            </a>
-          </section>
+          </Link>
         </section>
       </div>
     </main>
