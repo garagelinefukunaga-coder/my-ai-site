@@ -69,10 +69,10 @@ export default function MerryPage() {
               LINE Stickers
             </p>
             <h2 className="mt-2 text-base font-black leading-6 text-white">
-              HAPPY FOREVERパンダ、最初のLINEスタンプ
+              HAPPY FOREVERパンダ LINEスタンプ販売ページ
             </h2>
             <h3 className="mt-1 text-sm font-black leading-6 text-emerald-100 sm:text-base">
-              しんどい日を笑って生き残れ
+              HAPPY FOREVERパンダ「しんどい日を笑って生き残れ」
             </h3>
             <p className="mt-2 text-xs font-medium leading-6 text-white/78 sm:text-sm">
               メリーの言葉で、しんどい日を少し笑いに変えるスタンプです。
@@ -92,10 +92,10 @@ export default function MerryPage() {
               LINE Stickers
             </p>
             <h2 className="mt-2 text-base font-black leading-6 text-white">
-              新しいLINEスタンプ販売ページ
+              ハピパンスタンプライト1
             </h2>
             <p className="mt-2 text-xs font-medium leading-6 text-white/78 sm:text-sm">
-              メリーの販売場に、新しいスタンプの販売ページも追加しました。
+              ハピパンスタンプライト1のLINEスタンプ販売ページです。
             </p>
             <a
               href="https://store.line.me/stickershop/product/34719629/ja?from=sticker"
@@ -103,7 +103,7 @@ export default function MerryPage() {
               rel="noreferrer"
               className="mt-4 inline-flex rounded-lg border border-white/25 bg-[#06c755]/80 px-4 py-3 text-sm font-black text-white shadow-[0_0_28px_rgba(6,199,85,0.25)] transition hover:bg-[#06c755]"
             >
-              LINEスタンプ販売ページを見る →
+              ハピパンスタンプライト1を販売ページで見る →
             </a>
           </section>
         </section>
