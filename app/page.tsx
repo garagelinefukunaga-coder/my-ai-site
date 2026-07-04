@@ -7,7 +7,7 @@ const linkCardClass =
 
 const siteUrl = "https://happy-forever.vercel.app/";
 const socialLinks = [
-  "https://www.youtube.com/shorts/ZE72hBtFzi8",
+  "https://www.youtube.com/shorts/qIidO9DCRfI",
   "https://x.com/happyforever420",
   "https://note.com/clear_acacia1018",
   "https://suno.com/@happyforever42019",
@@ -94,17 +94,16 @@ const structuredData = {
     {
       "@type": "VideoObject",
       "@id": "https://happy-forever.vercel.app/#latest-video",
-      name: "ハッピーじゃないし、未来へ繋ぐ意志 | HAPPY FOREVER 420",
+      name: "景色は変わる感じ方一つで | HAPPY FOREVER 420",
       description:
-        "HAPPY FOREVER 420の最新パンダラップ動画。ハッピーじゃないし、未来へ繋ぐ意志をテーマにしたショート動画です。",
+        "HAPPY FOREVER 420の最新パンダラップ動画。景色は変わる感じ方一つでをテーマにしたショート動画です。",
       thumbnailUrl: [
-        "https://happy-forever.vercel.app/latest-panda-rap-thumbnail.jpg",
+        "https://i.ytimg.com/vi/qIidO9DCRfI/hqdefault.jpg",
         "https://happy-forever.vercel.app/happy-forever-logo.png",
       ],
-      embedUrl: "https://www.youtube.com/embed/ZE72hBtFzi8",
-      contentUrl: "https://youtube.com/shorts/ZE72hBtFzi8",
-      uploadDate: "2026-06-25T23:00:25-07:00",
-      duration: "PT1M49S",
+      embedUrl: "https://www.youtube.com/embed/qIidO9DCRfI",
+      contentUrl: "https://www.youtube.com/shorts/qIidO9DCRfI",
+      uploadDate: "2026-07-04T00:00:00+09:00",
       publisher: {
         "@id": "https://happy-forever.vercel.app/#happy-forever",
       },
@@ -215,35 +214,21 @@ export default function Home() {
             <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
               <iframe
                 className="h-full w-full"
-                src="https://www.youtube.com/embed/ZE72hBtFzi8?rel=0&playsinline=1"
-                title="Panda Rap - ハッピーじゃないし、未来へ繋ぐ意志"
+                src="https://www.youtube.com/embed/qIidO9DCRfI?rel=0&playsinline=1"
+                title="Panda Rap - 景色は変わる感じ方一つで"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
             </div>
 
             <a
-              href="https://www.youtube.com/shorts/ZE72hBtFzi8"
+              href="https://www.youtube.com/shorts/qIidO9DCRfI"
               target="_blank"
               rel="noreferrer"
               className="inline-flex rounded-lg border border-white/25 bg-red-500/45 px-4 py-2 text-sm font-black text-white shadow-[0_0_28px_rgba(239,68,68,0.35)] backdrop-blur-md transition hover:bg-red-400/55"
             >
               YouTube チャンネルで他の動画も見る →
             </a>
-
-            <div className="rounded-lg border border-white/20 bg-black/20 px-4 py-4 shadow-[0_14px_48px_rgba(0,0,0,0.24)] backdrop-blur-md">
-              <p className="text-sm font-medium leading-7 text-white/86">
-                ハッピーじゃないし、未来へ繋ぐ意志について、曲の考え方と制作の流れをnoteにまとめました。
-              </p>
-              <a
-                href="https://note.com/clear_acacia1018/n/n925a3afbd85d"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-3 inline-flex rounded-lg border border-white/25 bg-white/10 px-4 py-2 text-sm font-black text-white transition hover:border-red-200/80 hover:bg-white/18"
-              >
-                最新パンダラップのnoteを読む →
-              </a>
-            </div>
 
             <div className="pt-2">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-100">
@@ -321,7 +306,7 @@ export default function Home() {
 
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
               <a
-                href="https://www.youtube.com/shorts/ZE72hBtFzi8"
+                href="https://www.youtube.com/shorts/qIidO9DCRfI"
                 target="_blank"
                 rel="noreferrer"
                 className={linkCardClass}
