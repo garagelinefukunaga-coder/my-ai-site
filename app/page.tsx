@@ -7,7 +7,7 @@ const linkCardClass =
 
 const siteUrl = "https://happy-forever.vercel.app/";
 const socialLinks = [
-  "https://www.youtube.com/shorts/qIidO9DCRfI",
+  "https://www.youtube.com/watch?v=6urmDrJyM1g",
   "https://x.com/happyforever420",
   "https://note.com/clear_acacia1018",
   "https://suno.com/@happyforever42019",
@@ -94,21 +94,21 @@ const structuredData = {
     {
       "@type": "VideoObject",
       "@id": "https://happy-forever.vercel.app/#latest-video",
-      name: "景色は変わる感じ方一つで | HAPPY FOREVER 420",
+      name: "狂気のピエロ | HAPPY FOREVER 420",
       description:
-        "HAPPY FOREVER 420の最新パンダラップ動画。景色は変わる感じ方一つでをテーマにしたショート動画です。",
+        "HAPPY FOREVER 420の最新動画。狂気のピエロをテーマにした映像です。",
       thumbnailUrl: [
-        "https://i.ytimg.com/vi/qIidO9DCRfI/hqdefault.jpg",
+        "https://i.ytimg.com/vi/6urmDrJyM1g/hqdefault.jpg",
         "https://happy-forever.vercel.app/happy-forever-logo.png",
       ],
-      embedUrl: "https://www.youtube.com/embed/qIidO9DCRfI",
-      contentUrl: "https://www.youtube.com/shorts/qIidO9DCRfI",
-      uploadDate: "2026-07-04T00:00:00+09:00",
+      embedUrl: "https://www.youtube.com/embed/6urmDrJyM1g",
+      contentUrl: "https://www.youtube.com/watch?v=6urmDrJyM1g",
+      uploadDate: "2026-07-13T00:00:00+09:00",
       publisher: {
         "@id": "https://happy-forever.vercel.app/#happy-forever",
       },
       inLanguage: "ja",
-      genre: ["Japanese Drill", "AI Music", "Panda Rap"],
+      genre: ["Japanese Drill", "AI Music", "SUNO"],
     },
     {
       "@type": "ImageObject",
@@ -204,7 +204,7 @@ export default function Home() {
                 Featured Short
               </p>
               <h2 className="hero-title mt-1 text-2xl font-black text-white">
-                最新のパンダラップ動画
+                最新の動画
               </h2>
               <p className="mt-2 text-sm font-medium text-white/80">
                 YouTubeに上げた短いの中から、今一番見てほしいやつ。
@@ -214,21 +214,13 @@ export default function Home() {
             <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
               <iframe
                 className="h-full w-full"
-                src="https://www.youtube.com/embed/qIidO9DCRfI?rel=0&playsinline=1"
-                title="Panda Rap - 景色は変わる感じ方一つで"
+                src="https://www.youtube.com/embed/6urmDrJyM1g?si=aKxXNw-vrA43ENvX&rel=0&playsinline=1"
+                title="狂気のピエロ"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
               />
             </div>
-
-            <a
-              href="https://www.youtube.com/shorts/qIidO9DCRfI"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex rounded-lg border border-white/25 bg-red-500/45 px-4 py-2 text-sm font-black text-white shadow-[0_0_28px_rgba(239,68,68,0.35)] backdrop-blur-md transition hover:bg-red-400/55"
-            >
-              YouTube チャンネルで他の動画も見る →
-            </a>
 
             <div className="pt-2">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-100">
@@ -306,13 +298,13 @@ export default function Home() {
 
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
               <a
-                href="https://www.youtube.com/shorts/qIidO9DCRfI"
+                href="https://www.youtube.com/watch?v=6urmDrJyM1g"
                 target="_blank"
                 rel="noreferrer"
                 className={linkCardClass}
               >
                 <p className="text-sm font-black">YouTube</p>
-                <p className="text-xs text-emerald-50/70">最新のパンダラップ動画。</p>
+                <p className="text-xs text-emerald-50/70">最新の動画。</p>
               </a>
 
               <a
