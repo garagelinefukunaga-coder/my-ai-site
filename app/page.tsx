@@ -17,7 +17,7 @@ const socialLinks = [
 export const metadata: Metadata = {
   title: "HAPPY FOREVER 420 | Japanese Drill AI Music",
   description:
-    "HAPPY FOREVER 420は、Japanese Drill、AI Music、パンダラッパー、映像作品、note制作ログ、ブレンダの見極め占いを公開している個人プロジェクトです。Happyは福、Foreverは永。",
+    "HAPPY FOREVER 420は、Japanese Drill、AI Music、パンダラッパー、映像作品、note制作ログ、ブレンダのツール置き場を公開している個人プロジェクトです。Happyは福、Foreverは永。",
   alternates: {
     canonical: "/",
     languages: {
@@ -39,7 +39,7 @@ const structuredData = {
       image: "https://happy-forever.vercel.app/happy-forever-logo.png",
       inLanguage: "ja",
       description:
-        "HAPPY FOREVER 420は、Japanese Drill、AI Music、パンダラッパー、映像作品、note制作ログ、ブレンダの見極め占いを公開している個人プロジェクトです。Happyは福、Foreverは永。",
+        "HAPPY FOREVER 420は、Japanese Drill、AI Music、パンダラッパー、映像作品、note制作ログ、ブレンダのツール置き場を公開している個人プロジェクトです。Happyは福、Foreverは永。",
     },
     {
       "@type": "Person",
@@ -56,7 +56,7 @@ const structuredData = {
         "パンダラッパー",
         "映像",
         "note制作ログ",
-        "ブレンダの見極め占い",
+        "ブレンダのツール置き場",
         "量子力学",
         "感情コントロール",
       ],
@@ -87,7 +87,7 @@ const structuredData = {
         "パンダラッパー",
         "映像作品",
         "note制作ログ",
-        "ブレンダの見極め占い",
+        "ブレンダのツール置き場",
       ],
       sameAs: socialLinks,
     },
@@ -139,7 +139,7 @@ const structuredData = {
         {
           "@type": "ListItem",
           position: 3,
-          name: "ブレンダの見極め占い",
+          name: "ブレンダのツール置き場",
           item: "https://happy-forever.vercel.app/blender",
         },
       ],
@@ -246,11 +246,11 @@ export default function Home() {
               </p>
             </Link>
             <Link href="/blender" className={linkCardClass}>
-              <p className="text-sm font-black">ブレンダの見極め占い</p>
+              <p className="text-sm font-black">ブレンダのツール置き場</p>
               <p className="mt-1 text-xs leading-5 text-emerald-50/70">
-                APIなしの簡単版。占いキャラとして作ったブレンダで、まずは勧誘占いから。
+                APIなしの簡単版。ブレンダの試作ツール置き場です。
                 <br />
-                公式LINEでは、ブレンダを使ってもう少し深く対応します →
+                今は見極め占いツールを置いています →
               </p>
             </Link>
 

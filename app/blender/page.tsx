@@ -3,9 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 
-const lineUrl =
-  "https://line.me/R/oaMessage/%40494whwcg/?%E3%83%96%E3%83%AC%E3%83%B3%E3%83%80%E3%81%AE%E8%A6%8B%E6%A5%B5%E3%82%81%E5%8D%A0%E3%81%84";
-
 type FortuneResult = {
   profile: string;
   overall: string;
@@ -155,10 +152,10 @@ export default function BlenderFortunePage() {
           <div className="rounded-lg border border-white/15 bg-white/[0.07] px-4 py-5 shadow-[0_20px_70px_rgba(0,0,0,0.38)] backdrop-blur-md sm:px-6">
             <div>
               <p className="mb-2 text-xs font-black uppercase tracking-[0.22em] text-rose-100">
-                Brenda Reading
+                Brenda Tools
               </p>
               <h1 className="text-3xl font-black leading-tight text-white sm:text-5xl">
-                ブレンダの見極め占い
+                ブレンダのツール置き場
               </h1>
             </div>
           </div>
@@ -176,6 +173,8 @@ export default function BlenderFortunePage() {
           <div className="rounded-lg border border-rose-100/20 bg-white/[0.07] px-4 py-5 shadow-[0_18px_55px_rgba(0,0,0,0.3)] backdrop-blur-md sm:px-6">
             <div className="space-y-3 text-sm font-medium leading-7 text-white/84">
               <p className="text-base font-black text-rose-50">ブレンダです。</p>
+              <p>ここは、ブレンダの試作ツールを置いていく場所です。</p>
+              <p>今は、生年月日・血液型・気分から今日の流れを見るミニ占いツールを置いています。</p>
               <p>やさしいだけの占いでは、たぶん終わりません。</p>
               <p>
                 ちょっと厳しいことも言うかもしれへんけど、ほんまのところを見ずに、きれいごとだけ並べるんは好きやないんです。
@@ -271,24 +270,6 @@ export default function BlenderFortunePage() {
                   <p className="mt-3 text-sm leading-7 text-white/84">{text}</p>
                 </div>
               ))}
-
-              <div className="rounded-lg border border-rose-100/25 bg-white/[0.08] px-4 py-5 shadow-[0_0_42px_rgba(244,114,182,0.18)] backdrop-blur-md sm:px-6">
-                <p className="text-lg font-black text-white">公式LINE募集中</p>
-                <div className="mt-3 space-y-3 text-sm leading-7 text-white/82">
-                  <p>ただいま、AI占いを練習中のため、公式LINEで無料案内しています。</p>
-                  <p>まだ育てている途中やけれど、やさしく見てもらいたい方には、今ちょうど入りやすい時期です。</p>
-                  <p>少し付き合ってもええよ、という方がおられましたら、ぜひご協力ください。</p>
-                  <p>気負わんでも大丈夫です。ええ感じに受け取れるように、ちゃんと見ます。</p>
-                </div>
-                <a
-                  href={lineUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-5 inline-flex w-full justify-center rounded-lg border border-rose-100/40 bg-rose-300/20 px-5 py-3 text-sm font-black text-white shadow-[0_0_30px_rgba(244,114,182,0.26)] transition hover:bg-rose-200/30 sm:w-auto"
-                >
-                  公式LINEはこちら
-                </a>
-              </div>
             </section>
           )}
         </section>

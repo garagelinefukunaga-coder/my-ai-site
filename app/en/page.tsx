@@ -144,9 +144,9 @@ export default function EnglishPage() {
             </Link>
 
             <Link href="/blender" className={cardClass}>
-              <p className="text-sm font-black">Brenda Fortune Telling</p>
+              <p className="text-sm font-black">Brenda Tools</p>
               <p className="mt-1 text-xs text-emerald-50/70">
-                A Japanese mini fortune-telling page →
+                A small Japanese tool page →
               </p>
             </Link>
           </div>
