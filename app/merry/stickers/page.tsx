@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "HAPPY FOREVERパンダ・ハピパン LINEスタンプ販売まとめ | 秘密の農園メリー",
   description:
-    "ハピパンのLINEスタンプ「しんどい日を笑って生き残れ」と、低価格LITE版のハピパンスタンプLITE1をまとめた販売ページです。",
+    "ハピパンのLINEスタンプ「しんどい日を笑って生き残れ」、ハピパンスタンプLITE1、成長と感謝の毎日スタンプをまとめた販売ページです。",
   alternates: {
     canonical: "/merry/stickers",
   },
@@ -68,6 +68,26 @@ export default function MerryStickersPage() {
               className="mt-4 inline-flex rounded-lg border border-white/25 bg-[#06c755]/80 px-4 py-3 text-sm font-black text-white shadow-[0_0_28px_rgba(6,199,85,0.25)] transition hover:bg-[#06c755]"
             >
               ハピパンスタンプLITE1を販売ページで見る →
+            </a>
+          </section>
+
+          <section className="rounded-lg border border-white/20 bg-black/20 px-4 py-4 shadow-[0_18px_55px_rgba(0,0,0,0.3)] backdrop-blur-md sm:px-5">
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-amber-100">
+              LINE Stickers
+            </p>
+            <h2 className="mt-2 text-base font-black leading-6 text-white">
+              ハピパン 成長と感謝の毎日スタンプ
+            </h2>
+            <p className="mt-2 text-xs font-medium leading-6 text-white/78 sm:text-sm">
+              毎日の成長と感謝を伝えるハピパンのLINEスタンプです。
+            </p>
+            <a
+              href="https://store.line.me/stickershop/product/35181367/ja"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex rounded-lg border border-white/25 bg-[#06c755]/80 px-4 py-3 text-sm font-black text-white shadow-[0_0_28px_rgba(6,199,85,0.25)] transition hover:bg-[#06c755]"
+            >
+              成長と感謝の毎日スタンプを販売ページで見る →
             </a>
           </section>
         </section>
