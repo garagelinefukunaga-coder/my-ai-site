@@ -7,7 +7,7 @@ const linkCardClass =
 
 const siteUrl = "https://happy-forever.vercel.app/";
 const socialLinks = [
-  "https://www.youtube.com/watch?v=6urmDrJyM1g",
+  "https://www.youtube.com/shorts/VLOUCho8-cs",
   "https://x.com/happyforever420",
   "https://note.com/clear_acacia1018",
   "https://suno.com/@happyforever42019",
@@ -94,21 +94,21 @@ const structuredData = {
     {
       "@type": "VideoObject",
       "@id": "https://happy-forever.vercel.app/#latest-video",
-      name: "狂気のピエロ | HAPPY FOREVER 420",
+      name: "ハイで回す、PDCA | HAPPY FOREVER 420",
       description:
-        "HAPPY FOREVER 420の最新動画。狂気のピエロをテーマにした映像です。",
+        "HAPPY FOREVER 420の最新動画。ハイで回す、PDCAをテーマにしたショート動画です。",
       thumbnailUrl: [
-        "https://i.ytimg.com/vi/6urmDrJyM1g/hqdefault.jpg",
+        "https://i.ytimg.com/vi/VLOUCho8-cs/hqdefault.jpg",
         "https://happy-forever.vercel.app/happy-forever-logo.png",
       ],
-      embedUrl: "https://www.youtube.com/embed/6urmDrJyM1g",
-      contentUrl: "https://www.youtube.com/watch?v=6urmDrJyM1g",
-      uploadDate: "2026-07-13T00:00:00+09:00",
+      embedUrl: "https://www.youtube.com/embed/VLOUCho8-cs",
+      contentUrl: "https://www.youtube.com/shorts/VLOUCho8-cs",
+      uploadDate: "2026-07-18T00:00:00+09:00",
       publisher: {
         "@id": "https://happy-forever.vercel.app/#happy-forever",
       },
       inLanguage: "ja",
-      genre: ["Japanese Drill", "AI Music", "SUNO"],
+      genre: ["Japanese Drill", "AI Music", "Panda Rap"],
     },
     {
       "@type": "ImageObject",
@@ -214,8 +214,8 @@ export default function Home() {
             <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
               <iframe
                 className="h-full w-full"
-                src="https://www.youtube.com/embed/6urmDrJyM1g?si=aKxXNw-vrA43ENvX&rel=0&playsinline=1"
-                title="狂気のピエロ"
+                src="https://www.youtube.com/embed/VLOUCho8-cs?rel=0&playsinline=1"
+                title="ハイで回す、PDCA"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
@@ -298,7 +298,7 @@ export default function Home() {
 
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
               <a
-                href="https://www.youtube.com/watch?v=6urmDrJyM1g"
+                href="https://www.youtube.com/shorts/VLOUCho8-cs"
                 target="_blank"
                 rel="noreferrer"
                 className={linkCardClass}
