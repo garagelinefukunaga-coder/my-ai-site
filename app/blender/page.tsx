@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState, type ChangeEvent } from "react";
 import Link from "next/link";
 
 type FortuneResult = {
@@ -16,6 +16,25 @@ type Zodiac = {
   element: string;
   look: string;
 };
+
+type ImageFixOutput = {
+  url: string;
+  width: number;
+  height: number;
+  name: string;
+};
+
+type TrialCounter = {
+  date: string;
+  count: number;
+};
+
+const DAILY_TRIAL_LIMIT = 3;
+const MAX_AUDIO_SECONDS = 30;
+const MAX_AUDIO_BYTES = 40 * 1024 * 1024;
+const MAX_IMAGE_BYTES = 8 * 1024 * 1024;
+const MAX_IMAGE_EDGE = 720;
+const TRIAL_COUNTER_KEY = "happyForeverBlenderTrialCounter";
 
 const zodiacSigns: (Zodiac & { start: number; end: number })[] = [
   { name: "牡羊座", element: "火", look: "勢いで道を開く力", start: 321, end: 419 },
@@ -65,12 +84,12 @@ const trialTools = [
   {
     label: "Music Split",
     title: "音楽分離ツール",
-    body: "歌、伴奏、音の要素を分けるための試作ツールです。無料お試しは30秒までにして、本格利用は相談制にする予定です。",
+    body: "歌、伴奏、音の要素を分けるための試作ツールです。30秒以内の音声だけ、お試し受付チェックできます。",
   },
   {
     label: "Image Fix",
     title: "画像直しツール",
-    body: "画像の荒れ、ぼやけ、見た目の違和感を整えるための試作ツールです。無料お試しは低解像度だけにして、仕上げ版は別で扱います。",
+    body: "画像の荒れ、ぼやけ、見た目の違和感を整えるための試作ツールです。低解像度とHAPPY FOREVER表記入りで出力します。",
   },
 ];
 
@@ -114,6 +133,35 @@ const getTodayKey = () => {
   return `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
 };
 
+const getStoredTrialCounter = (): TrialCounter => {
+  const today = getTodayKey();
+
+  if (typeof window === "undefined") {
+    return { date: today, count: 0 };
+  }
+
+  try {
+    const stored = window.localStorage.getItem(TRIAL_COUNTER_KEY);
+    const parsed = stored ? (JSON.parse(stored) as Partial<TrialCounter>) : null;
+
+    if (parsed?.date === today && typeof parsed.count === "number") {
+      return { date: today, count: Math.min(Math.max(parsed.count, 0), DAILY_TRIAL_LIMIT) };
+    }
+  } catch {
+    window.localStorage.removeItem(TRIAL_COUNTER_KEY);
+  }
+
+  return { date: today, count: 0 };
+};
+
+const formatSeconds = (seconds: number) => {
+  if (!Number.isFinite(seconds)) {
+    return "不明";
+  }
+
+  return `${Math.round(seconds * 10) / 10}秒`;
+};
+
 const getZodiac = (birthDate: string) => {
   const [, month, day] = birthDate.split("-").map(Number);
   const value = month * 100 + day;
@@ -136,7 +184,220 @@ export default function BlenderFortunePage() {
   const [bloodType, setBloodType] = useState("");
   const [mood, setMood] = useState("");
   const [result, setResult] = useState<FortuneResult | null>(null);
+  const [trialCount, setTrialCount] = useState(0);
+  const [audioFile, setAudioFile] = useState<File | null>(null);
+  const [audioDuration, setAudioDuration] = useState<number | null>(null);
+  const [isAudioAccepted, setIsAudioAccepted] = useState(false);
+  const [audioStatus, setAudioStatus] = useState("音声ファイルを選ぶと、30秒以内か確認できます。");
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [imageStatus, setImageStatus] = useState("画像を選ぶと、低解像度のHAPPY FOREVER表記入りで出力できます。");
+  const [imageOutput, setImageOutput] = useState<ImageFixOutput | null>(null);
+  const [isImageProcessing, setIsImageProcessing] = useState(false);
   const canTellFortune = Boolean(birthDate && bloodType && mood.trim());
+  const remainingTrials = Math.max(DAILY_TRIAL_LIMIT - trialCount, 0);
+
+  useEffect(() => {
+    setTrialCount(getStoredTrialCounter().count);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (imageOutput?.url) {
+        URL.revokeObjectURL(imageOutput.url);
+      }
+    };
+  }, [imageOutput]);
+
+  const useTrialCount = () => {
+    const current = getStoredTrialCounter();
+
+    if (current.count >= DAILY_TRIAL_LIMIT) {
+      setTrialCount(current.count);
+      return false;
+    }
+
+    const next = { date: getTodayKey(), count: current.count + 1 };
+    window.localStorage.setItem(TRIAL_COUNTER_KEY, JSON.stringify(next));
+    setTrialCount(next.count);
+    return true;
+  };
+
+  const handleAudioChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0] ?? null;
+    setAudioFile(file);
+    setAudioDuration(null);
+    setIsAudioAccepted(false);
+
+    if (!file) {
+      setAudioStatus("音声ファイルを選ぶと、30秒以内か確認できます。");
+      return;
+    }
+
+    if (!file.type.startsWith("audio/")) {
+      setAudioStatus("音声ファイルだけ選んでください。");
+      return;
+    }
+
+    if (file.size > MAX_AUDIO_BYTES) {
+      setAudioStatus("音声ファイルが大きすぎます。短い音源だけにしてください。");
+      return;
+    }
+
+    const url = URL.createObjectURL(file);
+    const audio = document.createElement("audio");
+    audio.preload = "metadata";
+    audio.onloadedmetadata = () => {
+      URL.revokeObjectURL(url);
+      setAudioDuration(audio.duration);
+      setAudioStatus(
+        audio.duration <= MAX_AUDIO_SECONDS
+          ? `長さは${formatSeconds(audio.duration)}です。お試し受付できます。`
+          : `長さは${formatSeconds(audio.duration)}です。無料お試しは30秒までです。`,
+      );
+    };
+    audio.onerror = () => {
+      URL.revokeObjectURL(url);
+      setAudioStatus("音声の長さを確認できませんでした。別のファイルで試してください。");
+    };
+    audio.src = url;
+  };
+
+  const acceptAudioTrial = () => {
+    if (!audioFile || audioDuration === null) {
+      setAudioStatus("先に30秒以内の音声ファイルを選んでください。");
+      return;
+    }
+
+    if (audioDuration > MAX_AUDIO_SECONDS) {
+      setAudioStatus("無料お試しは30秒までです。短い音声で試してください。");
+      return;
+    }
+
+    if (!useTrialCount()) {
+      setAudioStatus("今日のお試し回数は上限です。また明日試してください。");
+      return;
+    }
+
+    setIsAudioAccepted(true);
+    setAudioStatus("受付チェックOKです。本格的な音楽分離処理は、準備でき次第ここにつなぎます。");
+  };
+
+  const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0] ?? null;
+    setImageFile(file);
+
+    if (!file) {
+      setImageStatus("画像を選ぶと、低解像度のHAPPY FOREVER表記入りで出力できます。");
+      return;
+    }
+
+    if (!file.type.startsWith("image/")) {
+      setImageStatus("画像ファイルだけ選んでください。");
+      return;
+    }
+
+    setImageStatus("画像を読み込みました。低解像度で出力できます。");
+  };
+
+  const fixImage = async () => {
+    if (!imageFile) {
+      setImageStatus("先に画像を選んでください。");
+      return;
+    }
+
+    if (!imageFile.type.startsWith("image/")) {
+      setImageStatus("画像ファイルだけ選んでください。");
+      return;
+    }
+
+    if (imageFile.size > MAX_IMAGE_BYTES) {
+      setImageStatus("画像ファイルが大きすぎます。軽い画像で試してください。");
+      return;
+    }
+
+    if (remainingTrials <= 0) {
+      setImageStatus("今日のお試し回数は上限です。また明日試してください。");
+      return;
+    }
+
+    setIsImageProcessing(true);
+    setImageStatus("画像を整えています。");
+
+    const objectUrl = URL.createObjectURL(imageFile);
+
+    try {
+      const image = new window.Image();
+      image.decoding = "async";
+      image.src = objectUrl;
+      await image.decode();
+
+      const scale = Math.min(1, MAX_IMAGE_EDGE / Math.max(image.width, image.height));
+      const width = Math.max(1, Math.round(image.width * scale));
+      const height = Math.max(1, Math.round(image.height * scale));
+      const canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
+      const context = canvas.getContext("2d");
+
+      if (!context) {
+        throw new Error("Canvas is not available");
+      }
+
+      context.filter = "contrast(1.06) saturate(1.08) brightness(1.02)";
+      context.drawImage(image, 0, 0, width, height);
+      context.filter = "none";
+
+      const watermark = "HAPPY FOREVER";
+      const fontSize = Math.max(14, Math.round(width * 0.035));
+      const padding = Math.max(10, Math.round(width * 0.025));
+      context.font = `700 ${fontSize}px Arial, sans-serif`;
+      const textMetrics = context.measureText(watermark);
+      const boxWidth = textMetrics.width + padding * 1.8;
+      const boxHeight = fontSize + padding * 1.25;
+      const boxX = Math.max(padding, width - boxWidth - padding);
+      const boxY = Math.max(padding, height - boxHeight - padding);
+
+      context.fillStyle = "rgba(0, 0, 0, 0.48)";
+      context.fillRect(boxX, boxY, boxWidth, boxHeight);
+      context.fillStyle = "rgba(255, 255, 255, 0.92)";
+      context.fillText(watermark, boxX + padding * 0.9, boxY + fontSize + padding * 0.15);
+
+      const blob = await new Promise<Blob>((resolve, reject) => {
+        canvas.toBlob((nextBlob) => {
+          if (nextBlob) {
+            resolve(nextBlob);
+          } else {
+            reject(new Error("Image export failed"));
+          }
+        }, "image/jpeg", 0.86);
+      });
+
+      if (!useTrialCount()) {
+        setImageStatus("今日のお試し回数は上限です。また明日試してください。");
+        return;
+      }
+
+      const outputUrl = URL.createObjectURL(blob);
+      setImageOutput((current) => {
+        if (current?.url) {
+          URL.revokeObjectURL(current.url);
+        }
+
+        return {
+          url: outputUrl,
+          width,
+          height,
+          name: `happy-forever-fixed-${imageFile.name.replace(/\.[^.]+$/, "")}.jpg`,
+        };
+      });
+      setImageStatus(`低解像度版を書き出しました。${width} x ${height}pxです。`);
+    } catch {
+      setImageStatus("画像を処理できませんでした。別の画像で試してください。");
+    } finally {
+      URL.revokeObjectURL(objectUrl);
+      setIsImageProcessing(false);
+    }
+  };
 
   const tellFortune = () => {
     if (!canTellFortune) {
@@ -236,7 +497,7 @@ export default function BlenderFortunePage() {
                     {tool.body}
                   </p>
                   <p className="mt-4 inline-flex rounded-lg border border-amber-100/35 bg-amber-300/15 px-3 py-2 text-xs font-black text-amber-50">
-                    受付制 / 準備中
+                    制限付きお試し
                   </p>
                 </div>
               ))}
@@ -251,6 +512,88 @@ export default function BlenderFortunePage() {
                   </li>
                 ))}
               </ul>
+            </div>
+
+            <div className="mt-5 rounded-lg border border-emerald-100/20 bg-emerald-300/10 px-4 py-4">
+              <p className="text-sm font-black text-emerald-50">
+                今日の残りお試し回数: {remainingTrials} / {DAILY_TRIAL_LIMIT}
+              </p>
+              <p className="mt-2 text-xs font-medium leading-6 text-white/70">
+                音楽分離と画像直しを合わせた回数です。公開版では、あとでサーバー側の制限にもつなげます。
+              </p>
+            </div>
+
+            <div className="mt-5 grid gap-4">
+              <div className="rounded-lg border border-white/15 bg-black/22 px-4 py-4">
+                <p className="text-[11px] font-black uppercase tracking-[0.18em] text-emerald-100">
+                  Music Split Trial
+                </p>
+                <h3 className="mt-2 text-lg font-black text-white">音楽分離お試し受付</h3>
+                <input
+                  type="file"
+                  accept="audio/*"
+                  onChange={handleAudioChange}
+                  className="mt-4 w-full rounded-lg border border-white/15 bg-white/10 px-3 py-3 text-sm text-white file:mr-3 file:rounded-lg file:border-0 file:bg-emerald-200 file:px-3 file:py-2 file:text-xs file:font-black file:text-emerald-950"
+                />
+                <p className="mt-3 text-sm font-medium leading-7 text-white/78">{audioStatus}</p>
+                {audioDuration !== null && (
+                  <p className="mt-1 text-xs font-medium text-white/55">
+                    確認した長さ: {formatSeconds(audioDuration)}
+                  </p>
+                )}
+                <button
+                  type="button"
+                  onClick={acceptAudioTrial}
+                  disabled={remainingTrials <= 0 || !audioFile || audioDuration === null || audioDuration > MAX_AUDIO_SECONDS || isAudioAccepted}
+                  className="mt-4 rounded-lg border border-emerald-100/35 bg-emerald-300/20 px-4 py-3 text-sm font-black text-white shadow-[0_0_28px_rgba(16,185,129,0.18)] transition hover:bg-emerald-200/28 disabled:cursor-not-allowed disabled:border-white/10 disabled:bg-white/10 disabled:text-white/45 disabled:shadow-none"
+                >
+                  受付チェックを使う
+                </button>
+              </div>
+
+              <div className="rounded-lg border border-white/15 bg-black/22 px-4 py-4">
+                <p className="text-[11px] font-black uppercase tracking-[0.18em] text-emerald-100">
+                  Image Fix Trial
+                </p>
+                <h3 className="mt-2 text-lg font-black text-white">画像直しお試し</h3>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  className="mt-4 w-full rounded-lg border border-white/15 bg-white/10 px-3 py-3 text-sm text-white file:mr-3 file:rounded-lg file:border-0 file:bg-emerald-200 file:px-3 file:py-2 file:text-xs file:font-black file:text-emerald-950"
+                />
+                <p className="mt-3 text-sm font-medium leading-7 text-white/78">{imageStatus}</p>
+                <button
+                  type="button"
+                  onClick={fixImage}
+                  disabled={remainingTrials <= 0 || !imageFile || isImageProcessing}
+                  className="mt-4 rounded-lg border border-emerald-100/35 bg-emerald-300/20 px-4 py-3 text-sm font-black text-white shadow-[0_0_28px_rgba(16,185,129,0.18)] transition hover:bg-emerald-200/28 disabled:cursor-not-allowed disabled:border-white/10 disabled:bg-white/10 disabled:text-white/45 disabled:shadow-none"
+                >
+                  {isImageProcessing ? "画像を処理中" : "低解像度で画像を直す"}
+                </button>
+
+                {imageOutput && (
+                  <div className="mt-4 overflow-hidden rounded-lg border border-white/15 bg-white/[0.06]">
+                    <img
+                      src={imageOutput.url}
+                      alt="HAPPY FOREVER表記入りの低解像度画像"
+                      className="max-h-[360px] w-full object-contain"
+                    />
+                    <div className="border-t border-white/10 px-4 py-3">
+                      <p className="text-xs font-medium text-white/65">
+                        {imageOutput.width} x {imageOutput.height}px
+                      </p>
+                      <a
+                        href={imageOutput.url}
+                        download={imageOutput.name}
+                        className="mt-3 inline-flex rounded-lg border border-white/25 bg-white/10 px-4 py-2 text-sm font-black text-white transition hover:bg-white/18"
+                      >
+                        画像をダウンロード →
+                      </a>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </section>
 
