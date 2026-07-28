@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://happy-forever.vercel.app"),
   title: "HAPPY FOREVER 420 | Japanese Drill AI Music",
   description:
-    "HAPPY FOREVER 420は、Japanese Drill、AI Music、パンダラッパー、映像作品、note制作ログ、ブレンダの秘密道具置き場を公開している個人プロジェクトです。Happyは福、Foreverは永。",
+    "HAPPY FOREVER 420は、Japanese Drill、AI Music、パンダラッパー、映像作品、note制作ログ、ブレンダの実験室を公開している個人プロジェクトです。Happyは福、Foreverは永。",
   keywords: [
     "HAPPY FOREVER 420",
     "Happyforever 420",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     "パンダラップ",
     "映像作品",
     "note制作ログ",
-    "ブレンダの秘密道具置き場",
+    "ブレンダの実験室",
     "秘密の農園メリー",
     "LINEスタンプ",
     "しんどい日を笑って生き残れ",
