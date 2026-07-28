@@ -61,6 +61,26 @@ const moodReadings = [
 const defaultMoodReading =
   "今の気分は、まだ言葉になりきっていないようです。無理にきれいな答えにせず、少しだけ眺めるくらいで大丈夫です";
 
+const trialTools = [
+  {
+    label: "Music Split",
+    title: "音楽分離ツール",
+    body: "歌、伴奏、音の要素を分けるための試作ツールです。無料お試しは30秒までにして、本格利用は相談制にする予定です。",
+  },
+  {
+    label: "Image Fix",
+    title: "画像直しツール",
+    body: "画像の荒れ、ぼやけ、見た目の違和感を整えるための試作ツールです。無料お試しは低解像度だけにして、仕上げ版は別で扱います。",
+  },
+];
+
+const trialRules = [
+  "音楽は30秒まで",
+  "画像は低解像度だけ",
+  "1日3回まで",
+  "出力に小さく HAPPY FOREVER 表記",
+];
+
 const overallOpenings = [
   "今日は、無理に愛想よくせんでもええ流れです。",
   "今日は、少し立ち止まって見極めるほうが強いです。",
@@ -175,6 +195,7 @@ export default function BlenderFortunePage() {
               <p className="text-base font-black text-rose-50">ブレンダです。</p>
               <p>ここは、ブレンダの試作ツールを置いていく場所です。</p>
               <p>今は、生年月日・血液型・気分から今日の流れを見るミニ占いツールを置いています。</p>
+              <p>次に、音楽分離と画像直しの試作ツールもここに置いていく予定です。</p>
               <p>やさしいだけの占いでは、たぶん終わりません。</p>
               <p>
                 ちょっと厳しいことも言うかもしれへんけど、ほんまのところを見ずに、きれいごとだけ並べるんは好きやないんです。
@@ -187,6 +208,51 @@ export default function BlenderFortunePage() {
               </p>
             </div>
           </div>
+
+          <section className="rounded-lg border border-emerald-100/20 bg-black/28 px-4 py-5 shadow-[0_18px_55px_rgba(0,0,0,0.3)] backdrop-blur-md sm:px-6">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-100">
+                Trial Tools
+              </p>
+              <h2 className="mt-2 text-2xl font-black leading-tight text-white">
+                準備中の制作ツール
+              </h2>
+              <p className="mt-3 text-sm font-medium leading-7 text-white/82">
+                便利なものほど、無料で全部開放しすぎると続けにくくなります。まずは軽いお試しだけ置いて、ちゃんと使いたい人は相談できる形にします。
+              </p>
+            </div>
+
+            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+              {trialTools.map((tool) => (
+                <div
+                  key={tool.title}
+                  className="rounded-lg border border-white/15 bg-white/[0.07] px-4 py-4 shadow-[0_14px_42px_rgba(0,0,0,0.24)]"
+                >
+                  <p className="text-[11px] font-black uppercase tracking-[0.18em] text-emerald-100">
+                    {tool.label}
+                  </p>
+                  <h3 className="mt-2 text-lg font-black text-white">{tool.title}</h3>
+                  <p className="mt-3 text-sm font-medium leading-7 text-white/82">
+                    {tool.body}
+                  </p>
+                  <p className="mt-4 inline-flex rounded-lg border border-amber-100/35 bg-amber-300/15 px-3 py-2 text-xs font-black text-amber-50">
+                    受付制 / 準備中
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-5 rounded-lg border border-white/15 bg-white/[0.06] px-4 py-4">
+              <p className="text-sm font-black text-emerald-50">無料お試しルール</p>
+              <ul className="mt-3 grid gap-2 text-sm font-medium leading-6 text-white/84 sm:grid-cols-2">
+                {trialRules.map((rule) => (
+                  <li key={rule} className="rounded-lg border border-white/10 bg-black/18 px-3 py-2">
+                    {rule}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
 
           <div className="rounded-lg border border-white/15 bg-black/30 px-4 py-5 shadow-[0_18px_50px_rgba(0,0,0,0.3)] backdrop-blur-md sm:px-6">
             <p className="mb-4 text-sm font-medium leading-7 text-white/82">
