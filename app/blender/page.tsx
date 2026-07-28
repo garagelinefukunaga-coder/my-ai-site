@@ -436,7 +436,7 @@ export default function BlenderFortunePage() {
                 Brenda Tools
               </p>
               <h1 className="text-3xl font-black leading-tight text-white sm:text-5xl">
-                ブレンダのツール置き場
+                ブレンダの秘密道具置き場
               </h1>
             </div>
           </div>
@@ -454,7 +454,7 @@ export default function BlenderFortunePage() {
           <div className="rounded-lg border border-rose-100/20 bg-white/[0.07] px-4 py-5 shadow-[0_18px_55px_rgba(0,0,0,0.3)] backdrop-blur-md sm:px-6">
             <div className="space-y-3 text-sm font-medium leading-7 text-white/84">
               <p className="text-base font-black text-rose-50">ブレンダです。</p>
-              <p>ここは、ブレンダの試作ツールを置いていく場所です。</p>
+              <p>ここは、ブレンダの秘密道具を少しずつ置いていく場所です。</p>
               <p>今は、生年月日・血液型・気分から今日の流れを見るミニ占いツールを置いています。</p>
               <p>次に、音楽分離と画像直しの試作ツールもここに置いていく予定です。</p>
               <p>やさしいだけの占いでは、たぶん終わりません。</p>
