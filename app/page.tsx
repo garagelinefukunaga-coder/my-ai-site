@@ -94,9 +94,9 @@ const structuredData = {
     {
       "@type": "VideoObject",
       "@id": "https://happy-forever.vercel.app/#latest-video",
-      name: "新曲 | HAPPY FOREVER 420",
+      name: "みんな僕に少しずつ分けてくれよ | HAPPY FOREVER 420",
       description:
-        "HAPPY FOREVER 420の最新動画。新曲のYouTube動画です。",
+        "HAPPY FOREVER 420の最新動画。みんな僕に少しずつ分けてくれよのYouTube動画です。",
       thumbnailUrl: [
         "https://i.ytimg.com/vi/kOXAteZb58A/hqdefault.jpg",
         "https://happy-forever.vercel.app/happy-forever-logo.png",
@@ -215,11 +215,25 @@ export default function Home() {
               <iframe
                 className="h-full w-full"
                 src="https://www.youtube.com/embed/kOXAteZb58A?si=e8L10_i33qZsrP_4&rel=0&playsinline=1"
-                title="新曲"
+                title="みんな僕に少しずつ分けてくれよ"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
               />
+            </div>
+
+            <div className="rounded-lg border border-white/20 bg-black/20 px-4 py-4 shadow-[0_14px_48px_rgba(0,0,0,0.24)] backdrop-blur-md">
+              <p className="text-sm font-medium leading-7 text-white/86">
+                「みんな僕に少しずつ分けてくれよ」の解説note。YouTubeはいいね、登録、コメントが大事らしいのに全部言ってみた話です。
+              </p>
+              <a
+                href="https://note.com/clear_acacia1018/n/n59273f1f538c?sub_rt=share_sb"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-3 inline-flex rounded-lg border border-white/25 bg-white/10 px-4 py-2 text-sm font-black text-white transition hover:border-red-200/80 hover:bg-white/18"
+              >
+                最新動画の解説noteを読む →
+              </a>
             </div>
 
             <div className="pt-2">

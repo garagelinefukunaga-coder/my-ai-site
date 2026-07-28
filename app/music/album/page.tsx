@@ -75,13 +75,13 @@ export default function AlbumPage() {
 
           <div>
             <h2 className="hero-title mb-3 text-2xl font-black leading-tight text-white sm:text-3xl">
-              新曲
+              みんな僕に少しずつ分けてくれよ
             </h2>
             <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
               <iframe
                 className="h-full w-full"
                 src="https://www.youtube.com/embed/kOXAteZb58A?si=e8L10_i33qZsrP_4&rel=0&playsinline=1"
-                title="HAPPY FOREVER 420 - 新曲"
+                title="HAPPY FOREVER 420 - みんな僕に少しずつ分けてくれよ"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
@@ -95,6 +95,19 @@ export default function AlbumPage() {
             >
               この動画をYouTubeで見る →
             </a>
+            <div className="mt-4 rounded-lg border border-white/20 bg-black/20 px-4 py-4 shadow-[0_14px_48px_rgba(0,0,0,0.24)] backdrop-blur-md">
+              <p className="text-sm font-medium leading-7 text-white/86">
+                「みんな僕に少しずつ分けてくれよ」の解説note。YouTubeはいいね、登録、コメントが大事らしいのに全部言ってみた流れをまとめています。
+              </p>
+              <a
+                href="https://note.com/clear_acacia1018/n/n59273f1f538c?sub_rt=share_sb"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-3 inline-flex rounded-lg border border-white/25 bg-white/10 px-4 py-2 text-sm font-black text-white transition hover:border-red-200/80 hover:bg-white/18"
+              >
+                この曲の詳しい解説はnoteへ →
+              </a>
+            </div>
           </div>
 
           <div>
