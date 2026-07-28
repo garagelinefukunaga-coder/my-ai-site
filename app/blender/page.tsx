@@ -30,7 +30,6 @@ type TrialCounter = {
 };
 
 const DAILY_TRIAL_LIMIT = 3;
-const MAX_AUDIO_SECONDS = 30;
 const MAX_AUDIO_BYTES = 40 * 1024 * 1024;
 const MAX_IMAGE_BYTES = 8 * 1024 * 1024;
 const MAX_IMAGE_EDGE = 720;
@@ -83,19 +82,23 @@ const defaultMoodReading =
 const trialTools = [
   {
     label: "Music Split",
-    title: "音楽分離ツール",
-    body: "歌、伴奏、音の要素を分けるための試作ツールです。30秒以内の音声だけ、お試し受付チェックできます。",
+    title: "音楽分離 30秒版",
+    body: "選んだ音源の先頭30秒だけを使う想定です。歌と伴奏の分離本体は、AI処理用のAPIをつないでから動かします。",
+    href: "#audio-tool",
+    action: "音楽ツールへ",
   },
   {
     label: "Image Fix",
     title: "画像直しツール",
-    body: "画像の荒れ、ぼやけ、見た目の違和感を整えるための試作ツールです。低解像度とHAPPY FOREVER表記入りで出力します。",
+    body: "今は低解像度補正とHAPPY FOREVER表記入りの書き出しです。不要物消しや背景消しは、AI処理用のAPIをつないでから追加します。",
+    href: "#image-tool",
+    action: "画像ツールへ",
   },
 ];
 
 const trialRules = [
-  "音楽は30秒まで",
-  "画像は低解像度だけ",
+  "音楽は先頭30秒だけ",
+  "画像は低解像度お試し",
   "1日3回まで",
   "出力に小さく HAPPY FOREVER 表記",
 ];
@@ -188,7 +191,9 @@ export default function BlenderFortunePage() {
   const [audioFile, setAudioFile] = useState<File | null>(null);
   const [audioDuration, setAudioDuration] = useState<number | null>(null);
   const [isAudioAccepted, setIsAudioAccepted] = useState(false);
-  const [audioStatus, setAudioStatus] = useState("音声ファイルを選ぶと、30秒以内か確認できます。");
+  const [audioStatus, setAudioStatus] = useState(
+    "音声ファイルを選ぶと、先頭30秒だけ使う形で準備します。分離本体はAPI接続後に動きます。",
+  );
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [imageStatus, setImageStatus] = useState("画像を選ぶと、低解像度のHAPPY FOREVER表記入りで出力できます。");
   const [imageOutput, setImageOutput] = useState<ImageFixOutput | null>(null);
@@ -229,7 +234,7 @@ export default function BlenderFortunePage() {
     setIsAudioAccepted(false);
 
     if (!file) {
-      setAudioStatus("音声ファイルを選ぶと、30秒以内か確認できます。");
+      setAudioStatus("音声ファイルを選ぶと、先頭30秒だけ使う形で準備します。分離本体はAPI接続後に動きます。");
       return;
     }
 
@@ -249,11 +254,7 @@ export default function BlenderFortunePage() {
     audio.onloadedmetadata = () => {
       URL.revokeObjectURL(url);
       setAudioDuration(audio.duration);
-      setAudioStatus(
-        audio.duration <= MAX_AUDIO_SECONDS
-          ? `長さは${formatSeconds(audio.duration)}です。お試し受付できます。`
-          : `長さは${formatSeconds(audio.duration)}です。無料お試しは30秒までです。`,
-      );
+      setAudioStatus(`長さは${formatSeconds(audio.duration)}です。分離するときは先頭30秒だけ使います。`);
     };
     audio.onerror = () => {
       URL.revokeObjectURL(url);
@@ -262,24 +263,19 @@ export default function BlenderFortunePage() {
     audio.src = url;
   };
 
-  const acceptAudioTrial = () => {
-    if (!audioFile || audioDuration === null) {
-      setAudioStatus("先に30秒以内の音声ファイルを選んでください。");
+  const prepareAudioTrial = () => {
+    if (!audioFile) {
+      setAudioStatus("先に音声ファイルを選んでください。");
       return;
     }
 
-    if (audioDuration > MAX_AUDIO_SECONDS) {
-      setAudioStatus("無料お試しは30秒までです。短い音声で試してください。");
-      return;
-    }
-
-    if (!useTrialCount()) {
-      setAudioStatus("今日のお試し回数は上限です。また明日試してください。");
+    if (!audioFile.type.startsWith("audio/")) {
+      setAudioStatus("音声ファイルだけ選んでください。");
       return;
     }
 
     setIsAudioAccepted(true);
-    setAudioStatus("受付チェックOKです。本格的な音楽分離処理は、準備でき次第ここにつなぎます。");
+    setAudioStatus("30秒版の準備OKです。歌と伴奏に分ける本体処理にはAPIが必要なので、接続後にここから実行できるようにします。今は回数を消費していません。");
   };
 
   const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -476,10 +472,10 @@ export default function BlenderFortunePage() {
                 Trial Tools
               </p>
               <h2 className="mt-2 text-2xl font-black leading-tight text-white">
-                準備中の制作ツール
+                秘密道具メニュー
               </h2>
               <p className="mt-3 text-sm font-medium leading-7 text-white/82">
-                便利なものほど、無料で全部開放しすぎると続けにくくなります。まずは軽いお試しだけ置いて、ちゃんと使いたい人は相談できる形にします。
+                便利なものほど、無料で全部開放しすぎると続けにくくなります。まずは軽いお試しを置いて、APIが必要な処理は準備できた順につないでいきます。
               </p>
             </div>
 
@@ -496,9 +492,12 @@ export default function BlenderFortunePage() {
                   <p className="mt-3 text-sm font-medium leading-7 text-white/82">
                     {tool.body}
                   </p>
-                  <p className="mt-4 inline-flex rounded-lg border border-amber-100/35 bg-amber-300/15 px-3 py-2 text-xs font-black text-amber-50">
-                    制限付きお試し
-                  </p>
+                  <a
+                    href={tool.href}
+                    className="mt-4 inline-flex rounded-lg border border-amber-100/35 bg-amber-300/15 px-3 py-2 text-xs font-black text-amber-50 transition hover:bg-amber-200/24"
+                  >
+                    {tool.action} →
+                  </a>
                 </div>
               ))}
             </div>
@@ -519,16 +518,16 @@ export default function BlenderFortunePage() {
                 今日の残りお試し回数: {remainingTrials} / {DAILY_TRIAL_LIMIT}
               </p>
               <p className="mt-2 text-xs font-medium leading-6 text-white/70">
-                音楽分離と画像直しを合わせた回数です。公開版では、あとでサーバー側の制限にもつなげます。
+                今は画像直しの書き出しで使います。音楽分離はAPIをつないだあと、同じ制限へつなげます。
               </p>
             </div>
 
             <div className="mt-5 grid gap-4">
-              <div className="rounded-lg border border-white/15 bg-black/22 px-4 py-4">
+              <div id="audio-tool" className="scroll-mt-6 rounded-lg border border-white/15 bg-black/22 px-4 py-4">
                 <p className="text-[11px] font-black uppercase tracking-[0.18em] text-emerald-100">
                   Music Split Trial
                 </p>
-                <h3 className="mt-2 text-lg font-black text-white">音楽分離お試し受付</h3>
+                <h3 className="mt-2 text-lg font-black text-white">音楽分離 30秒版</h3>
                 <input
                   type="file"
                   accept="audio/*"
@@ -543,15 +542,18 @@ export default function BlenderFortunePage() {
                 )}
                 <button
                   type="button"
-                  onClick={acceptAudioTrial}
-                  disabled={remainingTrials <= 0 || !audioFile || audioDuration === null || audioDuration > MAX_AUDIO_SECONDS || isAudioAccepted}
+                  onClick={prepareAudioTrial}
+                  disabled={!audioFile || isAudioAccepted}
                   className="mt-4 rounded-lg border border-emerald-100/35 bg-emerald-300/20 px-4 py-3 text-sm font-black text-white shadow-[0_0_28px_rgba(16,185,129,0.18)] transition hover:bg-emerald-200/28 disabled:cursor-not-allowed disabled:border-white/10 disabled:bg-white/10 disabled:text-white/45 disabled:shadow-none"
                 >
-                  受付チェックを使う
+                  {isAudioAccepted ? "30秒版の準備OK" : "先頭30秒で音楽分離する"}
                 </button>
+                <p className="mt-3 text-xs font-medium leading-6 text-white/60">
+                  実際に歌と伴奏を分けるにはAI処理のAPIが必要です。
+                </p>
               </div>
 
-              <div className="rounded-lg border border-white/15 bg-black/22 px-4 py-4">
+              <div id="image-tool" className="scroll-mt-6 rounded-lg border border-white/15 bg-black/22 px-4 py-4">
                 <p className="text-[11px] font-black uppercase tracking-[0.18em] text-emerald-100">
                   Image Fix Trial
                 </p>
@@ -563,6 +565,9 @@ export default function BlenderFortunePage() {
                   className="mt-4 w-full rounded-lg border border-white/15 bg-white/10 px-3 py-3 text-sm text-white file:mr-3 file:rounded-lg file:border-0 file:bg-emerald-200 file:px-3 file:py-2 file:text-xs file:font-black file:text-emerald-950"
                 />
                 <p className="mt-3 text-sm font-medium leading-7 text-white/78">{imageStatus}</p>
+                <p className="mt-2 text-xs font-medium leading-6 text-white/60">
+                  不要物消し、文字消し、背景消しはAI処理のAPIをつないでから追加します。
+                </p>
                 <button
                   type="button"
                   onClick={fixImage}
