@@ -7,7 +7,7 @@ const linkCardClass =
 
 const siteUrl = "https://happy-forever.vercel.app/";
 const socialLinks = [
-  "https://www.youtube.com/watch?v=kOXAteZb58A",
+  "https://www.youtube.com/watch?v=dYJCj0SfmAg",
   "https://x.com/happyforever420",
   "https://note.com/clear_acacia1018",
   "https://suno.com/@happyforever42019",
@@ -94,16 +94,16 @@ const structuredData = {
     {
       "@type": "VideoObject",
       "@id": "https://happy-forever.vercel.app/#latest-video",
-      name: "みんな僕に少しずつ分けてくれよ | HAPPY FOREVER 420",
+      name: "少しでも足掻き、生きる日々 | HAPPY FOREVER 420",
       description:
-        "HAPPY FOREVER 420の最新動画。みんな僕に少しずつ分けてくれよのYouTube動画です。",
+        "HAPPY FOREVER 420の最新動画。少しでも足掻き、生きる日々のYouTube動画です。",
       thumbnailUrl: [
-        "https://i.ytimg.com/vi/kOXAteZb58A/hqdefault.jpg",
+        "https://i.ytimg.com/vi/dYJCj0SfmAg/hqdefault.jpg",
         "https://happy-forever.vercel.app/happy-forever-logo.png",
       ],
-      embedUrl: "https://www.youtube.com/embed/kOXAteZb58A",
-      contentUrl: "https://www.youtube.com/watch?v=kOXAteZb58A",
-      uploadDate: "2026-07-25T00:00:00+09:00",
+      embedUrl: "https://www.youtube.com/embed/dYJCj0SfmAg",
+      contentUrl: "https://www.youtube.com/watch?v=dYJCj0SfmAg",
+      uploadDate: "2026-07-31T00:00:00+09:00",
       publisher: {
         "@id": "https://happy-forever.vercel.app/#happy-forever",
       },
@@ -214,8 +214,8 @@ export default function Home() {
             <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
               <iframe
                 className="h-full w-full"
-                src="https://www.youtube.com/embed/kOXAteZb58A?si=e8L10_i33qZsrP_4&rel=0&playsinline=1"
-                title="みんな僕に少しずつ分けてくれよ"
+                src="https://www.youtube.com/embed/dYJCj0SfmAg?si=QcY4gILATOBGIYRO&rel=0&playsinline=1"
+                title="少しでも足掻き、生きる日々"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
@@ -224,15 +224,15 @@ export default function Home() {
 
             <div className="rounded-lg border border-white/20 bg-black/20 px-4 py-4 shadow-[0_14px_48px_rgba(0,0,0,0.24)] backdrop-blur-md">
               <p className="text-sm font-medium leading-7 text-white/86">
-                「みんな僕に少しずつ分けてくれよ」の解説note。YouTubeはいいね、登録、コメントが大事らしいのに全部言ってみた話です。
+                「少しでも足掻き、生きる日々」の最新動画。今週の新曲です。
               </p>
               <a
-                href="https://note.com/clear_acacia1018/n/n59273f1f538c?sub_rt=share_sb"
+                href="https://www.youtube.com/watch?v=dYJCj0SfmAg"
                 target="_blank"
                 rel="noreferrer"
                 className="mt-3 inline-flex rounded-lg border border-white/25 bg-white/10 px-4 py-2 text-sm font-black text-white transition hover:border-red-200/80 hover:bg-white/18"
               >
-                最新動画の解説noteを読む →
+                この動画をYouTubeで見る →
               </a>
             </div>
 
@@ -312,7 +312,7 @@ export default function Home() {
 
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
               <a
-                href="https://www.youtube.com/watch?v=kOXAteZb58A"
+                href="https://www.youtube.com/watch?v=dYJCj0SfmAg"
                 target="_blank"
                 rel="noreferrer"
                 className={linkCardClass}
