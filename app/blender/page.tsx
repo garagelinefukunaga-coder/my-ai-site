@@ -201,7 +201,6 @@ export default function BlenderFortunePage() {
             </p>
             <a
               href="https://blender-toolbox.happyforever420.chatgpt.site"
-              target="_blank"
               rel="noreferrer"
               className="mt-4 flex w-full items-center justify-center rounded-lg border border-emerald-100/45 bg-emerald-300/24 px-5 py-4 text-center text-sm font-black text-white shadow-[0_0_34px_rgba(16,185,129,0.24)] transition hover:bg-emerald-200/32 sm:inline-flex sm:w-auto"
             >
