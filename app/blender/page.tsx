@@ -189,6 +189,26 @@ export default function BlenderFortunePage() {
             </div>
           </div>
 
+          <div className="rounded-lg border border-emerald-100/25 bg-emerald-300/10 px-4 py-5 shadow-[0_18px_55px_rgba(16,185,129,0.18)] backdrop-blur-md sm:px-6">
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-100">
+              Mobile Toolbox
+            </p>
+            <h2 className="mt-2 text-2xl font-black leading-tight text-white">
+              ブレンダの携帯道具箱
+            </h2>
+            <p className="mt-3 text-sm font-medium leading-7 text-white/84">
+              スマホ・PC対応／動画を9:16へ端末内で変換
+            </p>
+            <a
+              href="https://blender-toolbox.happyforever420.chatgpt.site"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 flex w-full items-center justify-center rounded-lg border border-emerald-100/45 bg-emerald-300/24 px-5 py-4 text-center text-sm font-black text-white shadow-[0_0_34px_rgba(16,185,129,0.24)] transition hover:bg-emerald-200/32 sm:inline-flex sm:w-auto"
+            >
+              ブレンダの携帯道具箱を開く →
+            </a>
+          </div>
+
           <div className="rounded-lg border border-white/15 bg-black/30 px-4 py-5 shadow-[0_18px_50px_rgba(0,0,0,0.3)] backdrop-blur-md sm:px-6">
             <p className="mb-4 text-sm font-medium leading-7 text-white/82">
               生年月日と血液型、気分から今日のあなたの流れをブレンダがそっと見極めます。
