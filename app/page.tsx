@@ -262,9 +262,9 @@ export default function Home() {
             <Link href="/blender" className={linkCardClass}>
               <p className="text-sm font-black">ブレンダの実験室</p>
               <p className="mt-1 text-xs leading-5 text-emerald-50/70">
-                APIなしの簡単版。ブレンダの見極め占いです。
+                新しいブレンダ占いと携帯道具箱を置いています。
                 <br />
-                今は見極め占いツールを置いています →
+                ブレンダの実験室を見る →
               </p>
             </Link>
 
