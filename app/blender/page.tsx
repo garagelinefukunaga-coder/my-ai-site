@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AudioConverter from "./AudioConverter";
 
 const toolboxUrl = "https://blender-toolbox.happyforever420.chatgpt.site";
 const fortuneUrl = `${toolboxUrl}/fortune`;
@@ -92,6 +93,8 @@ export default function BlenderFortunePage() {
               ブレンダの携帯道具箱を開く →
             </a>
           </div>
+
+          <AudioConverter />
         </section>
       </div>
     </main>
