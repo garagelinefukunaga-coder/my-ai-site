@@ -1,8 +1,8 @@
 import Link from "next/link";
-import AudioConverter from "./AudioConverter";
 
 const toolboxUrl = "https://blender-toolbox.happyforever420.chatgpt.site";
 const fortuneUrl = `${toolboxUrl}/fortune`;
+const stemMixLabUrl = `${toolboxUrl}/stem-mix-lab`;
 
 export default function BlenderFortunePage() {
   return (
@@ -94,7 +94,24 @@ export default function BlenderFortunePage() {
             </a>
           </div>
 
-          <AudioConverter />
+          <div className="rounded-lg border border-cyan-100/25 bg-cyan-300/10 px-4 py-5 shadow-[0_18px_55px_rgba(34,211,238,0.18)] backdrop-blur-md sm:px-6">
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-100">
+              Music Tool
+            </p>
+            <h2 className="mt-2 text-2xl font-black leading-tight text-white">
+              STEM Mix Lab
+            </h2>
+            <p className="mt-3 text-sm font-medium leading-7 text-white/84">
+              曲をボーカル・ドラム・ベース・その他へ分割。テンポや音程の変更、楽器音への入れ替え、ミックス保存までできます。
+            </p>
+            <a
+              href={stemMixLabUrl}
+              rel="noreferrer"
+              className="mt-4 flex w-full items-center justify-center rounded-lg border border-cyan-100/45 bg-cyan-300/24 px-5 py-4 text-center text-sm font-black text-white shadow-[0_0_34px_rgba(34,211,238,0.24)] transition hover:bg-cyan-200/32 sm:inline-flex sm:w-auto"
+            >
+              STEM Mix Labを開く →
+            </a>
+          </div>
         </section>
       </div>
     </main>
