@@ -26,6 +26,13 @@ const lineItems = [
   },
   {
     type: "LINE Stickers",
+    title: "ハピパン 車管理・点検連絡",
+    description: "車の管理や点検連絡に使えるハピパンのLINEスタンプです。",
+    href: "https://store.line.me/stickershop/product/35230636/ja",
+    cta: "車管理・点検連絡スタンプを販売ページで見る →",
+  },
+  {
+    type: "LINE Stickers",
     title: "ハピパンスタンプLITE1",
     description: "低価格LITE版のLINEスタンプ販売ページです。",
     href: "https://store.line.me/stickershop/product/34719629/ja?from=sticker",

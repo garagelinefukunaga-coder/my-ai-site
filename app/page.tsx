@@ -262,7 +262,7 @@ export default function Home() {
             <Link href="/blender" className={linkCardClass}>
               <p className="text-sm font-black">ブレンダの実験室</p>
               <p className="mt-1 text-xs leading-5 text-emerald-50/70">
-                新しいブレンダ占いと携帯道具箱を置いています。
+                新しいブレンダ占いと道具箱を置いています。
                 <br />
                 ブレンダの実験室を見る →
               </p>

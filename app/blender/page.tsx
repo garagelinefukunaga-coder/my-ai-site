@@ -62,7 +62,7 @@ export default function BlenderFortunePage() {
               Fortune Game
             </p>
             <h2 className="mt-2 text-2xl font-black leading-tight text-white">
-              ハピパンダ氏
+              ハピパン420ダッシュ
             </h2>
             <p className="mt-3 text-sm font-medium leading-7 text-white/84">
               ハピパン420ダッシュの実験ツールです。占いゲームみたいに、まずはここから遊べます。
@@ -72,7 +72,7 @@ export default function BlenderFortunePage() {
               rel="noreferrer"
               className="mt-4 flex w-full items-center justify-center rounded-lg border border-amber-100/45 bg-amber-300/24 px-5 py-4 text-center text-sm font-black text-white shadow-[0_0_34px_rgba(251,191,36,0.24)] transition hover:bg-amber-200/32 sm:inline-flex sm:w-auto"
             >
-              ハピパンダ氏を開く →
+              ハピパン420ダッシュを開く →
             </a>
           </div>
 
@@ -84,7 +84,7 @@ export default function BlenderFortunePage() {
               ブレンダ占い
             </h2>
             <p className="mt-3 text-sm font-medium leading-7 text-white/84">
-              新しいツールで作った占いです。スマホ・PCからここで使えます。
+              今日の占いから、あなた自身のことまで占えます。スマホ・PCからここで使えます。
             </p>
             <a
               href={fortuneUrl}
@@ -98,10 +98,10 @@ export default function BlenderFortunePage() {
           <div className="space-y-5 pt-5">
             <div className="rounded-lg border border-emerald-100/25 bg-emerald-300/10 px-4 py-5 shadow-[0_18px_55px_rgba(16,185,129,0.18)] backdrop-blur-md sm:px-6">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-100">
-                Mobile Toolbox
+                Toolbox
               </p>
               <h2 className="mt-2 text-2xl font-black leading-tight text-white">
-                ブレンダの携帯道具箱
+                ブレンダの道具箱
               </h2>
               <p className="mt-3 text-sm font-medium leading-7 text-white/84">
                 スマホ・PC対応／動画を9:16へ端末内で変換
@@ -111,7 +111,7 @@ export default function BlenderFortunePage() {
                 rel="noreferrer"
                 className="mt-4 flex w-full items-center justify-center rounded-lg border border-emerald-100/45 bg-emerald-300/24 px-5 py-4 text-center text-sm font-black text-white shadow-[0_0_34px_rgba(16,185,129,0.24)] transition hover:bg-emerald-200/32 sm:inline-flex sm:w-auto"
               >
-                ブレンダの携帯道具箱を開く →
+                ブレンダの道具箱を開く →
               </a>
             </div>
 
