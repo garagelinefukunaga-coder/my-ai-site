@@ -3,6 +3,7 @@ import Link from "next/link";
 const toolboxUrl = "https://blender-toolbox.happyforever420.chatgpt.site";
 const fortuneUrl = `${toolboxUrl}/fortune`;
 const hapipanDashUrl = `${toolboxUrl}/hapipan-420-dash`;
+const carYardPuzzleUrl = `${toolboxUrl}/car-yard-puzzle`;
 const stemMixLabUrl = `${toolboxUrl}/stem-mix-lab`;
 
 export default function BlenderFortunePage() {
@@ -92,6 +93,25 @@ export default function BlenderFortunePage() {
               className="mt-4 flex w-full items-center justify-center rounded-lg border border-rose-100/45 bg-rose-300/24 px-5 py-4 text-center text-sm font-black text-white shadow-[0_0_34px_rgba(244,114,182,0.24)] transition hover:bg-rose-200/32 sm:inline-flex sm:w-auto"
             >
               新しいブレンダ占いを開く →
+            </a>
+          </div>
+
+          <div className="rounded-lg border border-orange-100/25 bg-orange-300/10 px-4 py-5 shadow-[0_18px_55px_rgba(251,146,60,0.18)] backdrop-blur-md sm:px-6">
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-orange-100">
+              Parking Puzzle
+            </p>
+            <h2 className="mt-2 text-2xl font-black leading-tight text-white">
+              車置き場パズル
+            </h2>
+            <p className="mt-3 text-sm font-medium leading-7 text-white/84">
+              軽バンとトラックを、ぶつからない順番で出庫。解ける面が無限に続くパズルです。
+            </p>
+            <a
+              href={carYardPuzzleUrl}
+              rel="noreferrer"
+              className="mt-4 flex w-full items-center justify-center rounded-lg border border-orange-100/45 bg-orange-300/24 px-5 py-4 text-center text-sm font-black text-white shadow-[0_0_34px_rgba(251,146,60,0.24)] transition hover:bg-orange-200/32 sm:inline-flex sm:w-auto"
+            >
+              車置き場パズルを開く →
             </a>
           </div>
 
