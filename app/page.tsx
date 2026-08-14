@@ -7,7 +7,7 @@ const linkCardClass =
 
 const siteUrl = "https://happy-forever.vercel.app/";
 const socialLinks = [
-  "https://www.youtube.com/watch?v=oVZ0LsVxY4U",
+  "https://www.youtube.com/watch?v=MlBUiMZuNUc",
   "https://x.com/happyforever420",
   "https://note.com/clear_acacia1018",
   "https://suno.com/@happyforever42019",
@@ -94,16 +94,16 @@ const structuredData = {
     {
       "@type": "VideoObject",
       "@id": "https://happy-forever.vercel.app/#latest-video",
-      name: "人生ゲームにリセットはない｜イライラした時こそ頭を冷やせ | HAPPY FOREVER 420",
+      name: "輝くトリコーム、HAPPY FLOWERING | HAPPY FOREVER 420",
       description:
-        "HAPPY FOREVER 420の最新動画。人生ゲームにリセットはない｜イライラした時こそ頭を冷やせのYouTube動画です。",
+        "HAPPY FOREVER 420の最新動画。輝くトリコーム、HAPPY FLOWERINGのYouTube動画です。",
       thumbnailUrl: [
-        "https://i.ytimg.com/vi/oVZ0LsVxY4U/hqdefault.jpg",
+        "https://i.ytimg.com/vi/MlBUiMZuNUc/hqdefault.jpg",
         "https://happy-forever.vercel.app/happy-forever-logo.png",
       ],
-      embedUrl: "https://www.youtube.com/embed/oVZ0LsVxY4U",
-      contentUrl: "https://www.youtube.com/watch?v=oVZ0LsVxY4U",
-      uploadDate: "2026-08-08T00:00:00+09:00",
+      embedUrl: "https://www.youtube.com/embed/MlBUiMZuNUc",
+      contentUrl: "https://www.youtube.com/watch?v=MlBUiMZuNUc",
+      uploadDate: "2026-08-15T00:00:00+09:00",
       publisher: {
         "@id": "https://happy-forever.vercel.app/#happy-forever",
       },
@@ -214,8 +214,8 @@ export default function Home() {
             <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
               <iframe
                 className="h-full w-full"
-                src="https://www.youtube.com/embed/oVZ0LsVxY4U?si=XpXWXKUuxvRS7kT4&rel=0&playsinline=1"
-                title="人生ゲームにリセットはない｜イライラした時こそ頭を冷やせ"
+                src="https://www.youtube.com/embed/MlBUiMZuNUc?rel=0&playsinline=1"
+                title="輝くトリコーム、HAPPY FLOWERING"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
@@ -224,10 +224,10 @@ export default function Home() {
 
             <div className="rounded-lg border border-white/20 bg-black/20 px-4 py-4 shadow-[0_14px_48px_rgba(0,0,0,0.24)] backdrop-blur-md">
               <p className="text-sm font-medium leading-7 text-white/86">
-                「人生ゲームにリセットはない｜イライラした時こそ頭を冷やせ」の最新動画。今週の新曲です。
+                「輝くトリコーム、HAPPY FLOWERING」の最新動画。今週の新曲です。
               </p>
               <a
-                href="https://www.youtube.com/watch?v=oVZ0LsVxY4U"
+                href="https://www.youtube.com/watch?v=MlBUiMZuNUc"
                 target="_blank"
                 rel="noreferrer"
                 className="mt-3 inline-flex rounded-lg border border-white/25 bg-white/10 px-4 py-2 text-sm font-black text-white transition hover:border-red-200/80 hover:bg-white/18"
@@ -312,7 +312,7 @@ export default function Home() {
 
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
               <a
-                href="https://www.youtube.com/watch?v=oVZ0LsVxY4U"
+                href="https://www.youtube.com/watch?v=MlBUiMZuNUc"
                 target="_blank"
                 rel="noreferrer"
                 className={linkCardClass}

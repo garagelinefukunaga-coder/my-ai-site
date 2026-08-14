@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "HAPPY SET ALBUM | HAPPY FOREVER 420",
   description:
-    "HAPPY FOREVER 420のHAPPY SET ALBUM。人生ゲームにリセットはない、少しでも足掻き生きる日々、自分を変える努力、動画とnote解説をまとめています。",
+    "HAPPY FOREVER 420のHAPPY SET ALBUM。輝くトリコーム、HAPPY FLOWERING、人生ゲームにリセットはない、少しでも足掻き生きる日々などの動画とnote解説をまとめています。",
   alternates: {
     canonical: "/music/album",
   },
@@ -75,6 +75,30 @@ export default function AlbumPage() {
 
           <div>
             <h2 className="hero-title mb-3 text-2xl font-black leading-tight text-white sm:text-3xl">
+              輝くトリコーム、HAPPY FLOWERING
+            </h2>
+            <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
+              <iframe
+                className="h-full w-full"
+                src="https://www.youtube.com/embed/MlBUiMZuNUc?rel=0&playsinline=1"
+                title="HAPPY FOREVER 420 - 輝くトリコーム、HAPPY FLOWERING"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+            <a
+              href="https://www.youtube.com/watch?v=MlBUiMZuNUc"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-flex rounded-lg border border-white/25 bg-red-500/45 px-4 py-2 text-sm font-black text-white shadow-[0_0_28px_rgba(239,68,68,0.35)] backdrop-blur-md transition hover:bg-red-400/55"
+            >
+              この動画をYouTubeで見る →
+            </a>
+          </div>
+
+          <div>
+            <h2 className="hero-title mb-3 text-2xl font-black leading-tight text-white sm:text-3xl">
               人生ゲームにリセットはない｜イライラした時こそ頭を冷やせ
             </h2>
             <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
@@ -95,6 +119,19 @@ export default function AlbumPage() {
             >
               この動画をYouTubeで見る →
             </a>
+            <div className="mt-4 rounded-lg border border-white/20 bg-black/20 px-4 py-4 shadow-[0_14px_48px_rgba(0,0,0,0.24)] backdrop-blur-md">
+              <p className="text-sm font-medium leading-7 text-white/86">
+                人生ゲームにリセットはない。セーブなし、リセットなしで、コツコツレベルを上げていく考えをnoteにまとめました。
+              </p>
+              <a
+                href="https://note.com/clear_acacia1018/n/n4e009503d872?sub_rt=share_sb"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-3 inline-flex rounded-lg border border-white/25 bg-white/10 px-4 py-2 text-sm font-black text-white transition hover:border-red-200/80 hover:bg-white/18"
+              >
+                この曲の詳しい解説はnoteへ →
+              </a>
+            </div>
           </div>
 
           <div>
