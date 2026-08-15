@@ -2,6 +2,8 @@ import Link from "next/link";
 
 const toolboxUrl = "https://blender-toolbox.happyforever420.chatgpt.site";
 const fortuneUrl = `${toolboxUrl}/fortune`;
+const flowerCircuitUrl = `${toolboxUrl}/flower-circuit`;
+const numberHarvestUrl = `${toolboxUrl}/number-harvest`;
 const hapipanDashUrl = `${toolboxUrl}/hapipan-420-dash`;
 const carYardPuzzleUrl = `${toolboxUrl}/car-yard-puzzle`;
 const stemMixLabUrl = `${toolboxUrl}/stem-mix-lab`;
@@ -58,25 +60,6 @@ export default function BlenderFortunePage() {
             </div>
           </div>
 
-          <div className="rounded-lg border border-amber-100/25 bg-amber-300/10 px-4 py-5 shadow-[0_18px_55px_rgba(251,191,36,0.18)] backdrop-blur-md sm:px-6">
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-100">
-              Fortune Game
-            </p>
-            <h2 className="mt-2 text-2xl font-black leading-tight text-white">
-              ハピパン420ダッシュ
-            </h2>
-            <p className="mt-3 text-sm font-medium leading-7 text-white/84">
-              ハピパン420ダッシュの実験ツールです。占いゲームみたいに、まずはここから遊べます。
-            </p>
-            <a
-              href={hapipanDashUrl}
-              rel="noreferrer"
-              className="mt-4 flex w-full items-center justify-center rounded-lg border border-amber-100/45 bg-amber-300/24 px-5 py-4 text-center text-sm font-black text-white shadow-[0_0_34px_rgba(251,191,36,0.24)] transition hover:bg-amber-200/32 sm:inline-flex sm:w-auto"
-            >
-              ハピパン420ダッシュを開く →
-            </a>
-          </div>
-
           <div className="rounded-lg border border-rose-100/25 bg-rose-300/10 px-4 py-5 shadow-[0_18px_55px_rgba(244,114,182,0.18)] backdrop-blur-md sm:px-6">
             <p className="text-xs font-black uppercase tracking-[0.2em] text-rose-100">
               Fortune Tool
@@ -93,6 +76,63 @@ export default function BlenderFortunePage() {
               className="mt-4 flex w-full items-center justify-center rounded-lg border border-rose-100/45 bg-rose-300/24 px-5 py-4 text-center text-sm font-black text-white shadow-[0_0_34px_rgba(244,114,182,0.24)] transition hover:bg-rose-200/32 sm:inline-flex sm:w-auto"
             >
               新しいブレンダ占いを開く →
+            </a>
+          </div>
+
+          <div className="rounded-lg border border-lime-100/25 bg-lime-300/10 px-4 py-5 shadow-[0_18px_55px_rgba(163,230,53,0.18)] backdrop-blur-md sm:px-6">
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-lime-100">
+              Wiring Puzzle
+            </p>
+            <h2 className="mt-2 text-2xl font-black leading-tight text-white">
+              FLOWER CIRCUIT 電気配線ゲーム
+            </h2>
+            <p className="mt-3 text-sm font-medium leading-7 text-white/84">
+              暗い栽培ルームの配線をつなぎ、すべての設備へ電気を通して次の部屋を目指すパズルです。
+            </p>
+            <a
+              href={flowerCircuitUrl}
+              rel="noreferrer"
+              className="mt-4 flex w-full items-center justify-center rounded-lg border border-lime-100/45 bg-lime-300/24 px-5 py-4 text-center text-sm font-black text-white shadow-[0_0_34px_rgba(163,230,53,0.24)] transition hover:bg-lime-200/32 sm:inline-flex sm:w-auto"
+            >
+              FLOWER CIRCUITを開く →
+            </a>
+          </div>
+
+          <div className="rounded-lg border border-sky-100/25 bg-sky-300/10 px-4 py-5 shadow-[0_18px_55px_rgba(56,189,248,0.18)] backdrop-blur-md sm:px-6">
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-sky-100">
+              Number Puzzle
+            </p>
+            <h2 className="mt-2 text-2xl font-black leading-tight text-white">
+              NUMBER HARVEST 計算ゲーム
+            </h2>
+            <p className="mt-3 text-sm font-medium leading-7 text-white/84">
+              ボタンを押して目標数字を作る計算パズル。正解するたび、ハピパンが葉っぱを一枚いただきます。
+            </p>
+            <a
+              href={numberHarvestUrl}
+              rel="noreferrer"
+              className="mt-4 flex w-full items-center justify-center rounded-lg border border-sky-100/45 bg-sky-300/24 px-5 py-4 text-center text-sm font-black text-white shadow-[0_0_34px_rgba(56,189,248,0.24)] transition hover:bg-sky-200/32 sm:inline-flex sm:w-auto"
+            >
+              NUMBER HARVESTを開く →
+            </a>
+          </div>
+
+          <div className="rounded-lg border border-amber-100/25 bg-amber-300/10 px-4 py-5 shadow-[0_18px_55px_rgba(251,191,36,0.18)] backdrop-blur-md sm:px-6">
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-100">
+              Fortune Game
+            </p>
+            <h2 className="mt-2 text-2xl font-black leading-tight text-white">
+              ハピパン420ダッシュ
+            </h2>
+            <p className="mt-3 text-sm font-medium leading-7 text-white/84">
+              ハピパン420ダッシュの実験ツールです。占いゲームみたいに、まずはここから遊べます。
+            </p>
+            <a
+              href={hapipanDashUrl}
+              rel="noreferrer"
+              className="mt-4 flex w-full items-center justify-center rounded-lg border border-amber-100/45 bg-amber-300/24 px-5 py-4 text-center text-sm font-black text-white shadow-[0_0_34px_rgba(251,191,36,0.24)] transition hover:bg-amber-200/32 sm:inline-flex sm:w-auto"
+            >
+              ハピパン420ダッシュを開く →
             </a>
           </div>
 
