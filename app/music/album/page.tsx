@@ -19,6 +19,10 @@ const playlistLinks = [
     href: "https://suno.com/playlist/193f1a75-1fb0-4d43-a7b2-5bb20601e861",
     label: "SUNO Playlist",
   },
+  {
+    href: "https://suno.com/playlist/bbe2b5f1-8dc5-4f9e-963b-9d9f31d46b06",
+    label: "SUNO English",
+  },
 ];
 
 function PlaylistLinkBar() {
@@ -72,6 +76,29 @@ export default function AlbumPage() {
           </div>
 
           <PlaylistLinkBar />
+
+          <a
+            href="https://suno.com/playlist/bbe2b5f1-8dc5-4f9e-963b-9d9f31d46b06"
+            target="_blank"
+            rel="noreferrer"
+            className="glass-link block rounded-lg border border-sky-100/30 bg-sky-300/10 px-4 py-5 text-white shadow-[0_0_32px_rgba(56,189,248,0.18)] transition hover:-translate-y-0.5 hover:border-sky-100/70 hover:bg-sky-300/16 sm:px-6"
+          >
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-sky-100">
+              English Version / SUNO
+            </p>
+            <h2 className="mt-2 text-xl font-black leading-tight text-white sm:text-2xl">
+              HAPPY SET Ver: English
+            </h2>
+            <p className="mt-3 text-sm font-medium leading-7 text-white/82">
+              日本語版の自作リリックと韻をもとに、AIの力を借りて作った英語バージョンです。
+            </p>
+            <p className="mt-2 text-sm font-medium leading-7 text-white/76">
+              理由は分かりませんが、公開した頃から海外フォロワーが約1週間で60人ほど増えました。再生数はまだ大きく変わった感じではありませんが、海外へ届き始めた記録として残しています。
+            </p>
+            <p className="mt-3 text-xs font-black text-sky-50/80">
+              SUNOで英語版プレイリストを聴く →
+            </p>
+          </a>
 
           <div>
             <h2 className="hero-title mb-3 text-2xl font-black leading-tight text-white sm:text-3xl">

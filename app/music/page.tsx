@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "HAPPY FOREVER MUSIC | HAPPY FOREVER 420",
   description:
-    "HAPPY FOREVER 420の音楽ページ。HAPPY SET ALBUM、狂気のピエロ、リリックAI仕様アルバムなど、Japanese Drill、AI Music、パンダラップ、SUNOプレイリストをまとめています。",
+    "HAPPY FOREVER 420の音楽ページ。HAPPY SET ALBUMと英語版、狂気のピエロ、リリックAI仕様アルバムなど、Japanese Drill、AI Music、パンダラップ、SUNOプレイリストをまとめています。",
   alternates: {
     canonical: "/music",
   },
@@ -47,6 +47,24 @@ export default function MusicPage() {
               次のページへ →
             </p>
           </Link>
+
+          <a
+            href="https://suno.com/playlist/bbe2b5f1-8dc5-4f9e-963b-9d9f31d46b06"
+            target="_blank"
+            rel="noreferrer"
+            className="glass-link block rounded-lg border border-sky-100/30 bg-sky-300/10 px-4 py-4 text-white shadow-[0_0_28px_rgba(56,189,248,0.18)] transition hover:-translate-y-0.5 hover:border-sky-100/70 hover:bg-sky-300/16"
+          >
+            <p className="text-sm font-black">HAPPY SET Ver: English（SUNO）</p>
+            <p className="mt-2 text-sm font-medium leading-6 text-white/82">
+              日本語版の自作リリックと韻をもとに、AIの力を借りて作った英語バージョンです。
+            </p>
+            <p className="mt-2 text-sm font-medium leading-6 text-white/76">
+              公開した頃から、理由は分からないものの海外フォロワーが約1週間で60人ほど増えました。再生数はまだ大きく変わった感じではありません。
+            </p>
+            <p className="mt-2 text-xs text-sky-50/75">
+              SUNOで英語版プレイリストを聴く →
+            </p>
+          </a>
 
           <Link
             href="/music/crazy-clown"
