@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RandomAlbumVideo from "./RandomAlbumVideo";
 import ShareButtons from "./ShareButtons";
 
 const linkCardClass =
@@ -7,7 +8,7 @@ const linkCardClass =
 
 const siteUrl = "https://happy-forever.vercel.app/";
 const socialLinks = [
-  "https://www.youtube.com/watch?v=MlBUiMZuNUc",
+  "https://www.youtube.com/channel/UCG754AZ14rrJ7b7hXUbBw8w",
   "https://x.com/happyforever420",
   "https://note.com/clear_acacia1018",
   "https://suno.com/@happyforever42019",
@@ -92,25 +93,6 @@ const structuredData = {
       sameAs: socialLinks,
     },
     {
-      "@type": "VideoObject",
-      "@id": "https://happy-forever.vercel.app/#latest-video",
-      name: "輝くトリコーム、HAPPY FLOWERING | HAPPY FOREVER 420",
-      description:
-        "HAPPY FOREVER 420の最新動画。輝くトリコーム、HAPPY FLOWERINGのYouTube動画です。",
-      thumbnailUrl: [
-        "https://i.ytimg.com/vi/MlBUiMZuNUc/hqdefault.jpg",
-        "https://happy-forever.vercel.app/happy-forever-logo.png",
-      ],
-      embedUrl: "https://www.youtube.com/embed/MlBUiMZuNUc",
-      contentUrl: "https://www.youtube.com/watch?v=MlBUiMZuNUc",
-      uploadDate: "2026-08-15T00:00:00+09:00",
-      publisher: {
-        "@id": "https://happy-forever.vercel.app/#happy-forever",
-      },
-      inLanguage: "ja",
-      genre: ["Japanese Drill", "AI Music"],
-    },
-    {
       "@type": "ImageObject",
       "@id": "https://happy-forever.vercel.app/#main-image",
       name: "HAPPY FOREVER 420 main visual",
@@ -173,6 +155,23 @@ export default function Home() {
           </section>
 
           <section className="space-y-4">
+            <div className="rounded-lg border border-amber-100/30 bg-amber-200/10 px-4 py-5 shadow-[0_18px_60px_rgba(245,158,11,0.16)] backdrop-blur-md sm:px-6">
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-100">
+                お知らせ
+              </p>
+              <div className="mt-3 space-y-3 text-sm font-medium leading-7 text-white/86 sm:text-base">
+                <p>
+                  2026年9月9日、大麻栽培の罪について判決が出る予定で、その後しばらく、1年ほど不在になる見込みです。
+                </p>
+                <p>
+                  このサイトを見つけて何か気になった方は、各種SNSや公式LINEから気軽にメッセージしていただければと思います。
+                </p>
+                <p>
+                  その間もアイデアを集めて、戻ってきたらまた新しい形で更新していけたらと思っています。
+                </p>
+              </div>
+            </div>
+
             <ShareButtons />
 
             <Link href="/en" className={linkCardClass}>
@@ -200,41 +199,18 @@ export default function Home() {
             </div>
 
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-red-100">
-                Featured Short
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-100">
+                Happy Set Random Play
               </p>
               <h2 className="hero-title mt-1 text-2xl font-black text-white">
-                最新の動画
+                HAPPY SET ランダム動画
               </h2>
               <p className="mt-2 text-sm font-medium text-white/80">
-                YouTubeに上げた短いの中から、今一番見てほしいやつ。
+                HAPPY SET ALBUMの中から、開くたびに1曲をランダムで選びます。
               </p>
             </div>
 
-            <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
-              <iframe
-                className="h-full w-full"
-                src="https://www.youtube.com/embed/MlBUiMZuNUc?rel=0&playsinline=1"
-                title="輝くトリコーム、HAPPY FLOWERING"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
-            </div>
-
-            <div className="rounded-lg border border-white/20 bg-black/20 px-4 py-4 shadow-[0_14px_48px_rgba(0,0,0,0.24)] backdrop-blur-md">
-              <p className="text-sm font-medium leading-7 text-white/86">
-                「輝くトリコーム、HAPPY FLOWERING」の最新動画。今週の新曲です。
-              </p>
-              <a
-                href="https://www.youtube.com/watch?v=MlBUiMZuNUc"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-3 inline-flex rounded-lg border border-white/25 bg-white/10 px-4 py-2 text-sm font-black text-white transition hover:border-red-200/80 hover:bg-white/18"
-              >
-                この動画をYouTubeで見る →
-              </a>
-            </div>
+            <RandomAlbumVideo />
 
             <div className="pt-2">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-100">
@@ -312,13 +288,13 @@ export default function Home() {
 
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
               <a
-                href="https://www.youtube.com/watch?v=MlBUiMZuNUc"
+                href="https://www.youtube.com/channel/UCG754AZ14rrJ7b7hXUbBw8w"
                 target="_blank"
                 rel="noreferrer"
                 className={linkCardClass}
               >
                 <p className="text-sm font-black">YouTube</p>
-                <p className="text-xs text-emerald-50/70">最新の動画。</p>
+                <p className="text-xs text-emerald-50/70">動画とパンダラップ。</p>
               </a>
 
               <a
