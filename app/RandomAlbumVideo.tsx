@@ -1,9 +1,7 @@
 "use client";
 
-import { useState, useSyncExternalStore } from "react";
+import { useSyncExternalStore } from "react";
 import { happySetVideos } from "./music/album/videos";
-
-const subscribe = () => () => {};
 
 function randomVideoIndex(previousIndex?: number) {
   let nextIndex = Math.floor(Math.random() * happySetVideos.length);
@@ -13,11 +11,27 @@ function randomVideoIndex(previousIndex?: number) {
   return nextIndex;
 }
 
-export default function RandomAlbumVideo() {
-  const isHydrated = useSyncExternalStore(subscribe, () => true, () => false);
-  const [videoIndex, setVideoIndex] = useState(() => randomVideoIndex());
+let currentVideoIndex = randomVideoIndex();
+const listeners = new Set<() => void>();
 
-  if (!isHydrated) {
+function subscribe(listener: () => void) {
+  listeners.add(listener);
+  return () => listeners.delete(listener);
+}
+
+function selectAnotherVideo() {
+  currentVideoIndex = randomVideoIndex(currentVideoIndex);
+  listeners.forEach((listener) => listener());
+}
+
+export default function RandomAlbumVideo() {
+  const videoIndex = useSyncExternalStore(
+    subscribe,
+    () => currentVideoIndex,
+    () => -1,
+  );
+
+  if (videoIndex < 0) {
     return (
       <div className="rounded-lg border border-white/20 bg-black/20 px-4 py-8 text-center shadow-[0_14px_48px_rgba(0,0,0,0.24)] backdrop-blur-md">
         <p className="text-sm font-black text-white/80">HAPPY SETから選曲中...</p>
@@ -57,7 +71,7 @@ export default function RandomAlbumVideo() {
           </a>
           <button
             type="button"
-            onClick={() => setVideoIndex((current) => randomVideoIndex(current))}
+            onClick={selectAnotherVideo}
             className="inline-flex min-h-11 items-center justify-center rounded-lg border border-emerald-100/30 bg-emerald-300/12 px-4 py-2 text-center text-sm font-black text-white transition hover:border-emerald-100/70 hover:bg-emerald-300/20"
           >
             別の曲をランダムで選ぶ
