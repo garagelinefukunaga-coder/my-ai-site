@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import RandomAlbumVideo from "./RandomAlbumVideo";
+import FeaturedAlbumVideo from "./RandomAlbumVideo";
 import ShareButtons from "./ShareButtons";
 
 const linkCardClass =
@@ -200,17 +200,17 @@ export default function Home() {
 
             <div>
               <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-100">
-                Happy Set Random Play
+                Featured Video
               </p>
               <h2 className="hero-title mt-1 text-2xl font-black text-white">
-                HAPPY SET ランダム動画
+                今のおすすめ動画
               </h2>
               <p className="mt-2 text-sm font-medium text-white/80">
-                HAPPY SET ALBUMの中から、開くたびに1曲をランダムで選びます。
+                「人生ゲームにリセットはない」をトップで紹介しています。
               </p>
             </div>
 
-            <RandomAlbumVideo />
+            <FeaturedAlbumVideo />
 
             <div className="pt-2">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-100">
