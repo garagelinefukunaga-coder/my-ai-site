@@ -155,49 +155,6 @@ export default function Home() {
           </section>
 
           <section className="space-y-4">
-            <div className="rounded-lg border border-amber-100/30 bg-amber-200/10 px-4 py-5 shadow-[0_18px_60px_rgba(245,158,11,0.16)] backdrop-blur-md sm:px-6">
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-100">
-                お知らせ
-              </p>
-              <div className="mt-3 space-y-3 text-sm font-medium leading-7 text-white/86 sm:text-base">
-                <p>
-                  2026年9月9日、大麻栽培の罪について判決が出る予定で、その後しばらく、1年ほど不在になる見込みです。
-                </p>
-                <p>
-                  このサイトを見つけて何か気になった方は、各種SNSや公式LINEから気軽にメッセージしていただければと思います。
-                </p>
-                <p>
-                  その間もアイデアを集めて、戻ってきたらまた新しい形で更新していけたらと思っています。
-                </p>
-              </div>
-            </div>
-
-            <ShareButtons />
-
-            <Link href="/en" className={linkCardClass}>
-              <p className="text-sm font-black">English / Global Page</p>
-              <p className="mt-1 text-xs text-emerald-50/70">
-                HAPPY FOREVER 420 in English →
-              </p>
-            </Link>
-
-            <div className="rounded-lg border border-white/15 bg-black/20 px-4 py-6 shadow-[0_18px_70px_rgba(0,0,0,0.24)] backdrop-blur-md sm:px-6">
-              <div className="max-w-2xl space-y-3 text-sm font-medium leading-7 text-white/86 sm:text-base">
-                <p>My name is HAPPY FOREVER 420.</p>
-                <p>補助表記は、Happyforever 420 / 福永。</p>
-                <p>日本語の漢字で、Happy は「福」、Forever は「永」。</p>
-                <p>
-                  HAPPY FOREVER 420は、Japanese Drill、AI Music、パンダラッパー、映像作品、note制作ログを公開している個人プロジェクトです。
-                </p>
-                <p>
-                  まだ何かが定まっているわけではありませんが、AIを使いながら、音楽・映像・言葉を少しずつ形にしています。
-                </p>
-                <p>試行錯誤しながら、自分にしかできない表現を作っていきます。</p>
-                <p>皆様、よろしくお願いいたします。</p>
-                <p>HAPPY FOREVER 420</p>
-              </div>
-            </div>
-
             <div>
               <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-100">
                 Featured Video
@@ -211,6 +168,42 @@ export default function Home() {
             </div>
 
             <FeaturedAlbumVideo />
+
+            <div className="rounded-lg border border-amber-100/30 bg-amber-200/10 px-4 py-5 shadow-[0_18px_60px_rgba(245,158,11,0.16)] backdrop-blur-md sm:px-6">
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-100">
+                お知らせ
+              </p>
+              <div className="mt-3 space-y-3 text-sm font-medium leading-7 text-white/86 sm:text-base">
+                <p>
+                  2026年9月9日、大麻栽培の罪について判決が出る予定です。判決内容によっては、その後しばらく更新できない可能性があります。
+                </p>
+                <p>
+                  このサイトを見つけて何か気になった方は、各種SNSや公式LINEから気軽にメッセージしていただければと思います。
+                </p>
+                <p>
+                  その間もアイデアを集めて、戻ってきたらまた新しい形で更新していけたらと思っています。
+                </p>
+              </div>
+            </div>
+
+            <Link href="/en" className={linkCardClass}>
+              <p className="text-sm font-black">English / Global Page</p>
+              <p className="mt-1 text-xs text-emerald-50/70">
+                HAPPY FOREVER 420 in English →
+              </p>
+            </Link>
+
+            <div className="rounded-lg border border-white/15 bg-black/20 px-4 py-6 shadow-[0_18px_70px_rgba(0,0,0,0.24)] backdrop-blur-md sm:px-6">
+              <div className="max-w-2xl space-y-3 text-sm font-medium leading-7 text-white/86 sm:text-base">
+                <p>My name is HAPPY FOREVER 420.</p>
+                <p>
+                  Japanese Drill、AI Music、パンダラップを中心に、音楽・映像・言葉を作っている個人プロジェクトです。
+                </p>
+                <p>
+                  AIを使って試行錯誤しながら、自分にしかできない表現を少しずつ形にしています。
+                </p>
+              </div>
+            </div>
 
             <div className="pt-2">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-100">
@@ -303,23 +296,15 @@ export default function Home() {
                 rel="noreferrer"
                 className={linkCardClass}
               >
-                <p className="text-sm font-black">note制作ログ</p>
-                <p className="text-xs text-emerald-50/70">制作記録・曲解説・考察。</p>
+                <p className="text-sm font-black">note</p>
+                <p className="text-xs text-emerald-50/70">
+                  制作記録・曲解説・考察・ロング文章。
+                </p>
               </a>
 
               <a href="https://x.com/happyforever420" target="_blank" rel="noreferrer" className={linkCardClass}>
                 <p className="text-sm font-black">X（旧Twitter）</p>
                 <p className="text-xs text-emerald-50/70">日常と思想のログ。</p>
-              </a>
-
-              <a href="https://note.com/clear_acacia1018" target="_blank" rel="noreferrer" className={linkCardClass}>
-                <p className="text-sm font-black">note</p>
-                <p className="text-xs text-emerald-50/70">ロング文章・考察。</p>
-              </a>
-
-              <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" className={linkCardClass}>
-                <p className="text-sm font-black">Instagram</p>
-                <p className="text-xs text-emerald-50/70">ビジュアルログ。</p>
               </a>
 
               <a href="https://suno.com/@happyforever42019" target="_blank" rel="noreferrer" className={linkCardClass}>
