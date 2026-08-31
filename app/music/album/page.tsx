@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "HAPPY SET ALBUM | HAPPY FOREVER 420",
   description:
-    "HAPPY FOREVER 420のHAPPY SET ALBUM。綺麗な花を咲かせて、赤い目の龍シェンロン、輝くトリコーム、HAPPY FLOWERING、人生ゲームにリセットはないなどの動画とnote解説をまとめています。",
+    "HAPPY FOREVER 420のHAPPY SET ALBUM。綺麗な花を咲かせて、赤い目の龍シェンロン、輝くハーベスト、輝くトリコーム、HAPPY FLOWERINGなどの動画とnote解説をまとめています。",
   alternates: {
     canonical: "/music/album",
   },
@@ -137,6 +137,30 @@ export default function AlbumPage() {
                 この曲の詳しい解説はnoteへ →
               </a>
             </div>
+          </div>
+
+          <div>
+            <h2 className="hero-title mb-3 text-2xl font-black leading-tight text-white sm:text-3xl">
+              輝くハーベスト 横動画バージョン
+            </h2>
+            <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
+              <iframe
+                className="h-full w-full"
+                src="https://www.youtube.com/embed/S5OIN9XRruk?rel=0&playsinline=1"
+                title="HAPPY FOREVER 420 - 輝くハーベスト 横動画バージョン"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+            <a
+              href="https://www.youtube.com/watch?v=S5OIN9XRruk"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-flex rounded-lg border border-white/25 bg-red-500/45 px-4 py-2 text-sm font-black text-white shadow-[0_0_28px_rgba(239,68,68,0.35)] backdrop-blur-md transition hover:bg-red-400/55"
+            >
+              この動画をYouTubeで見る →
+            </a>
           </div>
 
           <div>

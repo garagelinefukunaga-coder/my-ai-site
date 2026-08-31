@@ -163,7 +163,7 @@ export default function Home() {
                 今のおすすめ動画
               </h2>
               <p className="mt-2 text-sm font-medium text-white/80">
-                「人生ゲームにリセットはない」をトップで紹介しています。
+                「輝くハーベスト 横動画バージョン」をトップで紹介しています。
               </p>
             </div>
 

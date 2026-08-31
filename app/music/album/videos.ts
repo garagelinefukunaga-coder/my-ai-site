@@ -1,5 +1,6 @@
 export const happySetVideos = [
   { id: "c195CqWl5ts", title: "綺麗な花を咲かせて、赤い目の龍シェンロン" },
+  { id: "S5OIN9XRruk", title: "輝くハーベスト 横動画バージョン" },
   { id: "MlBUiMZuNUc", title: "輝くトリコーム、HAPPY FLOWERING" },
   {
     id: "oVZ0LsVxY4U",

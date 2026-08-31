@@ -1,6 +1,6 @@
 const featuredVideo = {
-  id: "oVZ0LsVxY4U",
-  title: "人生ゲームにリセットはない｜イライラした時こそ頭を冷やせ",
+  id: "S5OIN9XRruk",
+  title: "輝くハーベスト 横動画バージョン",
 };
 
 export default function FeaturedAlbumVideo() {
