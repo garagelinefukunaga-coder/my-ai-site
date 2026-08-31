@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "HAPPY SET ALBUM | HAPPY FOREVER 420",
   description:
-    "HAPPY FOREVER 420のHAPPY SET ALBUM。輝くトリコーム、HAPPY FLOWERING、人生ゲームにリセットはない、少しでも足掻き生きる日々などの動画とnote解説をまとめています。",
+    "HAPPY FOREVER 420のHAPPY SET ALBUM。綺麗な花を咲かせて、赤い目の龍シェンロン、輝くトリコーム、HAPPY FLOWERING、人生ゲームにリセットはないなどの動画とnote解説をまとめています。",
   alternates: {
     canonical: "/music/album",
   },
@@ -99,6 +99,45 @@ export default function AlbumPage() {
               SUNOで英語版プレイリストを聴く →
             </p>
           </a>
+
+          <div>
+            <h2 className="hero-title mb-3 text-2xl font-black leading-tight text-white sm:text-3xl">
+              綺麗な花を咲かせて、赤い目の龍シェンロン
+            </h2>
+            <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
+              <iframe
+                className="h-full w-full"
+                src="https://www.youtube.com/embed/c195CqWl5ts?rel=0&playsinline=1"
+                title="HAPPY FOREVER 420 - 綺麗な花を咲かせて、赤い目の龍シェンロン"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+            <a
+              href="https://www.youtube.com/watch?v=c195CqWl5ts"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-flex rounded-lg border border-white/25 bg-red-500/45 px-4 py-2 text-sm font-black text-white shadow-[0_0_28px_rgba(239,68,68,0.35)] backdrop-blur-md transition hover:bg-red-400/55"
+            >
+              この動画をYouTubeで見る →
+            </a>
+            <div className="mt-4 rounded-lg border border-white/20 bg-black/20 px-4 py-4 shadow-[0_14px_48px_rgba(0,0,0,0.24)] backdrop-blur-md">
+              <p className="text-sm font-medium leading-7 text-white/86">
+                植物に必要なものと、植物の成長をテーマにしたパンダラップ。
+                <br />
+                花が育っていく姿と、人間が少しずつ成長していく姿を重ねた曲です。
+              </p>
+              <a
+                href="https://note.com/clear_acacia1018/n/n88a6067162c0"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-3 inline-flex rounded-lg border border-white/25 bg-white/10 px-4 py-2 text-sm font-black text-white transition hover:border-red-200/80 hover:bg-white/18"
+              >
+                この曲の詳しい解説はnoteへ →
+              </a>
+            </div>
+          </div>
 
           <div>
             <h2 className="hero-title mb-3 text-2xl font-black leading-tight text-white sm:text-3xl">
@@ -532,44 +571,6 @@ export default function AlbumPage() {
                 曲解説をnoteで読む →
               </p>
             </a>
-          </div>
-
-          <div>
-            <h2 className="hero-title mb-3 text-2xl font-black leading-tight text-white sm:text-3xl">
-              綺麗な花を咲かせて、赤い目の龍シェンロン
-            </h2>
-            <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 bg-black/45 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-sm">
-              <iframe
-                className="h-full w-full"
-                src="https://www.youtube.com/embed/6fPCNFhm5cQ"
-                title="Panda Rap - Happy Forever"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
-            <a
-              href="https://www.youtube.com/shorts/6fPCNFhm5cQ?feature=share"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-3 inline-flex rounded-lg border border-white/25 bg-red-500/45 px-4 py-2 text-sm font-black text-white shadow-[0_0_28px_rgba(239,68,68,0.35)] backdrop-blur-md transition hover:bg-red-400/55"
-            >
-              この動画をYouTubeで見る →
-            </a>
-            <div className="mt-4 rounded-lg border border-white/20 bg-black/20 px-4 py-4 shadow-[0_14px_48px_rgba(0,0,0,0.24)] backdrop-blur-md">
-              <p className="text-sm font-medium leading-7 text-white/86">
-                植物に必要なものと、植物の成長をテーマにしたパンダラップ。
-                <br />
-                花が育っていく姿と、人間が少しずつ成長していく姿を重ねた曲です。
-              </p>
-              <a
-                href="https://note.com/clear_acacia1018/n/n88a6067162c0"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-3 inline-flex rounded-lg border border-white/25 bg-white/10 px-4 py-2 text-sm font-black text-white transition hover:border-red-200/80 hover:bg-white/18"
-              >
-                この曲の詳しい解説はnoteへ →
-              </a>
-            </div>
           </div>
 
           <a

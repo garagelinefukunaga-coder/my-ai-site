@@ -1,4 +1,5 @@
 export const happySetVideos = [
+  { id: "c195CqWl5ts", title: "綺麗な花を咲かせて、赤い目の龍シェンロン" },
   { id: "MlBUiMZuNUc", title: "輝くトリコーム、HAPPY FLOWERING" },
   {
     id: "oVZ0LsVxY4U",
@@ -20,6 +21,4 @@ export const happySetVideos = [
     id: "gNcLSvSIJLc",
     title: "量子力学、感情コントロール、観測するまで未来はわからない",
   },
-  { id: "6fPCNFhm5cQ", title: "綺麗な花を咲かせて、赤い目の龍シェンロン" },
 ] as const;
-
