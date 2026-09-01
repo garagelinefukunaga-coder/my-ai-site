@@ -221,6 +221,13 @@ export default function Home() {
               </p>
             </Link>
 
+            <Link href="/board" className={linkCardClass}>
+              <p className="text-sm font-black">みんなの掲示板</p>
+              <p className="mt-1 text-xs leading-5 text-emerald-50/70">
+                あだ名で話題を立てて、感想やアイデアを話し合えます →
+              </p>
+            </Link>
+
 
             <Link href="/about" className={linkCardClass}>
               <p className="text-sm font-black">HAPPY FOREVER 420について</p>

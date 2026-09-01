@@ -7,6 +7,7 @@ const urlList = [
   `https://${host}/music/album`,
   `https://${host}/about`,
   `https://${host}/blender`,
+  `https://${host}/board`,
   `https://${host}/merry`,
   `https://${host}/en`,
 ];
