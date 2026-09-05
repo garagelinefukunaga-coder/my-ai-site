@@ -78,6 +78,26 @@ export default function AlbumPage() {
           <PlaylistLinkBar />
 
           <a
+            href="https://distrokid.com/hyperfollow/happyforever420/happy-set--ver-english--?utm_campaign=website&utm_medium=Email+&utm_source=SendGrid"
+            target="_blank"
+            rel="noreferrer"
+            className="glass-link block rounded-lg border border-emerald-100/35 bg-emerald-300/12 px-4 py-5 text-white shadow-[0_0_34px_rgba(52,211,153,0.2)] transition hover:-translate-y-0.5 hover:border-emerald-100/75 hover:bg-emerald-300/18 sm:px-6"
+          >
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-emerald-100">
+              Streaming Release
+            </p>
+            <h2 className="mt-2 text-xl font-black leading-tight text-white sm:text-2xl">
+              HAPPY SET Ver: English 配信中
+            </h2>
+            <p className="mt-3 text-sm font-medium leading-7 text-white/82">
+              HAPPY SETの英語バージョンを、Spotifyなどの音楽配信サービスで聴けます。
+            </p>
+            <p className="mt-3 text-sm font-black text-emerald-50">
+              Spotify・各配信サービスで聴く →
+            </p>
+          </a>
+
+          <a
             href="https://suno.com/playlist/bbe2b5f1-8dc5-4f9e-963b-9d9f31d46b06"
             target="_blank"
             rel="noreferrer"
